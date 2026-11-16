@@ -2,7 +2,7 @@ task: detect
 mode: train
 model: yolov8n.pt
 data: C:\Users\felip\Desktop\gs\Applied Computer Vision\dados\dataset\data.yaml
-epochs: 70
+epochs: 60
 time: null
 patience: 25
 batch: 16
@@ -13,7 +13,7 @@ cache: false
 device: cpu
 workers: 4
 project: C:\Users\felip\Desktop\gs\Applied Computer Vision\runs
-name: yolov8n-bocadelobo-v1
+name: yolov8n-bocadelobo-v2
 exist_ok: true
 pretrained: true
 cls_remap: true
@@ -112,4 +112,4 @@ auto_augment: randaugment
 erasing: 0.4
 cfg: null
 tracker: tracktrack.yaml
-save_dir: C:\Users\felip\Desktop\gs\Applied Computer Vision\runs\yolov8n-bocadelobo-v1
+save_dir: C:\Users\felip\Desktop\gs\Applied Computer Vision\runs\yolov8n-bocadelobo-v2

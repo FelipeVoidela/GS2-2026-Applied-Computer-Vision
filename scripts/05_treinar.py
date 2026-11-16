@@ -5,11 +5,11 @@ Parte dos pesos do YOLOv8n pré-treinados no COCO (transferência de aprendizado
 inteira ao nosso dataset. O YOLOv8n é a menor versão da família (3 milhões de parâmetros): é a
 que cabe no robô e roda em tempo real em CPU.
 
-Ao final, copia os melhores pesos (maior mAP na validação) para modelos/yolov8n-bocadelobo-v1.pt
-e as curvas de treino para resultados/treino/.
+Ao final, copia os melhores pesos (maior mAP na validação) para modelos/<nome do modelo>.pt
+e as curvas de treino para resultados/treino/. O nome do modelo vem de src/boca_de_lobo_visao/classes.py.
 
 Uso:
-    python scripts/05_treinar.py                      # CPU, até 70 épocas (cerca de 45 min)
+    python scripts/05_treinar.py                      # CPU, até 60 épocas (cerca de 1 hora)
     python scripts/05_treinar.py --epocas 120 --dispositivo 0   # com GPU
 """
 from __future__ import annotations
@@ -33,11 +33,13 @@ RESULTADOS = RAIZ / "resultados" / "treino"
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--epocas", type=int, default=70)
+    ap.add_argument("--epocas", type=int, default=60)
     ap.add_argument("--tamanho", type=int, default=640, help="lado da imagem de entrada")
     ap.add_argument("--lote", type=int, default=16)
     ap.add_argument("--dispositivo", default="cpu", help="cpu ou o índice da GPU (0)")
     ap.add_argument("--base", default="yolov8n.pt", help="pesos de partida")
+    ap.add_argument("--nome", default=NOME_MODELO,
+                    help="nome da rodada; diferente do padrão, não sobrescreve o modelo nem as curvas atuais")
     args = ap.parse_args()
 
     modelo = YOLO(args.base)
@@ -52,7 +54,7 @@ def main() -> None:
         seed=2026,
         deterministic=True,
         project=str(EXECUCOES),
-        name=NOME_MODELO,
+        name=args.nome,
         exist_ok=True,
         # Aumento de dados: a câmera do robô vê o bueiro de cima e em qualquer orientação,
         # com luz variável. Por isso giros, espelhamentos e variação de cor e brilho.
@@ -67,14 +69,15 @@ def main() -> None:
         plots=True,
     )
 
-    pasta = EXECUCOES / NOME_MODELO
+    pasta = EXECUCOES / args.nome
+    resultados = RESULTADOS if args.nome == NOME_MODELO else RESULTADOS.with_name(f"treino_{args.nome}")
     MODELOS.mkdir(exist_ok=True)
-    RESULTADOS.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(pasta / "weights" / "best.pt", MODELOS / f"{NOME_MODELO}.pt")
+    resultados.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(pasta / "weights" / "best.pt", MODELOS / f"{args.nome}.pt")
     for nome in ("results.csv", "results.png", "args.yaml", "labels.jpg", "train_batch0.jpg"):
         if (pasta / nome).exists():
-            shutil.copy2(pasta / nome, RESULTADOS / nome)
-    print(f"Pesos em {MODELOS / (NOME_MODELO + '.pt')}; curvas em {RESULTADOS}")
+            shutil.copy2(pasta / nome, resultados / nome)
+    print(f"Pesos em {MODELOS / (args.nome + '.pt')}; curvas em {resultados}")
 
 
 if __name__ == "__main__":

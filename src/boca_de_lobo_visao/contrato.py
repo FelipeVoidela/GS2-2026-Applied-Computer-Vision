@@ -4,7 +4,7 @@ Contrato com o resto do produto: o que a visão entrega depois de olhar um ponto
 O robô manda, em cada inspeção, um bloco "visao" que o pipeline de dados (componente Big Data)
 lê na camada Bronze e valida na Prata:
 
-    "visao": {"modelo": "yolov8n-bocadelobo-v1", "classe": "entupido",
+    "visao": {"modelo": "yolov8n-bocadelobo-v2", "classe": "entupido",
               "confianca": 0.87, "foto_id": "886935bd3b0c8ab3"}
 
 A Prata só aceita classe em {livre, parcialmente_obstruido, entupido, lixo_sarjeta} e confiança

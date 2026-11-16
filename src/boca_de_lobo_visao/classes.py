@@ -1,7 +1,7 @@
 """Classes do modelo e como cada uma vira informação para o resto do produto."""
 from __future__ import annotations
 
-NOME_MODELO = "yolov8n-bocadelobo-v1"
+NOME_MODELO = "yolov8n-bocadelobo-v2"
 
 # A ordem é o id da classe no dataset YOLO. Os nomes são os mesmos que o pipeline de dados
 # (componente Big Data, regra de qualidade da Prata) aceita no campo visao.classe.

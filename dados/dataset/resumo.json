@@ -30,6 +30,8 @@
   "grupos": 114,
   "sinteticas_no_treino": {
     "parcialmente_obstruido": 59,
-    "entupido": 69
-  }
+    "entupido": 69,
+    "livre_com_lixo": 64
+  },
+  "repeticoes_de_reais_obstruidas": 36
 }

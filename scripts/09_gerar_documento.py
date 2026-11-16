@@ -149,14 +149,39 @@ def main() -> None:
     # ---- tabelas montadas com os números medidos
     sint = resumo.get("sinteticas_no_treino", {})
     t_dataset = tabela(
-        ["Classe", "Treino (reais)", "Treino (sintéticas)", "Validação", "Teste", "Total"],
-        [[ROTULOS[c], resumo["caixas"]["train"].get(c, 0), sint.get(c, 0), resumo["caixas"]["val"].get(c, 0),
-          resumo["caixas"]["test"].get(c, 0),
-          resumo["caixas"]["train"].get(c, 0) + sint.get(c, 0) + resumo["caixas"]["val"].get(c, 0) + resumo["caixas"]["test"].get(c, 0)]
+        ["Caixas reais por classe", "Treino", "Validação", "Teste", "Total"],
+        [[ROTULOS[c], resumo["caixas"]["train"].get(c, 0), resumo["caixas"]["val"].get(c, 0),
+          resumo["caixas"]["test"].get(c, 0), sum(resumo["caixas"][p].get(c, 0) for p in ("train", "val", "test"))]
          for c in CLASSES] +
-        [["<b>Fotos</b>", resumo["fotos"]["train"], sum(sint.values()), resumo["fotos"]["val"], resumo["fotos"]["test"],
-          resumo["total_fotos"] + sum(sint.values())]],
-        {1, 2, 3, 4, 5})
+        [["<b>Fotos reais</b>", resumo["fotos"]["train"], resumo["fotos"]["val"], resumo["fotos"]["test"],
+          resumo["total_fotos"]]],
+        {1, 2, 3, 4})
+    repeticoes = resumo.get("repeticoes_de_reais_obstruidas", 0)
+    t_sinteticas = tabela(
+        ["Imagens geradas (só no treino)", "Como é feita", "Quantidade"],
+        [["Parcialmente obstruído", "lixo real colado sobre a grelha, cobrindo de 30% a 65%", sint.get("parcialmente_obstruido", 0)],
+         ["Entupido", "lixo real colado sobre a grelha, cobrindo 82% ou mais", sint.get("entupido", 0)],
+         ["Livre com lixo ao lado", "lixo real colado fora da grelha; a grelha continua livre", sint.get("livre_com_lixo", 0)],
+         ["Repetição de fotos reais obstruídas", "cópias das fotos reais de bueiro obstruído do treino", repeticoes]],
+        {2})
+
+    def linha_rodada(nome: str, mm: dict) -> list:
+        saida_ = [nome]
+        for chave_det, chave_lp in (("deteccao_val", "leitura_do_ponto_val"), ("deteccao_test", "leitura_do_ponto")):
+            l_ = mm[chave_lp]
+            saida_ += [num(mm[chave_det]["mAP50"]), f"{l_['acertos']} de {l_['fotos']}",
+                       f"{l_['pontos_com_problema'] - l_['problema_nao_alertado']} de {l_['pontos_com_problema']}"]
+        return saida_
+
+    historico = RAIZ / "resultados" / "historico" / "rodada1_metricas.json"
+    t_rodadas = ""
+    if historico.exists():
+        m1 = json.loads(historico.read_text(encoding="utf-8"))
+        t_rodadas = tabela(
+            ["Rodada", "mAP@50 (validação)", "Leituras certas (validação)", "Problemas alertados (validação)",
+             "mAP@50 (teste)", "Leituras certas (teste)", "Problemas alertados (teste)"],
+            [linha_rodada("1ª (só montagens sobre a grelha)", m1), linha_rodada("<b>2ª (modelo entregue)</b>", m)],
+            {1, 2, 3, 4, 5, 6})
     det = m["deteccao_test"]
     t_deteccao = tabela(
         ["Classe", "Precisão", "Revocação", "mAP@50", "mAP@50-95"],
@@ -218,8 +243,23 @@ def main() -> None:
         valores.update(fps_demo=num(d.get("fps_ponta_a_ponta", 0), 1), pontos_demo=len(d["pontos"]),
                        demo_livre=d["resumo"].get("livre", 0), demo_atencao=d["resumo"].get("atencao", 0),
                        demo_critico=d["resumo"].get("critico", 0), demo_sem=d["resumo"].get("sem_leitura", 0))
+    conferencia = RAIZ / "resultados" / "teste" / "conferencia_treino.json"
+    if conferencia.exists():
+        valores.update(json.loads(conferencia.read_text(encoding="utf-8")))
+    lpv = m["leitura_do_ponto_val"]
+    valores.update(
+        obstr_certos=sum(lp["matriz"][i][i] for i in (1, 2)),
+        alertas_lixo=sum(lp["matriz"][3][1:4]), obstr_alertados=sum(sum(lp["matriz"][i][1:4]) for i in (1, 2)),
+        livres_como_problema=lp["livres_lidos_como_problema"],
+        repeticoes=repeticoes, sint_sobre=sint.get("parcialmente_obstruido", 0) + sint.get("entupido", 0),
+        sint_lado=sint.get("livre_com_lixo", 0),
+        val_alertados=lpv["pontos_com_problema"] - lpv["problema_nao_alertado"], val_com_problema=lpv["pontos_com_problema"],
+        val_acertos=lpv["acertos"], val_fotos=lpv["fotos"],
+        map50_lixo=num(det["por_classe"].get("lixo_sarjeta", {}).get("mAP50", 0)),
+        map50_lixo_val=num(m["deteccao_val"]["por_classe"].get("lixo_sarjeta", {}).get("mAP50", 0)))
     blocos = {"TABELA_DATASET": t_dataset, "TABELA_DETECCAO": t_deteccao, "TABELA_PONTO": t_ponto,
-              "TABELA_VELOCIDADE": t_velocidade, "TABELA_LICENCAS": t_licencas}
+              "TABELA_VELOCIDADE": t_velocidade, "TABELA_LICENCAS": t_licencas,
+              "TABELA_SINTETICAS": t_sinteticas, "TABELA_RODADAS": t_rodadas}
 
     def secao(chave: str) -> str:
         bruto = getattr(T, chave)

@@ -1,0 +1,217 @@
+{
+  "observacao": "Primeira rodada de treino (yolov8n-bocadelobo-v1, commit f903e88): so montagens sobre a grelha, sem lixo colado ao lado nem repeticao das fotos reais obstruidas. Mesmas fotos de validacao e teste da rodada atual.",
+  "modelo": "yolov8n-bocadelobo-v1",
+  "conf_minima": 0.35,
+  "deteccao_test": {
+    "precisao": 0.186,
+    "revocacao": 0.299,
+    "mAP50": 0.232,
+    "mAP50_95": 0.119,
+    "por_classe": {
+      "livre": {
+        "precisao": 0.558,
+        "revocacao": 0.947,
+        "mAP50": 0.85,
+        "mAP50_95": 0.449
+      },
+      "parcialmente_obstruido": {
+        "precisao": 0.0,
+        "revocacao": 0.0,
+        "mAP50": 0.011,
+        "mAP50_95": 0.006
+      },
+      "entupido": {
+        "precisao": 0.0,
+        "revocacao": 0.0,
+        "mAP50": 0.0,
+        "mAP50_95": 0.0
+      },
+      "lixo_sarjeta": {
+        "precisao": 0.186,
+        "revocacao": 0.25,
+        "mAP50": 0.069,
+        "mAP50_95": 0.023
+      }
+    }
+  },
+  "deteccao_val": {
+    "precisao": 0.657,
+    "revocacao": 0.2,
+    "mAP50": 0.296,
+    "mAP50_95": 0.212,
+    "por_classe": {
+      "livre": {
+        "precisao": 0.627,
+        "revocacao": 0.802,
+        "mAP50": 0.638,
+        "mAP50_95": 0.436
+      },
+      "parcialmente_obstruido": {
+        "precisao": 1.0,
+        "revocacao": 0.0,
+        "mAP50": 0.042,
+        "mAP50_95": 0.011
+      },
+      "entupido": {
+        "precisao": 1.0,
+        "revocacao": 0.0,
+        "mAP50": 0.497,
+        "mAP50_95": 0.398
+      },
+      "lixo_sarjeta": {
+        "precisao": 0.0,
+        "revocacao": 0.0,
+        "mAP50": 0.007,
+        "mAP50_95": 0.004
+      }
+    }
+  },
+  "leitura_do_ponto": {
+    "fotos": 26,
+    "acertos": 19,
+    "acuracia": 0.731,
+    "linhas_anotado": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta"
+    ],
+    "colunas_previsto": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta",
+      "nada"
+    ],
+    "matriz": [
+      [
+        18,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "por_classe": {
+      "livre": {
+        "fotos": 19,
+        "revocacao": 0.947,
+        "precisao": 0.857
+      },
+      "parcialmente_obstruido": {
+        "fotos": 3,
+        "revocacao": 0.0,
+        "precisao": null
+      },
+      "entupido": {
+        "fotos": 1,
+        "revocacao": 0.0,
+        "precisao": null
+      },
+      "lixo_sarjeta": {
+        "fotos": 3,
+        "revocacao": 0.333,
+        "precisao": 1.0
+      }
+    },
+    "pontos_com_problema": 7,
+    "problema_nao_alertado": 6,
+    "taxa_problema_nao_alertado": 0.857,
+    "livres_lidos_como_problema": 0
+  },
+  "leitura_do_ponto_val": {
+    "fotos": 26,
+    "acertos": 19,
+    "acuracia": 0.731,
+    "linhas_anotado": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta"
+    ],
+    "colunas_previsto": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta",
+      "nada"
+    ],
+    "matriz": [
+      [
+        19,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "por_classe": {
+      "livre": {
+        "fotos": 20,
+        "revocacao": 0.95,
+        "precisao": 0.864
+      },
+      "parcialmente_obstruido": {
+        "fotos": 2,
+        "revocacao": 0.0,
+        "precisao": null
+      },
+      "entupido": {
+        "fotos": 1,
+        "revocacao": 0.0,
+        "precisao": null
+      },
+      "lixo_sarjeta": {
+        "fotos": 3,
+        "revocacao": 0.0,
+        "precisao": null
+      }
+    },
+    "pontos_com_problema": 6,
+    "problema_nao_alertado": 6,
+    "taxa_problema_nao_alertado": 1.0,
+    "livres_lidos_como_problema": 0
+  }
+}

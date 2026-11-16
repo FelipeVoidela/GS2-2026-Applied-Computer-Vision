@@ -30,3 +30,7 @@ documento/*.html
 
 # partes da pré-anotação em paralelo (já unidas em pre_anotacao.json)
 dados/anotacao/pre_anotacao.parte*.json
+
+# repetições das fotos reais obstruídas no treino (geradas por scripts/04b_gerar_sinteticos.py)
+dados/dataset/images/train/rep_*
+dados/dataset/labels/train/rep_*
