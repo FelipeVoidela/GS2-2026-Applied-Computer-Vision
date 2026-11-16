@@ -1,0 +1,109 @@
+{
+  "video": "demo_ronda.mp4",
+  "pontos": [
+    {
+      "foto": "wm_ae1cdf384e50.jpg",
+      "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 48,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_30ae27bfa37b.jpg",
+      "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 48,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_f829bde3808c.jpg",
+      "classe_do_ponto": null,
+      "quadros_com_deteccao": 0,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_0a6f06b08bb9.jpg",
+      "classe_do_ponto": "lixo_sarjeta",
+      "quadros_com_deteccao": 24,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_3cb075fc0d3e.jpg",
+      "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 48,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_7c26dde39f9d.jpg",
+      "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 27,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_9de8fe487300.jpg",
+      "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 23,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_bbaf0c24ff4a.jpg",
+      "classe_do_ponto": null,
+      "quadros_com_deteccao": 14,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_fc234baf91ed.jpg",
+      "classe_do_ponto": null,
+      "quadros_com_deteccao": 2,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_d950253b3d8e.jpg",
+      "classe_do_ponto": null,
+      "quadros_com_deteccao": 2,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_f345e26c8a5b.jpg",
+      "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 48,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_2263a324508a.jpg",
+      "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 32,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_204783f337c1.jpg",
+      "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 48,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_2130062f1b34.jpg",
+      "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 48,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_711ae97577ab.jpg",
+      "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 48,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_caf59b77c3f2.jpg",
+      "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 48,
+      "quadros": 48
+    }
+  ],
+  "resumo": {
+    "livre": 11,
+    "sem_leitura": 4,
+    "atencao": 1
+  },
+  "fps_ponta_a_ponta": 18.7,
+  "fps_video": 15,
+  "observacao": "ronda simulada com fotos do conjunto de teste"
+}

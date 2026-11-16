@@ -1,0 +1,8260 @@
+{
+ "wm_0105b243a30a.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_01416751f2c3.jpg": {
+  "largura": 1280,
+  "altura": 933,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.557,
+    "xyxy": [
+     68,
+     3,
+     706,
+     929
+    ]
+   }
+  ]
+ },
+ "wm_018892b1234a.jpg": {
+  "largura": 1280,
+  "altura": 795,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.359,
+    "xyxy": [
+     363,
+     718,
+     510,
+     791
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.329,
+    "xyxy": [
+     256,
+     214,
+     1232,
+     593
+    ]
+   }
+  ]
+ },
+ "wm_02104ffc4996.png": {
+  "largura": 1280,
+  "altura": 990,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.558,
+    "xyxy": [
+     840,
+     372,
+     1073,
+     476
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.329,
+    "xyxy": [
+     200,
+     373,
+     432,
+     449
+    ]
+   }
+  ]
+ },
+ "wm_023e493d5abd.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.317,
+    "xyxy": [
+     606,
+     428,
+     812,
+     783
+    ]
+   }
+  ]
+ },
+ "wm_0244f291b28e.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": []
+ },
+ "wm_02bf744f97db.jpg": {
+  "largura": 1280,
+  "altura": 1024,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.603,
+    "xyxy": [
+     768,
+     247,
+     1116,
+     596
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.632,
+    "xyxy": [
+     313,
+     346,
+     896,
+     875
+    ]
+   }
+  ]
+ },
+ "wm_042a328fb1ce.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.576,
+    "xyxy": [
+     18,
+     62,
+     1273,
+     815
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.339,
+    "xyxy": [
+     460,
+     389,
+     602,
+     514
+    ]
+   }
+  ]
+ },
+ "wm_04472d297707.jpg": {
+  "largura": 1200,
+  "altura": 1600,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.335,
+    "xyxy": [
+     512,
+     805,
+     1194,
+     1595
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.426,
+    "xyxy": [
+     50,
+     269,
+     546,
+     769
+    ]
+   }
+  ]
+ },
+ "wm_049e04e8cdd7.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.7,
+    "xyxy": [
+     497,
+     117,
+     842,
+     385
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.312,
+    "xyxy": [
+     356,
+     72,
+     1010,
+     915
+    ]
+   }
+  ]
+ },
+ "wm_050f6edd9058.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.505,
+    "xyxy": [
+     259,
+     167,
+     1070,
+     883
+    ]
+   }
+  ]
+ },
+ "wm_07c43d7d3554.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.341,
+    "xyxy": [
+     3,
+     654,
+     197,
+     750
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.339,
+    "xyxy": [
+     286,
+     577,
+     442,
+     645
+    ]
+   }
+  ]
+ },
+ "wm_0942297a2da5.jpg": {
+  "largura": 640,
+  "altura": 427,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.512,
+    "xyxy": [
+     2,
+     284,
+     638,
+     422
+    ]
+   }
+  ]
+ },
+ "wm_096bbea8775c.jpg": {
+  "largura": 1000,
+  "altura": 667,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.361,
+    "xyxy": [
+     633,
+     38,
+     855,
+     231
+    ]
+   }
+  ]
+ },
+ "wm_0a6f06b08bb9.jpg": {
+  "largura": 1280,
+  "altura": 622,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.576,
+    "xyxy": [
+     244,
+     74,
+     860,
+     252
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.462,
+    "xyxy": [
+     391,
+     191,
+     570,
+     299
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.323,
+    "xyxy": [
+     775,
+     234,
+     919,
+     335
+    ]
+   }
+  ]
+ },
+ "wm_0a7627756a61.jpg": {
+  "largura": 1280,
+  "altura": 962,
+  "caixas": []
+ },
+ "wm_0a929389d6e6.jpg": {
+  "largura": 640,
+  "altura": 578,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.356,
+    "xyxy": [
+     369,
+     273,
+     634,
+     575
+    ]
+   }
+  ]
+ },
+ "wm_0af9d001f444.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.446,
+    "xyxy": [
+     146,
+     392,
+     623,
+     576
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.351,
+    "xyxy": [
+     106,
+     385,
+     670,
+     776
+    ]
+   }
+  ]
+ },
+ "wm_0b224f07acb5.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.529,
+    "xyxy": [
+     4,
+     1,
+     1275,
+     182
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.357,
+    "xyxy": [
+     51,
+     75,
+     225,
+     203
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.323,
+    "xyxy": [
+     10,
+     119,
+     1270,
+     368
+    ]
+   }
+  ]
+ },
+ "wm_0b5375b799d0.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.334,
+    "xyxy": [
+     286,
+     111,
+     715,
+     955
+    ]
+   }
+  ]
+ },
+ "wm_0c3d3dcd2c9d.jpg": {
+  "largura": 1280,
+  "altura": 1600,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.611,
+    "xyxy": [
+     156,
+     1450,
+     595,
+     1584
+    ]
+   }
+  ]
+ },
+ "wm_0c49027b81fe.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.674,
+    "xyxy": [
+     511,
+     170,
+     826,
+     386
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.406,
+    "xyxy": [
+     4,
+     2,
+     1275,
+     389
+    ]
+   }
+  ]
+ },
+ "wm_0c6de7935b58.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.349,
+    "xyxy": [
+     199,
+     102,
+     630,
+     480
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.306,
+    "xyxy": [
+     288,
+     0,
+     640,
+     175
+    ]
+   }
+  ]
+ },
+ "wm_0d085b65bc7f.jpg": {
+  "largura": 1280,
+  "altura": 314,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.451,
+    "xyxy": [
+     635,
+     63,
+     978,
+     299
+    ]
+   }
+  ]
+ },
+ "wm_0d5caad9d288.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.469,
+    "xyxy": [
+     666,
+     714,
+     1156,
+     957
+    ]
+   }
+  ]
+ },
+ "wm_0ded6e2d2490.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.348,
+    "xyxy": [
+     617,
+     225,
+     1016,
+     602
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.446,
+    "xyxy": [
+     572,
+     596,
+     992,
+     847
+    ]
+   }
+  ]
+ },
+ "wm_0ebaa48826dd.jpg": {
+  "largura": 1280,
+  "altura": 849,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.477,
+    "xyxy": [
+     790,
+     487,
+     1119,
+     708
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.312,
+    "xyxy": [
+     906,
+     497,
+     1048,
+     585
+    ]
+   }
+  ]
+ },
+ "wm_0f0f3758b2cd.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.353,
+    "xyxy": [
+     3,
+     316,
+     637,
+     477
+    ]
+   }
+  ]
+ },
+ "wm_0f62f01e9c29.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.448,
+    "xyxy": [
+     283,
+     347,
+     1277,
+     579
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.366,
+    "xyxy": [
+     31,
+     804,
+     196,
+     897
+    ]
+   }
+  ]
+ },
+ "wm_1081b2eda619.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.387,
+    "xyxy": [
+     185,
+     275,
+     827,
+     745
+    ]
+   }
+  ]
+ },
+ "wm_10902de89634.jpg": {
+  "largura": 1280,
+  "altura": 940,
+  "caixas": []
+ },
+ "wm_10a0173affcc.jpg": {
+  "largura": 1161,
+  "altura": 2000,
+  "caixas": []
+ },
+ "wm_11a583681faa.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.304,
+    "xyxy": [
+     508,
+     391,
+     887,
+     534
+    ]
+   }
+  ]
+ },
+ "wm_1216f98293a1.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.413,
+    "xyxy": [
+     83,
+     597,
+     466,
+     773
+    ]
+   }
+  ]
+ },
+ "wm_124ff6f509db.jpg": {
+  "largura": 1280,
+  "altura": 640,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.371,
+    "xyxy": [
+     821,
+     292,
+     1044,
+     397
+    ]
+   }
+  ]
+ },
+ "wm_126a4c28b9d2.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.551,
+    "xyxy": [
+     297,
+     30,
+     1111,
+     822
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.384,
+    "xyxy": [
+     3,
+     99,
+     321,
+     891
+    ]
+   }
+  ]
+ },
+ "wm_12b5bf701377.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.373,
+    "xyxy": [
+     24,
+     737,
+     1276,
+     958
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.331,
+    "xyxy": [
+     3,
+     643,
+     1220,
+     833
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.51,
+    "xyxy": [
+     1189,
+     554,
+     1279,
+     788
+    ]
+   }
+  ]
+ },
+ "wm_12dd39e5e651.jpg": {
+  "largura": 1280,
+  "altura": 956,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.656,
+    "xyxy": [
+     540,
+     34,
+     1170,
+     599
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.415,
+    "xyxy": [
+     537,
+     493,
+     643,
+     601
+    ]
+   }
+  ]
+ },
+ "wm_1361b719d67a.jpg": {
+  "largura": 1280,
+  "altura": 804,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.363,
+    "xyxy": [
+     14,
+     627,
+     1264,
+     793
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.403,
+    "xyxy": [
+     20,
+     394,
+     1258,
+     685
+    ]
+   }
+  ]
+ },
+ "wm_149a40fe4d4a.jpg": {
+  "largura": 1280,
+  "altura": 850,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.605,
+    "xyxy": [
+     279,
+     601,
+     913,
+     843
+    ]
+   }
+  ]
+ },
+ "wm_14fc469d0bef.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.574,
+    "xyxy": [
+     207,
+     90,
+     992,
+     837
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.377,
+    "xyxy": [
+     3,
+     5,
+     324,
+     954
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.34,
+    "xyxy": [
+     710,
+     270,
+     1276,
+     956
+    ]
+   }
+  ]
+ },
+ "wm_15c9ae177153.jpg": {
+  "largura": 1280,
+  "altura": 956,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.591,
+    "xyxy": [
+     667,
+     122,
+     1273,
+     770
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.387,
+    "xyxy": [
+     755,
+     606,
+     912,
+     678
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.315,
+    "xyxy": [
+     709,
+     429,
+     848,
+     619
+    ]
+   }
+  ]
+ },
+ "wm_1703424acb00.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_1796f7cece02.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_17e467679539.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_1842b83b34ae.jpg": {
+  "largura": 1200,
+  "altura": 1600,
+  "caixas": []
+ },
+ "wm_18492dd018ee.jpg": {
+  "largura": 1080,
+  "altura": 1920,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.403,
+    "xyxy": [
+     776,
+     473,
+     1076,
+     1016
+    ]
+   }
+  ]
+ },
+ "wm_18e1a499b575.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.553,
+    "xyxy": [
+     100,
+     143,
+     1158,
+     833
+    ]
+   }
+  ]
+ },
+ "wm_195513cead85.jpg": {
+  "largura": 1280,
+  "altura": 914,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.486,
+    "xyxy": [
+     579,
+     648,
+     695,
+     707
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.455,
+    "xyxy": [
+     37,
+     3,
+     482,
+     295
+    ]
+   }
+  ]
+ },
+ "wm_1a3c125e7e07.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.595,
+    "xyxy": [
+     0,
+     1303,
+     1280,
+     1706
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.653,
+    "xyxy": [
+     123,
+     896,
+     1278,
+     1143
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.439,
+    "xyxy": [
+     839,
+     631,
+     1092,
+     789
+    ]
+   }
+  ]
+ },
+ "wm_1a58e9bd961b.jpg": {
+  "largura": 1200,
+  "altura": 800,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.384,
+    "xyxy": [
+     114,
+     198,
+     557,
+     487
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.432,
+    "xyxy": [
+     3,
+     2,
+     993,
+     201
+    ]
+   }
+  ]
+ },
+ "wm_1a63c1e15152.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.566,
+    "xyxy": [
+     2,
+     67,
+     427,
+     399
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.547,
+    "xyxy": [
+     467,
+     136,
+     906,
+     519
+    ]
+   }
+  ]
+ },
+ "wm_1bab7c27ae76.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.347,
+    "xyxy": [
+     4,
+     499,
+     1276,
+     848
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.31,
+    "xyxy": [
+     4,
+     615,
+     1276,
+     956
+    ]
+   }
+  ]
+ },
+ "wm_1d1c6b1a86dd.jpg": {
+  "largura": 1280,
+  "altura": 915,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.402,
+    "xyxy": [
+     578,
+     707,
+     906,
+     878
+    ]
+   }
+  ]
+ },
+ "wm_204783f337c1.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.694,
+    "xyxy": [
+     487,
+     473,
+     669,
+     581
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.337,
+    "xyxy": [
+     5,
+     5,
+     1272,
+     430
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.311,
+    "xyxy": [
+     280,
+     352,
+     885,
+     827
+    ]
+   }
+  ]
+ },
+ "wm_20f7163fb5c8.jpg": {
+  "largura": 858,
+  "altura": 1144,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.488,
+    "xyxy": [
+     310,
+     476,
+     602,
+     734
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.301,
+    "xyxy": [
+     311,
+     476,
+     602,
+     735
+    ]
+   }
+  ]
+ },
+ "wm_2129b0363d30.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.584,
+    "xyxy": [
+     402,
+     462,
+     905,
+     796
+    ]
+   }
+  ]
+ },
+ "wm_2130062f1b34.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.518,
+    "xyxy": [
+     450,
+     256,
+     830,
+     440
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.317,
+    "xyxy": [
+     450,
+     256,
+     830,
+     441
+    ]
+   }
+  ]
+ },
+ "wm_2263a324508a.jpg": {
+  "largura": 1280,
+  "altura": 850,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.339,
+    "xyxy": [
+     216,
+     774,
+     514,
+     847
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.304,
+    "xyxy": [
+     580,
+     577,
+     788,
+     688
+    ]
+   }
+  ]
+ },
+ "wm_2291b00f0762.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.48,
+    "xyxy": [
+     448,
+     548,
+     745,
+     580
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.309,
+    "xyxy": [
+     996,
+     490,
+     1275,
+     953
+    ]
+   }
+  ]
+ },
+ "wm_234dfc344bfb.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.466,
+    "xyxy": [
+     477,
+     134,
+     720,
+     956
+    ]
+   }
+  ]
+ },
+ "wm_23cc67b82745.jpg": {
+  "largura": 1280,
+  "altura": 1709,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.447,
+    "xyxy": [
+     122,
+     542,
+     1207,
+     1625
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.612,
+    "xyxy": [
+     751,
+     1579,
+     1000,
+     1652
+    ]
+   }
+  ]
+ },
+ "wm_23fca6194aba.jpg": {
+  "largura": 960,
+  "altura": 1280,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.651,
+    "xyxy": [
+     739,
+     1104,
+     921,
+     1277
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.345,
+    "xyxy": [
+     321,
+     83,
+     636,
+     1274
+    ]
+   }
+  ]
+ },
+ "wm_2425be909deb.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.648,
+    "xyxy": [
+     257,
+     85,
+     1036,
+     852
+    ]
+   }
+  ]
+ },
+ "wm_25a70bea7df8.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.444,
+    "xyxy": [
+     448,
+     497,
+     672,
+     521
+    ]
+   }
+  ]
+ },
+ "wm_25ace172cebf.jpg": {
+  "largura": 1280,
+  "altura": 857,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.455,
+    "xyxy": [
+     184,
+     471,
+     280,
+     533
+    ]
+   }
+  ]
+ },
+ "wm_26ebcbf0d056.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.589,
+    "xyxy": [
+     297,
+     115,
+     986,
+     777
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.4,
+    "xyxy": [
+     334,
+     552,
+     468,
+     703
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.313,
+    "xyxy": [
+     797,
+     568,
+     946,
+     712
+    ]
+   }
+  ]
+ },
+ "wm_26f625397704.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.358,
+    "xyxy": [
+     217,
+     287,
+     357,
+     344
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.412,
+    "xyxy": [
+     241,
+     287,
+     322,
+     331
+    ]
+   }
+  ]
+ },
+ "wm_280f18b2aa17.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.449,
+    "xyxy": [
+     3,
+     3,
+     454,
+     847
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.357,
+    "xyxy": [
+     747,
+     299,
+     881,
+     378
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.35,
+    "xyxy": [
+     927,
+     323,
+     1236,
+     612
+    ]
+   }
+  ]
+ },
+ "wm_2936fc59ffaa.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.331,
+    "xyxy": [
+     170,
+     675,
+     699,
+     847
+    ]
+   }
+  ]
+ },
+ "wm_296632edae38.jpg": {
+  "largura": 918,
+  "altura": 611,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.338,
+    "xyxy": [
+     71,
+     483,
+     279,
+     554
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.332,
+    "xyxy": [
+     352,
+     482,
+     547,
+     552
+    ]
+   }
+  ]
+ },
+ "wm_299044e0a511.jpg": {
+  "largura": 1280,
+  "altura": 973,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.404,
+    "xyxy": [
+     137,
+     46,
+     1149,
+     893
+    ]
+   }
+  ]
+ },
+ "wm_29d33273ec68.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.375,
+    "xyxy": [
+     6,
+     627,
+     1275,
+     932
+    ]
+   }
+  ]
+ },
+ "wm_2a453a1d6992.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.347,
+    "xyxy": [
+     718,
+     466,
+     1262,
+     738
+    ]
+   }
+  ]
+ },
+ "wm_2a6e0f821c02.jpg": {
+  "largura": 640,
+  "altura": 426,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.363,
+    "xyxy": [
+     1,
+     119,
+     330,
+     352
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.301,
+    "xyxy": [
+     361,
+     122,
+     638,
+     420
+    ]
+   }
+  ]
+ },
+ "wm_2b70af879b4c.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_2bc191e10c4c.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.577,
+    "xyxy": [
+     609,
+     1,
+     763,
+     1707
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.472,
+    "xyxy": [
+     832,
+     25,
+     1130,
+     96
+    ]
+   }
+  ]
+ },
+ "wm_2bce0f8bbfb0.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.56,
+    "xyxy": [
+     917,
+     63,
+     1275,
+     486
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.555,
+    "xyxy": [
+     779,
+     434,
+     1275,
+     638
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.514,
+    "xyxy": [
+     446,
+     407,
+     806,
+     670
+    ]
+   }
+  ]
+ },
+ "wm_2be37f4c4585.jpg": {
+  "largura": 1280,
+  "altura": 1168,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.531,
+    "xyxy": [
+     42,
+     47,
+     1188,
+     1135
+    ]
+   }
+  ]
+ },
+ "wm_2cb2ed825689.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.301,
+    "xyxy": [
+     545,
+     389,
+     1076,
+     672
+    ]
+   }
+  ]
+ },
+ "wm_2ddb90cf1ee2.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.71,
+    "xyxy": [
+     747,
+     609,
+     977,
+     743
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.657,
+    "xyxy": [
+     3,
+     163,
+     296,
+     612
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.349,
+    "xyxy": [
+     293,
+     145,
+     907,
+     672
+    ]
+   }
+  ]
+ },
+ "wm_2de042f8e1e9.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.625,
+    "xyxy": [
+     401,
+     187,
+     987,
+     575
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.382,
+    "xyxy": [
+     961,
+     385,
+     1277,
+     681
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.314,
+    "xyxy": [
+     2,
+     181,
+     301,
+     449
+    ]
+   }
+  ]
+ },
+ "wm_2e13bfcdf122.jpg": {
+  "largura": 1280,
+  "altura": 857,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.52,
+    "xyxy": [
+     576,
+     343,
+     789,
+     582
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.332,
+    "xyxy": [
+     350,
+     2,
+     1277,
+     222
+    ]
+   }
+  ]
+ },
+ "wm_2f7c8bcd2f74.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": []
+ },
+ "wm_3087b8b9c9c4.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.544,
+    "xyxy": [
+     207,
+     125,
+     1088,
+     841
+    ]
+   }
+  ]
+ },
+ "wm_30ae27bfa37b.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.549,
+    "xyxy": [
+     310,
+     396,
+     866,
+     674
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.703,
+    "xyxy": [
+     326,
+     295,
+     935,
+     552
+    ]
+   }
+  ]
+ },
+ "wm_30b014b9cef7.jpg": {
+  "largura": 1280,
+  "altura": 852,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.34,
+    "xyxy": [
+     238,
+     65,
+     1086,
+     809
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.437,
+    "xyxy": [
+     462,
+     198,
+     866,
+     551
+    ]
+   }
+  ]
+ },
+ "wm_30c87fba5a50.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.678,
+    "xyxy": [
+     37,
+     125,
+     612,
+     303
+    ]
+   }
+  ]
+ },
+ "wm_312c28dc361b.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.6,
+    "xyxy": [
+     461,
+     303,
+     844,
+     667
+    ]
+   }
+  ]
+ },
+ "wm_32f747b35e74.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.481,
+    "xyxy": [
+     697,
+     706,
+     1143,
+     951
+    ]
+   }
+  ]
+ },
+ "wm_33ba405a284f.jpg": {
+  "largura": 1280,
+  "altura": 832,
+  "caixas": []
+ },
+ "wm_33ca8db03a44.jpg": {
+  "largura": 1280,
+  "altura": 591,
+  "caixas": []
+ },
+ "wm_349508b6ad82.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.379,
+    "xyxy": [
+     213,
+     190,
+     1115,
+     802
+    ]
+   }
+  ]
+ },
+ "wm_35f0515e9716.jpg": {
+  "largura": 1280,
+  "altura": 1024,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.627,
+    "xyxy": [
+     175,
+     797,
+     446,
+     955
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.32,
+    "xyxy": [
+     4,
+     189,
+     406,
+     775
+    ]
+   }
+  ]
+ },
+ "wm_36b43ab568f4.jpg": {
+  "largura": 1024,
+  "altura": 768,
+  "caixas": []
+ },
+ "wm_373e63c5178e.jpg": {
+  "largura": 1280,
+  "altura": 1928,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.426,
+    "xyxy": [
+     579,
+     873,
+     986,
+     1493
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.364,
+    "xyxy": [
+     4,
+     717,
+     1261,
+     1126
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.345,
+    "xyxy": [
+     483,
+     869,
+     1105,
+     1918
+    ]
+   }
+  ]
+ },
+ "wm_3769712c2fda.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.518,
+    "xyxy": [
+     644,
+     650,
+     1063,
+     824
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.599,
+    "xyxy": [
+     1006,
+     241,
+     1274,
+     400
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.315,
+    "xyxy": [
+     219,
+     419,
+     382,
+     607
+    ]
+   }
+  ]
+ },
+ "wm_37aa501f043f.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.382,
+    "xyxy": [
+     778,
+     500,
+     909,
+     633
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.311,
+    "xyxy": [
+     652,
+     630,
+     939,
+     844
+    ]
+   }
+  ]
+ },
+ "wm_38bbc459f41b.jpg": {
+  "largura": 1280,
+  "altura": 581,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.308,
+    "xyxy": [
+     2,
+     1,
+     282,
+     327
+    ]
+   }
+  ]
+ },
+ "wm_39af0d0853f2.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.394,
+    "xyxy": [
+     445,
+     411,
+     823,
+     544
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.427,
+    "xyxy": [
+     7,
+     493,
+     1187,
+     955
+    ]
+   }
+  ]
+ },
+ "wm_3a0de25d08b6.jpg": {
+  "largura": 1280,
+  "altura": 1342,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.541,
+    "xyxy": [
+     302,
+     535,
+     938,
+     1145
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.363,
+    "xyxy": [
+     347,
+     37,
+     1046,
+     418
+    ]
+   }
+  ]
+ },
+ "wm_3ae11634c483.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.625,
+    "xyxy": [
+     562,
+     549,
+     794,
+     681
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.318,
+    "xyxy": [
+     703,
+     264,
+     865,
+     382
+    ]
+   }
+  ]
+ },
+ "wm_3b1764c0ecaf.jpg": {
+  "largura": 1280,
+  "altura": 749,
+  "caixas": []
+ },
+ "wm_3ba654be69ca.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.546,
+    "xyxy": [
+     389,
+     346,
+     905,
+     857
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.313,
+    "xyxy": [
+     1,
+     145,
+     1277,
+     364
+    ]
+   }
+  ]
+ },
+ "wm_3c9876cecb10.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.695,
+    "xyxy": [
+     754,
+     562,
+     977,
+     686
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.331,
+    "xyxy": [
+     173,
+     387,
+     536,
+     734
+    ]
+   }
+  ]
+ },
+ "wm_3cb075fc0d3e.jpg": {
+  "largura": 1280,
+  "altura": 720,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.622,
+    "xyxy": [
+     603,
+     445,
+     847,
+     616
+    ]
+   }
+  ]
+ },
+ "wm_3cd08c12beef.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.43,
+    "xyxy": [
+     3,
+     2,
+     305,
+     323
+    ]
+   }
+  ]
+ },
+ "wm_3d8766408af4.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.511,
+    "xyxy": [
+     186,
+     122,
+     1102,
+     849
+    ]
+   }
+  ]
+ },
+ "wm_3dfb5a347156.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.457,
+    "xyxy": [
+     539,
+     428,
+     899,
+     633
+    ]
+   }
+  ]
+ },
+ "wm_3e460ea4aba4.jpg": {
+  "largura": 1280,
+  "altura": 967,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.467,
+    "xyxy": [
+     121,
+     55,
+     1188,
+     936
+    ]
+   }
+  ]
+ },
+ "wm_3e6c23484c94.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.498,
+    "xyxy": [
+     968,
+     787,
+     1272,
+     850
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.321,
+    "xyxy": [
+     225,
+     519,
+     1275,
+     823
+    ]
+   }
+  ]
+ },
+ "wm_3eeff26f8897.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_3fcd4d2ebcbd.jpg": {
+  "largura": 1280,
+  "altura": 848,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.364,
+    "xyxy": [
+     746,
+     585,
+     1033,
+     797
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.339,
+    "xyxy": [
+     6,
+     261,
+     643,
+     803
+    ]
+   }
+  ]
+ },
+ "wm_3ffec776786b.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.632,
+    "xyxy": [
+     345,
+     585,
+     712,
+     849
+    ]
+   }
+  ]
+ },
+ "wm_421945d415e0.jpg": {
+  "largura": 1280,
+  "altura": 676,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.656,
+    "xyxy": [
+     478,
+     223,
+     786,
+     395
+    ]
+   }
+  ]
+ },
+ "wm_4228c4b9292b.jpg": {
+  "largura": 1280,
+  "altura": 956,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.463,
+    "xyxy": [
+     5,
+     2,
+     1271,
+     816
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.364,
+    "xyxy": [
+     688,
+     824,
+     826,
+     953
+    ]
+   }
+  ]
+ },
+ "wm_43679e114c33.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.442,
+    "xyxy": [
+     83,
+     308,
+     554,
+     471
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.36,
+    "xyxy": [
+     486,
+     415,
+     1277,
+     640
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.314,
+    "xyxy": [
+     651,
+     737,
+     827,
+     799
+    ]
+   }
+  ]
+ },
+ "wm_4455a31f37ef.jpg": {
+  "largura": 1200,
+  "altura": 900,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.465,
+    "xyxy": [
+     622,
+     601,
+     1196,
+     744
+    ]
+   }
+  ]
+ },
+ "wm_45c9b960625a.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.314,
+    "xyxy": [
+     2,
+     337,
+     622,
+     563
+    ]
+   }
+  ]
+ },
+ "wm_45e94cbf24f0.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.372,
+    "xyxy": [
+     216,
+     59,
+     1275,
+     662
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.363,
+    "xyxy": [
+     220,
+     466,
+     462,
+     661
+    ]
+   }
+  ]
+ },
+ "wm_46988c1b02a6.jpg": {
+  "largura": 1280,
+  "altura": 859,
+  "caixas": []
+ },
+ "wm_469aa3579b45.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.39,
+    "xyxy": [
+     305,
+     270,
+     981,
+     618
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.365,
+    "xyxy": [
+     694,
+     1509,
+     893,
+     1620
+    ]
+   }
+  ]
+ },
+ "wm_470e5064b55a.jpg": {
+  "largura": 1280,
+  "altura": 953,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.404,
+    "xyxy": [
+     221,
+     161,
+     1175,
+     756
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.35,
+    "xyxy": [
+     771,
+     646,
+     1268,
+     945
+    ]
+   }
+  ]
+ },
+ "wm_47cff9ef6fb1.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.341,
+    "xyxy": [
+     5,
+     533,
+     1275,
+     955
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.302,
+    "xyxy": [
+     2,
+     2,
+     199,
+     581
+    ]
+   }
+  ]
+ },
+ "wm_489097518643.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": []
+ },
+ "wm_48c1aff59d96.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": []
+ },
+ "wm_4a730b6dd506.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.499,
+    "xyxy": [
+     144,
+     693,
+     968,
+     840
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.315,
+    "xyxy": [
+     8,
+     388,
+     314,
+     620
+    ]
+   }
+  ]
+ },
+ "wm_4b14dc201515.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.66,
+    "xyxy": [
+     3,
+     397,
+     450,
+     894
+    ]
+   }
+  ]
+ },
+ "wm_4b2df2b959ed.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.617,
+    "xyxy": [
+     391,
+     140,
+     991,
+     667
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.499,
+    "xyxy": [
+     2,
+     215,
+     408,
+     482
+    ]
+   }
+  ]
+ },
+ "wm_4c1ccbd7c531.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.429,
+    "xyxy": [
+     4,
+     554,
+     775,
+     809
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.686,
+    "xyxy": [
+     3,
+     499,
+     266,
+     606
+    ]
+   }
+  ]
+ },
+ "wm_4ca04cb13f25.jpg": {
+  "largura": 1024,
+  "altura": 685,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.33,
+    "xyxy": [
+     3,
+     452,
+     1018,
+     682
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.504,
+    "xyxy": [
+     218,
+     447,
+     588,
+     556
+    ]
+   }
+  ]
+ },
+ "wm_4e9653dd4f96.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.592,
+    "xyxy": [
+     315,
+     254,
+     921,
+     708
+    ]
+   }
+  ]
+ },
+ "wm_4f1542e87960.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.451,
+    "xyxy": [
+     554,
+     407,
+     756,
+     525
+    ]
+   }
+  ]
+ },
+ "wm_5059cd9d5f27.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.37,
+    "xyxy": [
+     284,
+     67,
+     1050,
+     609
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.335,
+    "xyxy": [
+     4,
+     638,
+     177,
+     778
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.31,
+    "xyxy": [
+     176,
+     136,
+     410,
+     418
+    ]
+   }
+  ]
+ },
+ "wm_5083c22bd7b5.jpg": {
+  "largura": 1280,
+  "altura": 1650,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.666,
+    "xyxy": [
+     271,
+     313,
+     1060,
+     1118
+    ]
+   }
+  ]
+ },
+ "wm_51d39b354054.jpg": {
+  "largura": 1280,
+  "altura": 1615,
+  "caixas": []
+ },
+ "wm_53120b1269ae.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_5358695c7a76.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.323,
+    "xyxy": [
+     5,
+     283,
+     636,
+     477
+    ]
+   }
+  ]
+ },
+ "wm_542396337a02.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.62,
+    "xyxy": [
+     496,
+     451,
+     860,
+     674
+    ]
+   }
+  ]
+ },
+ "wm_54e41a62d629.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": []
+ },
+ "wm_559550eb4082.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.361,
+    "xyxy": [
+     545,
+     297,
+     784,
+     692
+    ]
+   }
+  ]
+ },
+ "wm_55d02759d21e.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.357,
+    "xyxy": [
+     158,
+     124,
+     651,
+     517
+    ]
+   }
+  ]
+ },
+ "wm_55f1a7a68ba3.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.408,
+    "xyxy": [
+     395,
+     611,
+     609,
+     752
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.385,
+    "xyxy": [
+     793,
+     516,
+     1019,
+     633
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.451,
+    "xyxy": [
+     829,
+     6,
+     998,
+     73
+    ]
+   }
+  ]
+ },
+ "wm_55f706594c9e.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.427,
+    "xyxy": [
+     238,
+     517,
+     831,
+     757
+    ]
+   }
+  ]
+ },
+ "wm_56308e1bd320.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.321,
+    "xyxy": [
+     3,
+     147,
+     637,
+     352
+    ]
+   }
+  ]
+ },
+ "wm_576d1d9a1574.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.645,
+    "xyxy": [
+     2,
+     57,
+     440,
+     715
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.482,
+    "xyxy": [
+     512,
+     348,
+     743,
+     598
+    ]
+   }
+  ]
+ },
+ "wm_58386ffdd730.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.468,
+    "xyxy": [
+     49,
+     516,
+     152,
+     956
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.391,
+    "xyxy": [
+     1031,
+     583,
+     1276,
+     956
+    ]
+   }
+  ]
+ },
+ "wm_59220bad352f.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": []
+ },
+ "wm_593191fa72c7.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.631,
+    "xyxy": [
+     354,
+     234,
+     911,
+     783
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.408,
+    "xyxy": [
+     903,
+     603,
+     1224,
+     820
+    ]
+   }
+  ]
+ },
+ "wm_5939a5aca152.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.431,
+    "xyxy": [
+     9,
+     213,
+     789,
+     602
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.564,
+    "xyxy": [
+     633,
+     466,
+     1064,
+     1058
+    ]
+   }
+  ]
+ },
+ "wm_5a1488a3e3aa.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.388,
+    "xyxy": [
+     186,
+     222,
+     373,
+     430
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.324,
+    "xyxy": [
+     498,
+     340,
+     639,
+     445
+    ]
+   }
+  ]
+ },
+ "wm_5a371dc78146.jpg": {
+  "largura": 1280,
+  "altura": 875,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.515,
+    "xyxy": [
+     1064,
+     632,
+     1277,
+     725
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.31,
+    "xyxy": [
+     384,
+     173,
+     733,
+     503
+    ]
+   }
+  ]
+ },
+ "wm_5ac3c40cabc1.jpg": {
+  "largura": 1280,
+  "altura": 1933,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.335,
+    "xyxy": [
+     362,
+     1205,
+     637,
+     1414
+    ]
+   }
+  ]
+ },
+ "wm_5b379d0d5222.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.538,
+    "xyxy": [
+     345,
+     4,
+     991,
+     633
+    ]
+   }
+  ]
+ },
+ "wm_5b61b0f88bb4.jpg": {
+  "largura": 1280,
+  "altura": 852,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.403,
+    "xyxy": [
+     392,
+     718,
+     497,
+     769
+    ]
+   }
+  ]
+ },
+ "wm_5c41326dadf1.jpg": {
+  "largura": 800,
+  "altura": 600,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.381,
+    "xyxy": [
+     112,
+     168,
+     797,
+     374
+    ]
+   }
+  ]
+ },
+ "wm_5cf8bb122cae.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.622,
+    "xyxy": [
+     420,
+     749,
+     571,
+     818
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.666,
+    "xyxy": [
+     3,
+     429,
+     232,
+     505
+    ]
+   }
+  ]
+ },
+ "wm_5ea1e9bf1541.jpg": {
+  "largura": 1280,
+  "altura": 587,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.387,
+    "xyxy": [
+     5,
+     381,
+     705,
+     582
+    ]
+   }
+  ]
+ },
+ "wm_5ef901c9993d.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.346,
+    "xyxy": [
+     707,
+     576,
+     859,
+     659
+    ]
+   }
+  ]
+ },
+ "wm_5fb8bb7dfcee.jpg": {
+  "largura": 1280,
+  "altura": 1463,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.468,
+    "xyxy": [
+     596,
+     695,
+     997,
+     920
+    ]
+   }
+  ]
+ },
+ "wm_5fd1b819775a.jpg": {
+  "largura": 1280,
+  "altura": 850,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.342,
+    "xyxy": [
+     250,
+     268,
+     884,
+     802
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.524,
+    "xyxy": [
+     271,
+     347,
+     841,
+     788
+    ]
+   }
+  ]
+ },
+ "wm_605b14a23dd8.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.616,
+    "xyxy": [
+     440,
+     2,
+     1075,
+     566
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.594,
+    "xyxy": [
+     552,
+     462,
+     670,
+     610
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.393,
+    "xyxy": [
+     52,
+     360,
+     557,
+     620
+    ]
+   }
+  ]
+ },
+ "wm_6063f41f8b08.jpg": {
+  "largura": 1280,
+  "altura": 1063,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.46,
+    "xyxy": [
+     240,
+     216,
+     994,
+     948
+    ]
+   }
+  ]
+ },
+ "wm_608f5e3a84f8.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.391,
+    "xyxy": [
+     232,
+     115,
+     658,
+     860
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.385,
+    "xyxy": [
+     648,
+     97,
+     1105,
+     850
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.349,
+    "xyxy": [
+     29,
+     354,
+     126,
+     527
+    ]
+   }
+  ]
+ },
+ "wm_60dced169533.jpg": {
+  "largura": 1123,
+  "altura": 845,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.601,
+    "xyxy": [
+     727,
+     471,
+     808,
+     543
+    ]
+   }
+  ]
+ },
+ "wm_610afebd8f0f.jpg": {
+  "largura": 1280,
+  "altura": 929,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.654,
+    "xyxy": [
+     535,
+     267,
+     861,
+     535
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.308,
+    "xyxy": [
+     501,
+     537,
+     920,
+     925
+    ]
+   }
+  ]
+ },
+ "wm_614b6496dda7.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": []
+ },
+ "wm_61f164e25e07.jpg": {
+  "largura": 1280,
+  "altura": 959,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.332,
+    "xyxy": [
+     29,
+     103,
+     1263,
+     952
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.354,
+    "xyxy": [
+     1153,
+     358,
+     1277,
+     956
+    ]
+   }
+  ]
+ },
+ "wm_62118244923b.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.451,
+    "xyxy": [
+     745,
+     75,
+     1274,
+     351
+    ]
+   }
+  ]
+ },
+ "wm_6220984e179e.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.368,
+    "xyxy": [
+     4,
+     641,
+     1276,
+     956
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.497,
+    "xyxy": [
+     512,
+     344,
+     791,
+     527
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.325,
+    "xyxy": [
+     530,
+     24,
+     1277,
+     279
+    ]
+   }
+  ]
+ },
+ "wm_623d51c8f40f.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.641,
+    "xyxy": [
+     342,
+     744,
+     696,
+     956
+    ]
+   }
+  ]
+ },
+ "wm_6335143cb126.jpg": {
+  "largura": 1280,
+  "altura": 1920,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.691,
+    "xyxy": [
+     122,
+     1235,
+     967,
+     1775
+    ]
+   }
+  ]
+ },
+ "wm_63614c4c0160.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.634,
+    "xyxy": [
+     358,
+     215,
+     1036,
+     678
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.377,
+    "xyxy": [
+     456,
+     3,
+     1275,
+     145
+    ]
+   }
+  ]
+ },
+ "wm_63e799f05dcf.jpg": {
+  "largura": 1280,
+  "altura": 964,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.571,
+    "xyxy": [
+     202,
+     194,
+     1059,
+     719
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.487,
+    "xyxy": [
+     467,
+     749,
+     848,
+     877
+    ]
+   }
+  ]
+ },
+ "wm_6584bd4ad4bc.jpg": {
+  "largura": 1280,
+  "altura": 959,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.609,
+    "xyxy": [
+     454,
+     281,
+     969,
+     792
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.338,
+    "xyxy": [
+     1016,
+     700,
+     1277,
+     800
+    ]
+   }
+  ]
+ },
+ "wm_65dffefbb798.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.495,
+    "xyxy": [
+     87,
+     279,
+     1167,
+     727
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.354,
+    "xyxy": [
+     87,
+     280,
+     1167,
+     727
+    ]
+   }
+  ]
+ },
+ "wm_662d513d32df.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": []
+ },
+ "wm_66aa6fb3d998.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.66,
+    "xyxy": [
+     584,
+     771,
+     798,
+     856
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.354,
+    "xyxy": [
+     2,
+     700,
+     246,
+     951
+    ]
+   }
+  ]
+ },
+ "wm_67eefb018d7c.jpg": {
+  "largura": 1280,
+  "altura": 337,
+  "caixas": []
+ },
+ "wm_69bc18a441d6.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.325,
+    "xyxy": [
+     51,
+     18,
+     143,
+     164
+    ]
+   }
+  ]
+ },
+ "wm_6c1c7d9337e9.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.49,
+    "xyxy": [
+     244,
+     190,
+     486,
+     480
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.364,
+    "xyxy": [
+     297,
+     1,
+     640,
+     161
+    ]
+   }
+  ]
+ },
+ "wm_6c7bac4ffbcd.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.403,
+    "xyxy": [
+     464,
+     320,
+     697,
+     548
+    ]
+   }
+  ]
+ },
+ "wm_6d115a0f693d.jpg": {
+  "largura": 1280,
+  "altura": 895,
+  "caixas": []
+ },
+ "wm_6e203cadfa59.jpg": {
+  "largura": 1280,
+  "altura": 857,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.471,
+    "xyxy": [
+     168,
+     338,
+     1087,
+     852
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.411,
+    "xyxy": [
+     159,
+     326,
+     236,
+     447
+    ]
+   }
+  ]
+ },
+ "wm_6f17e9c71ead.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.362,
+    "xyxy": [
+     199,
+     69,
+     1097,
+     914
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.338,
+    "xyxy": [
+     986,
+     3,
+     1088,
+     110
+    ]
+   }
+  ]
+ },
+ "wm_6f2c9bf0824d.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.578,
+    "xyxy": [
+     187,
+     1445,
+     1273,
+     1704
+    ]
+   }
+  ]
+ },
+ "wm_6fbe029286d4.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.624,
+    "xyxy": [
+     333,
+     763,
+     564,
+     852
+    ]
+   }
+  ]
+ },
+ "wm_7032f945d79f.jpg": {
+  "largura": 1280,
+  "altura": 959,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.344,
+    "xyxy": [
+     471,
+     292,
+     911,
+     412
+    ]
+   }
+  ]
+ },
+ "wm_708c80c1c8cd.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.377,
+    "xyxy": [
+     52,
+     525,
+     1178,
+     1361
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.417,
+    "xyxy": [
+     6,
+     168,
+     1269,
+     539
+    ]
+   }
+  ]
+ },
+ "wm_71001ddcab88.jpg": {
+  "largura": 1280,
+  "altura": 855,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.367,
+    "xyxy": [
+     428,
+     703,
+     768,
+     846
+    ]
+   }
+  ]
+ },
+ "wm_711ae97577ab.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.559,
+    "xyxy": [
+     4,
+     523,
+     637,
+     810
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.318,
+    "xyxy": [
+     955,
+     311,
+     1164,
+     664
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.311,
+    "xyxy": [
+     1013,
+     683,
+     1159,
+     771
+    ]
+   }
+  ]
+ },
+ "wm_721c1dc81ee9.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.339,
+    "xyxy": [
+     1063,
+     437,
+     1277,
+     688
+    ]
+   }
+  ]
+ },
+ "wm_7356865d2180.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.704,
+    "xyxy": [
+     485,
+     64,
+     638,
+     166
+    ]
+   }
+  ]
+ },
+ "wm_74252bf60f3c.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.646,
+    "xyxy": [
+     134,
+     650,
+     720,
+     970
+    ]
+   }
+  ]
+ },
+ "wm_747071171113.jpg": {
+  "largura": 1280,
+  "altura": 1505,
+  "caixas": []
+ },
+ "wm_765326eb73f1.jpg": {
+  "largura": 1200,
+  "altura": 1600,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.402,
+    "xyxy": [
+     428,
+     807,
+     1052,
+     1595
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.36,
+    "xyxy": [
+     549,
+     329,
+     763,
+     509
+    ]
+   }
+  ]
+ },
+ "wm_77141451fec3.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.416,
+    "xyxy": [
+     423,
+     338,
+     636,
+     554
+    ]
+   }
+  ]
+ },
+ "wm_77c0bc29cd39.jpg": {
+  "largura": 600,
+  "altura": 709,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.438,
+    "xyxy": [
+     112,
+     185,
+     417,
+     647
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.302,
+    "xyxy": [
+     2,
+     22,
+     598,
+     210
+    ]
+   }
+  ]
+ },
+ "wm_7830b4732d49.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.615,
+    "xyxy": [
+     415,
+     215,
+     831,
+     591
+    ]
+   }
+  ]
+ },
+ "wm_787f84db7cf3.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.427,
+    "xyxy": [
+     474,
+     294,
+     866,
+     686
+    ]
+   }
+  ]
+ },
+ "wm_79cb4ba4e7a8.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.638,
+    "xyxy": [
+     276,
+     161,
+     1093,
+     611
+    ]
+   }
+  ]
+ },
+ "wm_7af5fb1edfb5.jpg": {
+  "largura": 1280,
+  "altura": 183,
+  "caixas": []
+ },
+ "wm_7b49d1b76cde.jpg": {
+  "largura": 1280,
+  "altura": 1440,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.445,
+    "xyxy": [
+     946,
+     947,
+     1106,
+     997
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.36,
+    "xyxy": [
+     4,
+     36,
+     503,
+     606
+    ]
+   }
+  ]
+ },
+ "wm_7bc032030f17.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.391,
+    "xyxy": [
+     3,
+     75,
+     637,
+     477
+    ]
+   }
+  ]
+ },
+ "wm_7c26dde39f9d.jpg": {
+  "largura": 1280,
+  "altura": 1020,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.398,
+    "xyxy": [
+     756,
+     604,
+     873,
+     690
+    ]
+   }
+  ]
+ },
+ "wm_7c45c9d7a0a8.jpg": {
+  "largura": 1280,
+  "altura": 1270,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.348,
+    "xyxy": [
+     317,
+     87,
+     797,
+     636
+    ]
+   }
+  ]
+ },
+ "wm_7c7645b7fed5.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": []
+ },
+ "wm_7c80d7ec3f0a.jpg": {
+  "largura": 1280,
+  "altura": 720,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.452,
+    "xyxy": [
+     486,
+     77,
+     780,
+     328
+    ]
+   }
+  ]
+ },
+ "wm_7d67390adb87.jpg": {
+  "largura": 1280,
+  "altura": 876,
+  "caixas": []
+ },
+ "wm_7d8bb0c34931.jpg": {
+  "largura": 1280,
+  "altura": 640,
+  "caixas": []
+ },
+ "wm_7dda0b2e33be.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.568,
+    "xyxy": [
+     274,
+     194,
+     1033,
+     847
+    ]
+   }
+  ]
+ },
+ "wm_7dda89110cba.jpg": {
+  "largura": 960,
+  "altura": 1280,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.389,
+    "xyxy": [
+     422,
+     981,
+     629,
+     1097
+    ]
+   }
+  ]
+ },
+ "wm_7e388b505721.jpg": {
+  "largura": 1280,
+  "altura": 1024,
+  "caixas": []
+ },
+ "wm_7e6e9c3e1bfb.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_7e9ce04c3840.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.365,
+    "xyxy": [
+     599,
+     516,
+     1111,
+     620
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.347,
+    "xyxy": [
+     5,
+     607,
+     1274,
+     956
+    ]
+   }
+  ]
+ },
+ "wm_7f89156e18dc.jpg": {
+  "largura": 1280,
+  "altura": 1280,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.611,
+    "xyxy": [
+     452,
+     438,
+     856,
+     578
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.494,
+    "xyxy": [
+     369,
+     148,
+     546,
+     258
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.395,
+    "xyxy": [
+     416,
+     437,
+     884,
+     1095
+    ]
+   }
+  ]
+ },
+ "wm_802adbdf2423.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.582,
+    "xyxy": [
+     352,
+     78,
+     899,
+     642
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.32,
+    "xyxy": [
+     528,
+     348,
+     779,
+     622
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.317,
+    "xyxy": [
+     279,
+     58,
+     393,
+     200
+    ]
+   }
+  ]
+ },
+ "wm_827746321e25.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.51,
+    "xyxy": [
+     701,
+     666,
+     958,
+     774
+    ]
+   }
+  ]
+ },
+ "wm_82c9428159f9.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": []
+ },
+ "wm_832661e6058e.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_83901caf68d8.jpg": {
+  "largura": 1280,
+  "altura": 1215,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.631,
+    "xyxy": [
+     228,
+     350,
+     1160,
+     1116
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.335,
+    "xyxy": [
+     270,
+     283,
+     565,
+     352
+    ]
+   }
+  ]
+ },
+ "wm_84e8ae1c7337.jpg": {
+  "largura": 1280,
+  "altura": 905,
+  "caixas": []
+ },
+ "wm_8506465a6a96.jpg": {
+  "largura": 1280,
+  "altura": 852,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.382,
+    "xyxy": [
+     39,
+     550,
+     248,
+     676
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.45,
+    "xyxy": [
+     664,
+     469,
+     1277,
+     849
+    ]
+   }
+  ]
+ },
+ "wm_853b5cf85e1d.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.638,
+    "xyxy": [
+     398,
+     259,
+     895,
+     753
+    ]
+   }
+  ]
+ },
+ "wm_861ecad94650.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.401,
+    "xyxy": [
+     569,
+     581,
+     691,
+     645
+    ]
+   }
+  ]
+ },
+ "wm_86a2b6fa6ebe.jpg": {
+  "largura": 1280,
+  "altura": 843,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.536,
+    "xyxy": [
+     571,
+     297,
+     771,
+     522
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.345,
+    "xyxy": [
+     286,
+     2,
+     1154,
+     181
+    ]
+   }
+  ]
+ },
+ "wm_8905800a8bf6.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.344,
+    "xyxy": [
+     350,
+     487,
+     700,
+     804
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.331,
+    "xyxy": [
+     692,
+     440,
+     1062,
+     843
+    ]
+   }
+  ]
+ },
+ "wm_89cea183a26c.jpg": {
+  "largura": 1280,
+  "altura": 894,
+  "caixas": []
+ },
+ "wm_89d371dacfdd.jpg": {
+  "largura": 1280,
+  "altura": 1267,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.439,
+    "xyxy": [
+     120,
+     86,
+     1156,
+     1140
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.384,
+    "xyxy": [
+     466,
+     447,
+     791,
+     794
+    ]
+   }
+  ]
+ },
+ "wm_89fc39904933.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.69,
+    "xyxy": [
+     490,
+     841,
+     753,
+     1024
+    ]
+   }
+  ]
+ },
+ "wm_8a58351e1ef7.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.439,
+    "xyxy": [
+     740,
+     668,
+     1276,
+     922
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.371,
+    "xyxy": [
+     2,
+     463,
+     777,
+     697
+    ]
+   }
+  ]
+ },
+ "wm_8ac3c51ec9ac.jpg": {
+  "largura": 1280,
+  "altura": 1700,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.453,
+    "xyxy": [
+     4,
+     1264,
+     1276,
+     1694
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.325,
+    "xyxy": [
+     19,
+     272,
+     1273,
+     910
+    ]
+   }
+  ]
+ },
+ "wm_8b22ee893180.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.404,
+    "xyxy": [
+     448,
+     464,
+     745,
+     726
+    ]
+   }
+  ]
+ },
+ "wm_8b8c8cb4ff9a.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_8bad9f5aa4da.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.46,
+    "xyxy": [
+     722,
+     71,
+     1242,
+     550
+    ]
+   }
+  ]
+ },
+ "wm_8beb07f96da1.jpg": {
+  "largura": 1280,
+  "altura": 1719,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.616,
+    "xyxy": [
+     146,
+     1242,
+     445,
+     1414
+    ]
+   }
+  ]
+ },
+ "wm_8c3418be0a76.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.309,
+    "xyxy": [
+     0,
+     87,
+     126,
+     273
+    ]
+   }
+  ]
+ },
+ "wm_8c435468a4d9.jpg": {
+  "largura": 1280,
+  "altura": 1927,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.306,
+    "xyxy": [
+     628,
+     1204,
+     754,
+     1376
+    ]
+   }
+  ]
+ },
+ "wm_8c883d51f071.jpg": {
+  "largura": 1280,
+  "altura": 720,
+  "caixas": []
+ },
+ "wm_8d0268468ba1.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.468,
+    "xyxy": [
+     322,
+     117,
+     733,
+     315
+    ]
+   }
+  ]
+ },
+ "wm_8d44598e1f31.jpg": {
+  "largura": 1280,
+  "altura": 953,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.396,
+    "xyxy": [
+     1038,
+     574,
+     1276,
+     686
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.377,
+    "xyxy": [
+     432,
+     779,
+     638,
+     949
+    ]
+   }
+  ]
+ },
+ "wm_8d8afa206e19.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_8ea8a1bee392.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.34,
+    "xyxy": [
+     76,
+     417,
+     340,
+     772
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.542,
+    "xyxy": [
+     271,
+     366,
+     886,
+     803
+    ]
+   }
+  ]
+ },
+ "wm_8ee6b4495251.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.531,
+    "xyxy": [
+     955,
+     152,
+     1277,
+     602
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.713,
+    "xyxy": [
+     409,
+     134,
+     962,
+     679
+    ]
+   }
+  ]
+ },
+ "wm_8f0e6fb305f7.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.433,
+    "xyxy": [
+     961,
+     757,
+     1089,
+     818
+    ]
+   }
+  ]
+ },
+ "wm_8f56ba378815.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.63,
+    "xyxy": [
+     525,
+     773,
+     696,
+     850
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.557,
+    "xyxy": [
+     67,
+     544,
+     1276,
+     725
+    ]
+   }
+  ]
+ },
+ "wm_8f728f8804ce.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.674,
+    "xyxy": [
+     380,
+     588,
+     674,
+     756
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.563,
+    "xyxy": [
+     3,
+     221,
+     354,
+     335
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.39,
+    "xyxy": [
+     646,
+     221,
+     856,
+     573
+    ]
+   }
+  ]
+ },
+ "wm_8f8c18565765.jpg": {
+  "largura": 1280,
+  "altura": 1067,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.607,
+    "xyxy": [
+     947,
+     354,
+     1211,
+     458
+    ]
+   }
+  ]
+ },
+ "wm_903738e5866b.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.388,
+    "xyxy": [
+     252,
+     360,
+     334,
+     395
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.341,
+    "xyxy": [
+     280,
+     237,
+     637,
+     412
+    ]
+   }
+  ]
+ },
+ "wm_9042014be8ee.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.336,
+    "xyxy": [
+     984,
+     262,
+     1276,
+     506
+    ]
+   }
+  ]
+ },
+ "wm_90c39cfc8125.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.532,
+    "xyxy": [
+     500,
+     402,
+     796,
+     674
+    ]
+   }
+  ]
+ },
+ "wm_92fd00bb72f1.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.574,
+    "xyxy": [
+     210,
+     665,
+     1075,
+     1495
+    ]
+   }
+  ]
+ },
+ "wm_94c2c59ef256.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.627,
+    "xyxy": [
+     839,
+     56,
+     1277,
+     695
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.649,
+    "xyxy": [
+     174,
+     491,
+     343,
+     609
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.505,
+    "xyxy": [
+     406,
+     151,
+     899,
+     726
+    ]
+   }
+  ]
+ },
+ "wm_94e9ece9e094.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.58,
+    "xyxy": [
+     972,
+     54,
+     1277,
+     617
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.703,
+    "xyxy": [
+     463,
+     313,
+     798,
+     650
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.381,
+    "xyxy": [
+     45,
+     585,
+     228,
+     679
+    ]
+   }
+  ]
+ },
+ "wm_958366e25cec.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": []
+ },
+ "wm_95e24fcbb156.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.461,
+    "xyxy": [
+     157,
+     262,
+     1122,
+     716
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.364,
+    "xyxy": [
+     349,
+     13,
+     620,
+     185
+    ]
+   }
+  ]
+ },
+ "wm_969e600f4907.jpg": {
+  "largura": 1280,
+  "altura": 1359,
+  "caixas": []
+ },
+ "wm_96b39e0cd029.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.494,
+    "xyxy": [
+     506,
+     823,
+     685,
+     905
+    ]
+   }
+  ]
+ },
+ "wm_9725bb0d50de.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.631,
+    "xyxy": [
+     280,
+     78,
+     974,
+     792
+    ]
+   }
+  ]
+ },
+ "wm_974df4daea73.jpg": {
+  "largura": 591,
+  "altura": 319,
+  "caixas": []
+ },
+ "wm_9834f17fc7a5.jpg": {
+  "largura": 1280,
+  "altura": 845,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.511,
+    "xyxy": [
+     266,
+     238,
+     814,
+     624
+    ]
+   }
+  ]
+ },
+ "wm_98d0bb5af4fb.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.331,
+    "xyxy": [
+     517,
+     122,
+     1119,
+     236
+    ]
+   }
+  ]
+ },
+ "wm_990d46b909bc.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.475,
+    "xyxy": [
+     352,
+     195,
+     493,
+     284
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.625,
+    "xyxy": [
+     1,
+     201,
+     194,
+     347
+    ]
+   }
+  ]
+ },
+ "wm_99ee2f6e2694.jpg": {
+  "largura": 1280,
+  "altura": 1219,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.48,
+    "xyxy": [
+     249,
+     829,
+     606,
+     1068
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.36,
+    "xyxy": [
+     833,
+     658,
+     1074,
+     999
+    ]
+   }
+  ]
+ },
+ "wm_99f24aa9177d.jpg": {
+  "largura": 1280,
+  "altura": 900,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.339,
+    "xyxy": [
+     430,
+     277,
+     1050,
+     880
+    ]
+   }
+  ]
+ },
+ "wm_9a0bb801bf2b.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.392,
+    "xyxy": [
+     1,
+     601,
+     114,
+     846
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.493,
+    "xyxy": [
+     453,
+     527,
+     1109,
+     956
+    ]
+   }
+  ]
+ },
+ "wm_9a859e7c57e9.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.374,
+    "xyxy": [
+     246,
+     508,
+     612,
+     956
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.309,
+    "xyxy": [
+     838,
+     220,
+     1276,
+     309
+    ]
+   }
+  ]
+ },
+ "wm_9dbe7c94b882.jpg": {
+  "largura": 1280,
+  "altura": 915,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.551,
+    "xyxy": [
+     173,
+     148,
+     1036,
+     809
+    ]
+   }
+  ]
+ },
+ "wm_9de8fe487300.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.656,
+    "xyxy": [
+     281,
+     1266,
+     580,
+     1463
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.356,
+    "xyxy": [
+     237,
+     1267,
+     323,
+     1475
+    ]
+   }
+  ]
+ },
+ "wm_a07f40aee3bf.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.509,
+    "xyxy": [
+     370,
+     337,
+     899,
+     863
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.31,
+    "xyxy": [
+     5,
+     607,
+     1274,
+     955
+    ]
+   }
+  ]
+ },
+ "wm_a1d9876af00b.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.49,
+    "xyxy": [
+     1099,
+     3,
+     1277,
+     592
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.436,
+    "xyxy": [
+     491,
+     253,
+     773,
+     576
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.319,
+    "xyxy": [
+     785,
+     539,
+     1272,
+     761
+    ]
+   }
+  ]
+ },
+ "wm_a1e475d28fce.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": []
+ },
+ "wm_a1faebd54d6e.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.36,
+    "xyxy": [
+     11,
+     356,
+     766,
+     952
+    ]
+   }
+  ]
+ },
+ "wm_a240319cb0dc.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.328,
+    "xyxy": [
+     541,
+     19,
+     1278,
+     601
+    ]
+   }
+  ]
+ },
+ "wm_a24e740f6a64.jpg": {
+  "largura": 1280,
+  "altura": 1031,
+  "caixas": []
+ },
+ "wm_a372c34f41fd.jpg": {
+  "largura": 1280,
+  "altura": 722,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.528,
+    "xyxy": [
+     240,
+     8,
+     956,
+     692
+    ]
+   }
+  ]
+ },
+ "wm_a3dd8e95a42f.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.624,
+    "xyxy": [
+     285,
+     190,
+     894,
+     771
+    ]
+   }
+  ]
+ },
+ "wm_a3dfc8f6ae68.jpg": {
+  "largura": 1280,
+  "altura": 448,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.369,
+    "xyxy": [
+     93,
+     68,
+     565,
+     343
+    ]
+   }
+  ]
+ },
+ "wm_a683e7c3262a.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.459,
+    "xyxy": [
+     345,
+     1198,
+     1218,
+     1641
+    ]
+   }
+  ]
+ },
+ "wm_a6c18d036505.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.556,
+    "xyxy": [
+     209,
+     68,
+     1105,
+     871
+    ]
+   }
+  ]
+ },
+ "wm_a81a32a921b2.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.346,
+    "xyxy": [
+     257,
+     175,
+     368,
+     272
+    ]
+   }
+  ]
+ },
+ "wm_a867a48111a0.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_a8afd60d9027.jpg": {
+  "largura": 1280,
+  "altura": 720,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.577,
+    "xyxy": [
+     396,
+     54,
+     1075,
+     204
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.631,
+    "xyxy": [
+     778,
+     113,
+     1158,
+     675
+    ]
+   }
+  ]
+ },
+ "wm_a8cd4fb0ba42.jpg": {
+  "largura": 800,
+  "altura": 1200,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.685,
+    "xyxy": [
+     151,
+     689,
+     623,
+     947
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.388,
+    "xyxy": [
+     337,
+     404,
+     797,
+     828
+    ]
+   }
+  ]
+ },
+ "wm_a8d3d7f61307.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.556,
+    "xyxy": [
+     495,
+     16,
+     1121,
+     593
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.323,
+    "xyxy": [
+     497,
+     313,
+     683,
+     608
+    ]
+   }
+  ]
+ },
+ "wm_a938a1da04d0.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.369,
+    "xyxy": [
+     471,
+     581,
+     880,
+     1391
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.351,
+    "xyxy": [
+     492,
+     1409,
+     745,
+     1597
+    ]
+   }
+  ]
+ },
+ "wm_a9b27822e431.jpg": {
+  "largura": 1280,
+  "altura": 721,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.638,
+    "xyxy": [
+     74,
+     137,
+     497,
+     373
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.397,
+    "xyxy": [
+     421,
+     252,
+     1039,
+     596
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.367,
+    "xyxy": [
+     4,
+     55,
+     296,
+     433
+    ]
+   }
+  ]
+ },
+ "wm_ab32f4f95f4d.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.434,
+    "xyxy": [
+     536,
+     690,
+     1235,
+     849
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.598,
+    "xyxy": [
+     952,
+     3,
+     1276,
+     375
+    ]
+   }
+  ]
+ },
+ "wm_ab44b40528e7.jpg": {
+  "largura": 1200,
+  "altura": 900,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.378,
+    "xyxy": [
+     330,
+     245,
+     798,
+     616
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.45,
+    "xyxy": [
+     2,
+     3,
+     626,
+     383
+    ]
+   }
+  ]
+ },
+ "wm_ac4221f5a17c.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.391,
+    "xyxy": [
+     469,
+     446,
+     787,
+     584
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.333,
+    "xyxy": [
+     392,
+     171,
+     878,
+     342
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.345,
+    "xyxy": [
+     338,
+     164,
+     922,
+     581
+    ]
+   }
+  ]
+ },
+ "wm_ae1cdf384e50.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.549,
+    "xyxy": [
+     160,
+     173,
+     638,
+     462
+    ]
+   }
+  ]
+ },
+ "wm_aed3afc64b2d.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.34,
+    "xyxy": [
+     753,
+     524,
+     1276,
+     749
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.374,
+    "xyxy": [
+     665,
+     441,
+     1165,
+     538
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.345,
+    "xyxy": [
+     5,
+     492,
+     977,
+     952
+    ]
+   }
+  ]
+ },
+ "wm_af13fda7e564.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.33,
+    "xyxy": [
+     6,
+     499,
+     1274,
+     680
+    ]
+   }
+  ]
+ },
+ "wm_afb2fbb65fb5.jpg": {
+  "largura": 1280,
+  "altura": 841,
+  "caixas": []
+ },
+ "wm_b0a0d6894af3.jpg": {
+  "largura": 1280,
+  "altura": 854,
+  "caixas": []
+ },
+ "wm_b0a2668b3374.jpg": {
+  "largura": 1280,
+  "altura": 1015,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.523,
+    "xyxy": [
+     203,
+     136,
+     1082,
+     867
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.451,
+    "xyxy": [
+     445,
+     98,
+     1015,
+     160
+    ]
+   }
+  ]
+ },
+ "wm_b31eb15c8928.jpg": {
+  "largura": 1280,
+  "altura": 1077,
+  "caixas": []
+ },
+ "wm_b341c90a1cb3.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_b35ab000f790.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.387,
+    "xyxy": [
+     93,
+     1097,
+     304,
+     1208
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.545,
+    "xyxy": [
+     5,
+     317,
+     271,
+     559
+    ]
+   }
+  ]
+ },
+ "wm_b41523740836.jpg": {
+  "largura": 1280,
+  "altura": 720,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.715,
+    "xyxy": [
+     399,
+     98,
+     686,
+     341
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.361,
+    "xyxy": [
+     6,
+     255,
+     472,
+     714
+    ]
+   }
+  ]
+ },
+ "wm_b4c8911e4bf4.jpg": {
+  "largura": 1024,
+  "altura": 683,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.523,
+    "xyxy": [
+     375,
+     292,
+     884,
+     492
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.33,
+    "xyxy": [
+     377,
+     291,
+     728,
+     437
+    ]
+   }
+  ]
+ },
+ "wm_b4e80c7c79d0.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.42,
+    "xyxy": [
+     15,
+     221,
+     1272,
+     1529
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.323,
+    "xyxy": [
+     8,
+     1145,
+     1273,
+     1530
+    ]
+   }
+  ]
+ },
+ "wm_b51485f815ce.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.693,
+    "xyxy": [
+     580,
+     1481,
+     829,
+     1700
+    ]
+   }
+  ]
+ },
+ "wm_b5914cf4a5b3.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.348,
+    "xyxy": [
+     816,
+     4,
+     1276,
+     466
+    ]
+   }
+  ]
+ },
+ "wm_b5f0d68cb679.jpg": {
+  "largura": 1280,
+  "altura": 763,
+  "caixas": []
+ },
+ "wm_b681b1d5efc6.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.619,
+    "xyxy": [
+     184,
+     288,
+     528,
+     422
+    ]
+   }
+  ]
+ },
+ "wm_b6ab7b31b64c.jpg": {
+  "largura": 1280,
+  "altura": 830,
+  "caixas": []
+ },
+ "wm_b795ab782bc6.jpg": {
+  "largura": 1280,
+  "altura": 857,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.346,
+    "xyxy": [
+     325,
+     650,
+     922,
+     741
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.338,
+    "xyxy": [
+     471,
+     310,
+     818,
+     513
+    ]
+   }
+  ]
+ },
+ "wm_ba5e0ab45d92.jpg": {
+  "largura": 800,
+  "altura": 533,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.363,
+    "xyxy": [
+     724,
+     263,
+     798,
+     528
+    ]
+   }
+  ]
+ },
+ "wm_bb8fd23d1f7d.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.469,
+    "xyxy": [
+     6,
+     105,
+     1273,
+     847
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.352,
+    "xyxy": [
+     5,
+     47,
+     396,
+     202
+    ]
+   }
+  ]
+ },
+ "wm_bba4da587e71.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": []
+ },
+ "wm_bbaf0c24ff4a.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.516,
+    "xyxy": [
+     206,
+     90,
+     1094,
+     914
+    ]
+   }
+  ]
+ },
+ "wm_bc5cffb8aa7f.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.528,
+    "xyxy": [
+     171,
+     43,
+     1092,
+     924
+    ]
+   }
+  ]
+ },
+ "wm_bc610f6afe29.jpg": {
+  "largura": 1280,
+  "altura": 1012,
+  "caixas": []
+ },
+ "wm_bccbc6aeed8b.jpg": {
+  "largura": 1280,
+  "altura": 858,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.41,
+    "xyxy": [
+     713,
+     590,
+     1082,
+     658
+    ]
+   }
+  ]
+ },
+ "wm_bcf0e868c48f.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.4,
+    "xyxy": [
+     751,
+     475,
+     853,
+     538
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.317,
+    "xyxy": [
+     1,
+     232,
+     176,
+     358
+    ]
+   }
+  ]
+ },
+ "wm_bcfff40c409e.jpg": {
+  "largura": 1000,
+  "altura": 576,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.349,
+    "xyxy": [
+     8,
+     177,
+     105,
+     277
+    ]
+   }
+  ]
+ },
+ "wm_bd1b5262a280.jpg": {
+  "largura": 1280,
+  "altura": 1280,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.56,
+    "xyxy": [
+     61,
+     46,
+     1214,
+     1195
+    ]
+   }
+  ]
+ },
+ "wm_bd72924b1ae6.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.491,
+    "xyxy": [
+     724,
+     2,
+     1276,
+     426
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.403,
+    "xyxy": [
+     628,
+     435,
+     735,
+     539
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.335,
+    "xyxy": [
+     11,
+     12,
+     363,
+     720
+    ]
+   }
+  ]
+ },
+ "wm_bd863ed43324.jpg": {
+  "largura": 600,
+  "altura": 295,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.593,
+    "xyxy": [
+     205,
+     204,
+     311,
+     253
+    ]
+   }
+  ]
+ },
+ "wm_bda3dd0412af.jpg": {
+  "largura": 1280,
+  "altura": 857,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.444,
+    "xyxy": [
+     144,
+     4,
+     1050,
+     826
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.369,
+    "xyxy": [
+     926,
+     1,
+     1059,
+     91
+    ]
+   }
+  ]
+ },
+ "wm_c066012722ff.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.661,
+    "xyxy": [
+     586,
+     461,
+     742,
+     554
+    ]
+   }
+  ]
+ },
+ "wm_c07d685c962b.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.582,
+    "xyxy": [
+     517,
+     1112,
+     1104,
+     1531
+    ]
+   }
+  ]
+ },
+ "wm_c0f2395adf44.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.428,
+    "xyxy": [
+     728,
+     671,
+     1004,
+     779
+    ]
+   }
+  ]
+ },
+ "wm_c168460c8011.jpg": {
+  "largura": 1280,
+  "altura": 893,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.319,
+    "xyxy": [
+     767,
+     593,
+     969,
+     710
+    ]
+   }
+  ]
+ },
+ "wm_c1ef04a7c227.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.453,
+    "xyxy": [
+     461,
+     350,
+     681,
+     454
+    ]
+   }
+  ]
+ },
+ "wm_c24f55461bc9.jpg": {
+  "largura": 1280,
+  "altura": 1920,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.598,
+    "xyxy": [
+     269,
+     172,
+     992,
+     901
+    ]
+   }
+  ]
+ },
+ "wm_c26c9aa7fb43.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.573,
+    "xyxy": [
+     456,
+     341,
+     820,
+     662
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.346,
+    "xyxy": [
+     517,
+     438,
+     644,
+     521
+    ]
+   }
+  ]
+ },
+ "wm_c3623bdb8886.jpg": {
+  "largura": 640,
+  "altura": 386,
+  "caixas": []
+ },
+ "wm_c38c06431fad.jpg": {
+  "largura": 630,
+  "altura": 473,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.654,
+    "xyxy": [
+     100,
+     0,
+     438,
+     247
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.352,
+    "xyxy": [
+     207,
+     289,
+     368,
+     361
+    ]
+   }
+  ]
+ },
+ "wm_c3c2640d5f19.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.503,
+    "xyxy": [
+     608,
+     298,
+     739,
+     338
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.353,
+    "xyxy": [
+     435,
+     394,
+     923,
+     716
+    ]
+   }
+  ]
+ },
+ "wm_c4f11a64d6ff.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.397,
+    "xyxy": [
+     312,
+     546,
+     750,
+     805
+    ]
+   }
+  ]
+ },
+ "wm_c5d811277480.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.637,
+    "xyxy": [
+     289,
+     169,
+     802,
+     692
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.438,
+    "xyxy": [
+     636,
+     86,
+     1071,
+     405
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.353,
+    "xyxy": [
+     482,
+     639,
+     769,
+     694
+    ]
+   }
+  ]
+ },
+ "wm_c676326907ac.jpg": {
+  "largura": 1280,
+  "altura": 900,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.651,
+    "xyxy": [
+     155,
+     372,
+     796,
+     802
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.539,
+    "xyxy": [
+     4,
+     2,
+     1274,
+     231
+    ]
+   }
+  ]
+ },
+ "wm_c69f4bc09915.jpg": {
+  "largura": 1000,
+  "altura": 643,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.359,
+    "xyxy": [
+     2,
+     401,
+     997,
+     640
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.3,
+    "xyxy": [
+     847,
+     284,
+     998,
+     375
+    ]
+   }
+  ]
+ },
+ "wm_c710fe5b2855.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.5,
+    "xyxy": [
+     351,
+     181,
+     1249,
+     702
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.339,
+    "xyxy": [
+     305,
+     440,
+     542,
+     710
+    ]
+   }
+  ]
+ },
+ "wm_ca03715d2561.jpg": {
+  "largura": 1280,
+  "altura": 1227,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.584,
+    "xyxy": [
+     128,
+     131,
+     1130,
+     1118
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.319,
+    "xyxy": [
+     520,
+     491,
+     726,
+     702
+    ]
+   }
+  ]
+ },
+ "wm_caf59b77c3f2.jpg": {
+  "largura": 1280,
+  "altura": 1280,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.621,
+    "xyxy": [
+     200,
+     235,
+     1100,
+     1112
+    ]
+   }
+  ]
+ },
+ "wm_cafd792a4219.jpg": {
+  "largura": 1280,
+  "altura": 758,
+  "caixas": []
+ },
+ "wm_cb09268be0f9.jpg": {
+  "largura": 1280,
+  "altura": 1920,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.457,
+    "xyxy": [
+     549,
+     811,
+     955,
+     1230
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.444,
+    "xyxy": [
+     586,
+     1315,
+     1191,
+     1915
+    ]
+   }
+  ]
+ },
+ "wm_cbc5b1e7f9d1.jpg": {
+  "largura": 768,
+  "altura": 1024,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.578,
+    "xyxy": [
+     42,
+     293,
+     442,
+     984
+    ]
+   }
+  ]
+ },
+ "wm_cc3c5a3096d5.jpg": {
+  "largura": 1280,
+  "altura": 959,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.542,
+    "xyxy": [
+     522,
+     2,
+     1156,
+     562
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.571,
+    "xyxy": [
+     498,
+     321,
+     798,
+     622
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.392,
+    "xyxy": [
+     3,
+     132,
+     507,
+     248
+    ]
+   }
+  ]
+ },
+ "wm_cd8d45a8ec22.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.569,
+    "xyxy": [
+     567,
+     873,
+     669,
+     956
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.323,
+    "xyxy": [
+     457,
+     190,
+     726,
+     409
+    ]
+   }
+  ]
+ },
+ "wm_cddb735a3ab2.jpg": {
+  "largura": 1280,
+  "altura": 1046,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.541,
+    "xyxy": [
+     1069,
+     876,
+     1276,
+     1042
+    ]
+   }
+  ]
+ },
+ "wm_cefdf52b3e83.jpg": {
+  "largura": 1280,
+  "altura": 720,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.519,
+    "xyxy": [
+     574,
+     525,
+     996,
+     609
+    ]
+   }
+  ]
+ },
+ "wm_cf5fb3793d29.jpg": {
+  "largura": 1280,
+  "altura": 720,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.38,
+    "xyxy": [
+     139,
+     131,
+     1088,
+     643
+    ]
+   }
+  ]
+ },
+ "wm_cfd63b66fedb.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.532,
+    "xyxy": [
+     444,
+     760,
+     566,
+     809
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.724,
+    "xyxy": [
+     1078,
+     507,
+     1276,
+     714
+    ]
+   }
+  ]
+ },
+ "wm_cff7b0122a59.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_d03ce37f2f67.jpg": {
+  "largura": 1280,
+  "altura": 854,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.542,
+    "xyxy": [
+     604,
+     455,
+     795,
+     526
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.375,
+    "xyxy": [
+     3,
+     2,
+     732,
+     250
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.339,
+    "xyxy": [
+     586,
+     453,
+     810,
+     757
+    ]
+   }
+  ]
+ },
+ "wm_d18e6f1c4a0f.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.62,
+    "xyxy": [
+     190,
+     265,
+     724,
+     780
+    ]
+   }
+  ]
+ },
+ "wm_d201de2d7528.jpg": {
+  "largura": 1200,
+  "altura": 1600,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.321,
+    "xyxy": [
+     336,
+     1067,
+     527,
+     1419
+    ]
+   }
+  ]
+ },
+ "wm_d22a792701c6.jpg": {
+  "largura": 1280,
+  "altura": 934,
+  "caixas": []
+ },
+ "wm_d2c9e5d05c65.jpg": {
+  "largura": 1280,
+  "altura": 1700,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.44,
+    "xyxy": [
+     6,
+     1197,
+     1274,
+     1694
+    ]
+   },
+   {
+    "grupo": "bueiro",
+    "conf": 0.411,
+    "xyxy": [
+     222,
+     140,
+     1019,
+     535
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.403,
+    "xyxy": [
+     223,
+     141,
+     1018,
+     534
+    ]
+   }
+  ]
+ },
+ "wm_d49510f3f124.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.399,
+    "xyxy": [
+     324,
+     452,
+     962,
+     971
+    ]
+   }
+  ]
+ },
+ "wm_d4a9c69f1890.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.392,
+    "xyxy": [
+     571,
+     148,
+     1122,
+     643
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.567,
+    "xyxy": [
+     419,
+     612,
+     580,
+     687
+    ]
+   }
+  ]
+ },
+ "wm_d4c6f7d88e05.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": []
+ },
+ "wm_d55c7baea45b.jpg": {
+  "largura": 1280,
+  "altura": 914,
+  "caixas": []
+ },
+ "wm_d59b67505e33.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.663,
+    "xyxy": [
+     754,
+     840,
+     1075,
+     956
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.303,
+    "xyxy": [
+     398,
+     219,
+     665,
+     509
+    ]
+   }
+  ]
+ },
+ "wm_d686790a2250.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.354,
+    "xyxy": [
+     482,
+     346,
+     945,
+     524
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.319,
+    "xyxy": [
+     2,
+     490,
+     641,
+     738
+    ]
+   }
+  ]
+ },
+ "wm_d6e260a958c0.jpg": {
+  "largura": 1280,
+  "altura": 670,
+  "caixas": []
+ },
+ "wm_d81dee61afe6.jpg": {
+  "largura": 1280,
+  "altura": 977,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.487,
+    "xyxy": [
+     898,
+     666,
+     1277,
+     844
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.38,
+    "xyxy": [
+     353,
+     64,
+     496,
+     157
+    ]
+   }
+  ]
+ },
+ "wm_d83583bde579.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.676,
+    "xyxy": [
+     702,
+     1298,
+     1063,
+     1702
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.315,
+    "xyxy": [
+     605,
+     105,
+     943,
+     356
+    ]
+   }
+  ]
+ },
+ "wm_d8436759bdf5.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.486,
+    "xyxy": [
+     437,
+     498,
+     688,
+     946
+    ]
+   }
+  ]
+ },
+ "wm_d86dff157576.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.627,
+    "xyxy": [
+     327,
+     205,
+     917,
+     783
+    ]
+   }
+  ]
+ },
+ "wm_d8c900c266fe.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.62,
+    "xyxy": [
+     224,
+     152,
+     367,
+     307
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.315,
+    "xyxy": [
+     207,
+     15,
+     638,
+     308
+    ]
+   }
+  ]
+ },
+ "wm_d8cd5123166a.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.592,
+    "xyxy": [
+     465,
+     247,
+     650,
+     492
+    ]
+   }
+  ]
+ },
+ "wm_d950253b3d8e.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.415,
+    "xyxy": [
+     55,
+     263,
+     1162,
+     711
+    ]
+   }
+  ]
+ },
+ "wm_dace664f3a13.jpg": {
+  "largura": 640,
+  "altura": 453,
+  "caixas": []
+ },
+ "wm_dc513783c225.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.611,
+    "xyxy": [
+     388,
+     2,
+     1157,
+     641
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.411,
+    "xyxy": [
+     529,
+     375,
+     709,
+     570
+    ]
+   }
+  ]
+ },
+ "wm_dd1ba9d216d5.jpg": {
+  "largura": 800,
+  "altura": 799,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.384,
+    "xyxy": [
+     148,
+     165,
+     590,
+     634
+    ]
+   }
+  ]
+ },
+ "wm_de1a6e5cf008.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.386,
+    "xyxy": [
+     934,
+     519,
+     1090,
+     609
+    ]
+   }
+  ]
+ },
+ "wm_de3857008a61.jpg": {
+  "largura": 1038,
+  "altura": 924,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.394,
+    "xyxy": [
+     193,
+     382,
+     829,
+     919
+    ]
+   }
+  ]
+ },
+ "wm_de752e732500.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": []
+ },
+ "wm_dee743438408.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.635,
+    "xyxy": [
+     3,
+     22,
+     486,
+     472
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.337,
+    "xyxy": [
+     7,
+     393,
+     1274,
+     571
+    ]
+   }
+  ]
+ },
+ "wm_df2b2f2b5bd9.jpg": {
+  "largura": 1280,
+  "altura": 857,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.432,
+    "xyxy": [
+     226,
+     310,
+     559,
+     785
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.345,
+    "xyxy": [
+     421,
+     90,
+     1076,
+     837
+    ]
+   }
+  ]
+ },
+ "wm_e0bbf247ff6d.jpg": {
+  "largura": 1280,
+  "altura": 992,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.473,
+    "xyxy": [
+     643,
+     413,
+     1277,
+     990
+    ]
+   }
+  ]
+ },
+ "wm_e11f55b3a894.jpg": {
+  "largura": 1280,
+  "altura": 754,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.344,
+    "xyxy": [
+     337,
+     562,
+     486,
+     707
+    ]
+   }
+  ]
+ },
+ "wm_e133db6393a6.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.619,
+    "xyxy": [
+     210,
+     1565,
+     501,
+     1668
+    ]
+   }
+  ]
+ },
+ "wm_e2588ac02db7.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.507,
+    "xyxy": [
+     201,
+     2,
+     887,
+     487
+    ]
+   }
+  ]
+ },
+ "wm_e399c9ae1242.jpg": {
+  "largura": 1280,
+  "altura": 1515,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.506,
+    "xyxy": [
+     398,
+     743,
+     805,
+     994
+    ]
+   }
+  ]
+ },
+ "wm_e4366779c58e.jpg": {
+  "largura": 1080,
+  "altura": 1920,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.413,
+    "xyxy": [
+     430,
+     191,
+     839,
+     1913
+    ]
+   }
+  ]
+ },
+ "wm_e45ec68a1a47.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.542,
+    "xyxy": [
+     2,
+     352,
+     931,
+     565
+    ]
+   }
+  ]
+ },
+ "wm_e4a4ae11508c.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.465,
+    "xyxy": [
+     1025,
+     341,
+     1150,
+     484
+    ]
+   }
+  ]
+ },
+ "wm_e590c6543b33.jpg": {
+  "largura": 1280,
+  "altura": 1280,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.429,
+    "xyxy": [
+     64,
+     519,
+     1261,
+     1268
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.366,
+    "xyxy": [
+     23,
+     3,
+     1273,
+     319
+    ]
+   }
+  ]
+ },
+ "wm_e609277d0523.jpg": {
+  "largura": 1133,
+  "altura": 857,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.31,
+    "xyxy": [
+     23,
+     529,
+     1111,
+     837
+    ]
+   }
+  ]
+ },
+ "wm_e61fcd302d7d.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_e654992f7821.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_e67a1f4eed64.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.674,
+    "xyxy": [
+     302,
+     439,
+     680,
+     571
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.516,
+    "xyxy": [
+     637,
+     458,
+     1276,
+     715
+    ]
+   }
+  ]
+ },
+ "wm_e709ef7f226a.jpg": {
+  "largura": 1280,
+  "altura": 1927,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.597,
+    "xyxy": [
+     810,
+     1477,
+     1161,
+     1714
+    ]
+   }
+  ]
+ },
+ "wm_e8dc76e02ca0.jpg": {
+  "largura": 1280,
+  "altura": 852,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.448,
+    "xyxy": [
+     5,
+     387,
+     1275,
+     836
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.489,
+    "xyxy": [
+     819,
+     126,
+     986,
+     236
+    ]
+   }
+  ]
+ },
+ "wm_e9f98ba9e385.jpg": {
+  "largura": 1280,
+  "altura": 1890,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.302,
+    "xyxy": [
+     4,
+     3,
+     1275,
+     834
+    ]
+   }
+  ]
+ },
+ "wm_ea47b6488c98.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": []
+ },
+ "wm_eac3da994673.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_eacc23d8fd67.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.368,
+    "xyxy": [
+     482,
+     285,
+     693,
+     320
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.322,
+    "xyxy": [
+     512,
+     136,
+     605,
+     241
+    ]
+   }
+  ]
+ },
+ "wm_eb8f58cd5115.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.332,
+    "xyxy": [
+     16,
+     737,
+     1275,
+     1211
+    ]
+   }
+  ]
+ },
+ "wm_ebaef4430f70.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.569,
+    "xyxy": [
+     652,
+     466,
+     792,
+     517
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.564,
+    "xyxy": [
+     601,
+     647,
+     848,
+     824
+    ]
+   }
+  ]
+ },
+ "wm_ebf812e38aea.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.389,
+    "xyxy": [
+     3,
+     756,
+     428,
+     849
+    ]
+   }
+  ]
+ },
+ "wm_ec59387678b2.jpg": {
+  "largura": 640,
+  "altura": 427,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.39,
+    "xyxy": [
+     2,
+     146,
+     294,
+     423
+    ]
+   }
+  ]
+ },
+ "wm_ecf356e78c10.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.677,
+    "xyxy": [
+     4,
+     397,
+     315,
+     601
+    ]
+   }
+  ]
+ },
+ "wm_ed48b30ad000.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_ee69cb7cb261.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.406,
+    "xyxy": [
+     7,
+     2,
+     711,
+     814
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.362,
+    "xyxy": [
+     453,
+     343,
+     807,
+     568
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.343,
+    "xyxy": [
+     738,
+     594,
+     1274,
+     850
+    ]
+   }
+  ]
+ },
+ "wm_ef6c616c52da.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.613,
+    "xyxy": [
+     2,
+     589,
+     288,
+     764
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.427,
+    "xyxy": [
+     3,
+     713,
+     296,
+     861
+    ]
+   }
+  ]
+ },
+ "wm_ef85b51ad542.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.523,
+    "xyxy": [
+     340,
+     356,
+     927,
+     766
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.337,
+    "xyxy": [
+     553,
+     410,
+     767,
+     574
+    ]
+   }
+  ]
+ },
+ "wm_efaccf4a9109.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.594,
+    "xyxy": [
+     396,
+     606,
+     898,
+     837
+    ]
+   }
+  ]
+ },
+ "wm_f118e04df8fd.jpg": {
+  "largura": 1250,
+  "altura": 1086,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.335,
+    "xyxy": [
+     678,
+     70,
+     1249,
+     1083
+    ]
+   }
+  ]
+ },
+ "wm_f1cfe8bbb7b0.jpg": {
+  "largura": 1280,
+  "altura": 959,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.54,
+    "xyxy": [
+     230,
+     47,
+     1116,
+     933
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.519,
+    "xyxy": [
+     3,
+     4,
+     412,
+     953
+    ]
+   }
+  ]
+ },
+ "wm_f345e26c8a5b.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.579,
+    "xyxy": [
+     721,
+     257,
+     1033,
+     548
+    ]
+   }
+  ]
+ },
+ "wm_f473c66dc2a6.jpg": {
+  "largura": 1280,
+  "altura": 1707,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.56,
+    "xyxy": [
+     199,
+     704,
+     1275,
+     1699
+    ]
+   }
+  ]
+ },
+ "wm_f4c2c1ee9195.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.38,
+    "xyxy": [
+     338,
+     191,
+     933,
+     786
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.394,
+    "xyxy": [
+     448,
+     295,
+     817,
+     683
+    ]
+   }
+  ]
+ },
+ "wm_f6d99514b40f.jpg": {
+  "largura": 1280,
+  "altura": 864,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.37,
+    "xyxy": [
+     952,
+     580,
+     1194,
+     813
+    ]
+   }
+  ]
+ },
+ "wm_f75febdab060.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.445,
+    "xyxy": [
+     219,
+     2,
+     1176,
+     688
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.32,
+    "xyxy": [
+     710,
+     507,
+     1265,
+     955
+    ]
+   }
+  ]
+ },
+ "wm_f79d316cf528.jpg": {
+  "largura": 1280,
+  "altura": 861,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.377,
+    "xyxy": [
+     4,
+     270,
+     383,
+     850
+    ]
+   }
+  ]
+ },
+ "wm_f7c07b82ae53.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.335,
+    "xyxy": [
+     121,
+     124,
+     1256,
+     815
+    ]
+   }
+  ]
+ },
+ "wm_f7e7bd212f6e.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.521,
+    "xyxy": [
+     514,
+     268,
+     686,
+     456
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.367,
+    "xyxy": [
+     506,
+     3,
+     786,
+     293
+    ]
+   }
+  ]
+ },
+ "wm_f7fb668e1fa3.jpg": {
+  "largura": 1280,
+  "altura": 919,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.455,
+    "xyxy": [
+     1021,
+     802,
+     1276,
+     915
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.347,
+    "xyxy": [
+     17,
+     715,
+     126,
+     915
+    ]
+   }
+  ]
+ },
+ "wm_f829bde3808c.jpg": {
+  "largura": 1024,
+  "altura": 576,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.576,
+    "xyxy": [
+     179,
+     241,
+     326,
+     362
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.575,
+    "xyxy": [
+     101,
+     190,
+     465,
+     483
+    ]
+   }
+  ]
+ },
+ "wm_f837d8cb1fb8.jpg": {
+  "largura": 640,
+  "altura": 480,
+  "caixas": []
+ },
+ "wm_f938193f8f0f.jpg": {
+  "largura": 649,
+  "altura": 863,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.559,
+    "xyxy": [
+     245,
+     0,
+     649,
+     863
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.368,
+    "xyxy": [
+     0,
+     0,
+     221,
+     200
+    ]
+   }
+  ]
+ },
+ "wm_fa3d3783cc09.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.413,
+    "xyxy": [
+     616,
+     478,
+     792,
+     590
+    ]
+   }
+  ]
+ },
+ "wm_fa99e44612ec.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.513,
+    "xyxy": [
+     485,
+     188,
+     1007,
+     620
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.425,
+    "xyxy": [
+     295,
+     166,
+     581,
+     456
+    ]
+   }
+  ]
+ },
+ "wm_faad033cc281.jpg": {
+  "largura": 1280,
+  "altura": 591,
+  "caixas": []
+ },
+ "wm_fb5b0fe9d81b.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.464,
+    "xyxy": [
+     557,
+     35,
+     696,
+     318
+    ]
+   }
+  ]
+ },
+ "wm_fc234baf91ed.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.414,
+    "xyxy": [
+     4,
+     401,
+     1276,
+     954
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.408,
+    "xyxy": [
+     6,
+     1,
+     562,
+     81
+    ]
+   }
+  ]
+ },
+ "wm_fc6813482339.jpg": {
+  "largura": 1280,
+  "altura": 851,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.391,
+    "xyxy": [
+     394,
+     132,
+     921,
+     640
+    ]
+   }
+  ]
+ },
+ "wm_fd711eb6d35b.jpg": {
+  "largura": 1280,
+  "altura": 1882,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.434,
+    "xyxy": [
+     325,
+     1730,
+     789,
+     1815
+    ]
+   }
+  ]
+ },
+ "wm_fd75d0d3c3e4.jpg": {
+  "largura": 1280,
+  "altura": 1011,
+  "caixas": []
+ },
+ "wm_fdb96b7c6b67.jpg": {
+  "largura": 1280,
+  "altura": 903,
+  "caixas": []
+ },
+ "wm_fe78423767dc.jpg": {
+  "largura": 1280,
+  "altura": 960,
+  "caixas": []
+ },
+ "wm_fe8b9f4debb4.jpg": {
+  "largura": 1280,
+  "altura": 615,
+  "caixas": [
+   {
+    "grupo": "lixo",
+    "conf": 0.317,
+    "xyxy": [
+     101,
+     548,
+     585,
+     611
+    ]
+   }
+  ]
+ },
+ "wm_fec20ac453ec.jpg": {
+  "largura": 1024,
+  "altura": 768,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.364,
+    "xyxy": [
+     430,
+     577,
+     539,
+     618
+    ]
+   }
+  ]
+ },
+ "wm_fefab18c76c4.png": {
+  "largura": 788,
+  "altura": 354,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.393,
+    "xyxy": [
+     178,
+     2,
+     376,
+     123
+    ]
+   }
+  ]
+ },
+ "wm_fff89985f017.jpg": {
+  "largura": 1280,
+  "altura": 853,
+  "caixas": [
+   {
+    "grupo": "bueiro",
+    "conf": 0.645,
+    "xyxy": [
+     22,
+     107,
+     772,
+     517
+    ]
+   },
+   {
+    "grupo": "lixo",
+    "conf": 0.357,
+    "xyxy": [
+     232,
+     666,
+     1275,
+     849
+    ]
+   }
+  ]
+ }
+}

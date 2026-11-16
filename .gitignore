@@ -1,0 +1,32 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.tmp
+
+# fotos originais baixadas (o dataset final, já dividido, fica em dados/dataset/)
+dados/brutas/
+# folhas de contato da revisão (geradas por scripts/03_folhas_revisao.py)
+dados/anotacao/folhas/
+
+# execuções do ultralytics (os melhores pesos são copiados para modelos/)
+runs/
+yolov8n.pt
+yolov8*-world*.pt
+yolo26n.pt
+yolo11n.pt
+
+# fotos sintéticas do treino: são regeneradas, sempre iguais, por scripts/04b_gerar_sinteticos.py
+dados/dataset/images/train/sint_*
+dados/dataset/labels/train/sint_*
+dados/dataset/labels/*.cache
+
+# caches e pesos baixados automaticamente
+.pytest_cache/
+weights/
+
+# HTML intermediário do documento (o PDF é o entregável)
+documento/*.html
+
+# partes da pré-anotação em paralelo (já unidas em pre_anotacao.json)
+dados/anotacao/pre_anotacao.parte*.json

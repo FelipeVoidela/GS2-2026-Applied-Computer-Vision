@@ -1,0 +1,9 @@
+# Dataset Boca de Lobo (GS 2026.2). Sem a chave path, os caminhos valem a partir desta pasta.
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: livre
+  1: parcialmente_obstruido
+  2: entupido
+  3: lixo_sarjeta

@@ -1,0 +1,35 @@
+{
+  "fotos": {
+    "val": 26,
+    "test": 26,
+    "train": 110
+  },
+  "caixas": {
+    "train": {
+      "livre": 92,
+      "lixo_sarjeta": 38,
+      "parcialmente_obstruido": 11,
+      "entupido": 1
+    },
+    "val": {
+      "livre": 21,
+      "lixo_sarjeta": 5,
+      "parcialmente_obstruido": 3,
+      "entupido": 1
+    },
+    "test": {
+      "lixo_sarjeta": 4,
+      "livre": 19,
+      "parcialmente_obstruido": 3,
+      "entupido": 1
+    }
+  },
+  "total_fotos": 162,
+  "total_caixas": 199,
+  "semente": 2026,
+  "grupos": 114,
+  "sinteticas_no_treino": {
+    "parcialmente_obstruido": 59,
+    "entupido": 69
+  }
+}
