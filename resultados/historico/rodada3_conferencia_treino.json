@@ -1,0 +1,9 @@
+{
+  "montagens_obstr_total": 119,
+  "montagens_obstr_certas": 96,
+  "reais_obstr_treino_total": 21,
+  "reais_obstr_treino_certas": 20,
+  "lixo_treino_total": 72,
+  "lixo_treino_maior_autor": 33,
+  "modelo": "yolov8n-bocadelobo-v3"
+}

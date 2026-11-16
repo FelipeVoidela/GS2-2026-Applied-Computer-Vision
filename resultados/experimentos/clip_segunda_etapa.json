@@ -1,0 +1,111 @@
+{
+ "cv_auc": {
+  "sint=False,lam=0.3": 0.934,
+  "sint=False,lam=3.0": 0.922,
+  "sint=False,lam=30.0": 0.906,
+  "sint=False,lam=300.0": 0.904,
+  "sint=True,lam=0.3": 0.926,
+  "sint=True,lam=3.0": 0.912,
+  "sint=True,lam=30.0": 0.904,
+  "sint=True,lam=300.0": 0.904
+ },
+ "escolhido": {
+  "usa_sint": false,
+  "lam": 0.3,
+  "auc_cv": 0.934,
+  "limiar": 0.327,
+  "obstr_reais_treino_acima_oof": 14,
+  "obstr_reais_treino": 21
+ },
+ "zero_shot_auc_recortes_anotados": {
+  "treino": 0.904,
+  "validacao": 0.935,
+  "bueiros_livres_val": 36,
+  "bueiros_obstruidos_val": 6
+ },
+ "modelo_clip": "openai/clip-vit-base-patch32",
+ "validacao_ponta_a_ponta": {
+  "so_yolo": {
+   "matriz": [
+    [
+     33,
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     0,
+     1,
+     5
+    ]
+   ],
+   "acertos": 35,
+   "fotos": 48,
+   "obstruidos_reconhecidos": 1,
+   "obstruidos": 5,
+   "livres_certos": 33,
+   "livres": 35,
+   "livres_como_problema": 1,
+   "alertados": 4,
+   "com_problema": 13
+  },
+  "yolo_mais_clip": {
+   "matriz": [
+    [
+     33,
+     1,
+     0,
+     0,
+     1
+    ],
+    [
+     2,
+     1,
+     0,
+     0,
+     0
+    ],
+    [
+     0,
+     0,
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     0,
+     1,
+     5
+    ]
+   ],
+   "acertos": 35,
+   "fotos": 48,
+   "obstruidos_reconhecidos": 1,
+   "obstruidos": 5,
+   "livres_certos": 33,
+   "livres": 35,
+   "livres_como_problema": 1,
+   "alertados": 4,
+   "com_problema": 13
+  }
+ }
+}

@@ -13,13 +13,19 @@ As mesmas medidas são tiradas na VALIDAÇÃO, que é o conjunto usado para deci
 Saídas em resultados/teste/: metricas.json, matriz de confusão, curvas e fotos de exemplo do
 teste (acertos e erros, com a caixa anotada em branco e a prevista na cor da classe).
 
+Com --divisao, só entram as fotos listadas no CSV (arquivo, parte). Serve para medir um modelo novo
+nas mesmas 26 fotos de teste das rodadas anteriores (dados/anotacao/divisao_rodada2.csv), mesmo depois
+de o dataset ter crescido.
+
 Uso:
     python scripts/06_avaliar.py
     python scripts/06_avaliar.py --pesos modelos/outro.pt --saida resultados/teste_outro
+    python scripts/06_avaliar.py --divisao dados/anotacao/divisao_rodada2.csv --saida resultados/teste_rodada2
 """
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import shutil
 import statistics
@@ -63,10 +69,28 @@ def classe_anotada_do_ponto(caixas: list[tuple[str, tuple[int, int, int, int]]])
     return max(bueiros or caixas, key=area)[0]
 
 
-def metricas_de_deteccao(pesos: Path, parte: str) -> dict:
+def fotos_da_parte(parte: str, divisao: dict[str, set[str]] | None) -> list[Path]:
+    fotos = sorted((DATASET / "images" / parte).glob("*.jpg"))
+    return [f for f in fotos if f.stem in divisao[parte]] if divisao else fotos
+
+
+def metricas_de_deteccao(pesos: Path, parte: str, divisao: dict[str, set[str]] | None, rotulo: str) -> dict:
     modelo = YOLO(str(pesos))
-    m = modelo.val(data=str(DATASET / "data.yaml"), split=parte, imgsz=640, batch=8, device="cpu",
-                   workers=0, plots=True, project=str(RAIZ / "runs"), name=f"avaliacao_{pesos.stem}_{parte}",
+    dados = DATASET / "data.yaml"
+    if divisao:
+        # dataset temporário só com as fotos pedidas (lista de caminhos; os rótulos são achados pelo Ultralytics)
+        tmp = RAIZ / "runs" / f"_divisao_{rotulo}"
+        tmp.mkdir(parents=True, exist_ok=True)
+        linhas = [f"path: {DATASET.as_posix()}", "train: images/train"]
+        for p in ("val", "test"):
+            lista = tmp / f"{p}.txt"
+            lista.write_text("\n".join(f.as_posix() for f in fotos_da_parte(p, divisao)) + "\n", encoding="utf-8")
+            linhas.append(f"{p}: {lista.as_posix()}")
+        linhas += ["names:"] + [f"  {i}: {c}" for i, c in enumerate(CLASSES)]
+        dados = tmp / "data.yaml"
+        dados.write_text("\n".join(linhas) + "\n", encoding="utf-8")
+    m = modelo.val(data=str(dados), split=parte, imgsz=640, batch=8, device="cpu",
+                   workers=0, plots=True, project=str(RAIZ / "runs"), name=f"avaliacao_{pesos.stem}_{parte}{rotulo}",
                    exist_ok=True, verbose=False)
     por_classe = {}
     for k, idx in enumerate(m.box.ap_class_index.tolist()):
@@ -77,9 +101,10 @@ def metricas_de_deteccao(pesos: Path, parte: str) -> dict:
             "por_classe": por_classe, "pasta_graficos": str(Path(m.save_dir))}
 
 
-def leitura_do_ponto(detector: Detector, parte: str, exemplos: Path | None) -> tuple[dict, list[float]]:
+def leitura_do_ponto(detector: Detector, parte: str, exemplos: Path | None,
+                     divisao: dict[str, set[str]] | None = None) -> tuple[dict, list[float]]:
     """Uma foto, uma resposta: classe que o robô enviaria contra a classe anotada do ponto."""
-    fotos = sorted((DATASET / "images" / parte).glob("*.jpg"))
+    fotos = fotos_da_parte(parte, divisao)
     confusao: Counter = Counter()
     tempos = []
     detector.detectar(cv2.imread(str(fotos[0])))  # aquecimento (a primeira chamada é mais lenta)
@@ -136,8 +161,16 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--pesos", default=str(PESOS))
     ap.add_argument("--saida", default=str(SAIDA))
+    ap.add_argument("--divisao", help="CSV (arquivo, parte): avalia só as fotos listadas nele")
     args = ap.parse_args()
     pesos, saida = Path(args.pesos), Path(args.saida)
+    divisao, rotulo = None, ""
+    if args.divisao:
+        divisao = {"val": set(), "test": set(), "train": set()}
+        with open(args.divisao, encoding="utf-8", newline="") as fh:
+            for r in csv.DictReader(fh):
+                divisao[r["parte"]].add(Path(r["arquivo"]).stem)
+        rotulo = "_" + Path(args.divisao).stem
     saida.mkdir(parents=True, exist_ok=True)
     exemplos = saida / "exemplos"
     if exemplos.exists():
@@ -145,12 +178,12 @@ def main() -> None:
     (exemplos / "acertos").mkdir(parents=True)
     (exemplos / "erros").mkdir(parents=True)
 
-    resultado = {"modelo": pesos.stem, "conf_minima": CONF,
+    resultado = {"modelo": pesos.stem, "conf_minima": CONF, "divisao": Path(args.divisao).name if divisao else "completa",
                  "resumo_dataset": json.loads((DATASET / "resumo.json").read_text(encoding="utf-8"))}
 
     # 1) detecção, no teste e na validação
     for parte in ("test", "val"):
-        det = metricas_de_deteccao(pesos, parte)
+        det = metricas_de_deteccao(pesos, parte, divisao, rotulo)
         graficos = Path(det.pop("pasta_graficos"))
         resultado[f"deteccao_{parte}"] = det
         if parte == "test":
@@ -161,8 +194,8 @@ def main() -> None:
 
     # 2) leitura do ponto + 3) velocidade
     detector = Detector(pesos, conf=CONF)
-    resultado["leitura_do_ponto"], tempos = leitura_do_ponto(detector, "test", exemplos)
-    resultado["leitura_do_ponto_val"], _ = leitura_do_ponto(detector, "val", None)
+    resultado["leitura_do_ponto"], tempos = leitura_do_ponto(detector, "test", exemplos, divisao)
+    resultado["leitura_do_ponto_val"], _ = leitura_do_ponto(detector, "val", None, divisao)
     mediana = statistics.median(tempos)
     resultado["velocidade"] = {
         "ms_por_quadro_mediana": round(mediana * 1000, 1),

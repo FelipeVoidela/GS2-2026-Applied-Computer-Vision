@@ -6,15 +6,19 @@ Entradas (dados/anotacao/):
     revisao.csv   decisão do revisor para cada caixa (id_caixa, decisao)
     manuais.csv   caixas desenhadas à mão onde o detector não propôs nada
                   (arquivo, classe, x1, y1, x2, y2 em pixels) - opcional
+    repetidas.csv fotos que são cópia de outra (passo 1c); ficam de fora - opcional
 
 Regras:
   * só entram fotos com pelo menos uma caixa aceita; foto com todas as caixas descartadas fica
     de fora (ela pode ter um bueiro que ninguém marcou, e isso ensinaria o modelo a ignorá-lo);
   * a divisão é 64/18/18 e feita por GRUPO de fotos: fotos do mesmo autor com o mesmo título-base
     (séries do mesmo bueiro) ficam juntas, para o teste não ter foto quase igual à do treino;
+    nas fotos do Flickr (passo 1b) o grupo é o autor inteiro;
   * a divisão é estratificada pela classe mais rara da foto, para as classes minoritárias
     aparecerem nos três conjuntos;
-  * é determinística (semente fixa): rodar de novo gera a mesma divisão.
+  * é determinística (semente fixa): rodar de novo gera a mesma divisão;
+  * é estável: a divisão fica registrada em dados/anotacao/divisao.csv, e foto que já tem conjunto
+    não muda de lugar quando chegam fotos novas (só os grupos novos são sorteados).
 
 Saída: dados/dataset/images/{train,val,test}, dados/dataset/labels/{train,val,test},
 dados/dataset/data.yaml e dados/dataset/resumo.json.
@@ -43,6 +47,7 @@ BRUTAS = RAIZ / "dados" / "brutas"
 ANOT = RAIZ / "dados" / "anotacao"
 DATASET = RAIZ / "dados" / "dataset"
 FONTES = RAIZ / "dados" / "fontes.csv"
+DIVISAO = ANOT / "divisao.csv"
 SEMENTE = 2026
 FRACOES = {"train": 0.64, "val": 0.18, "test": 0.18}
 # Da mais rara para a mais comum: define a "classe da foto" na estratificação.
@@ -59,6 +64,10 @@ def ler_csv(caminho: Path) -> list[dict]:
 def grupo_da_foto(fonte: dict | None, arquivo: str) -> str:
     if not fonte:
         return arquivo
+    if arquivo.startswith("ov_") and fonte["autor"].strip():
+        # Fotos do Flickr (passo 1b): o mesmo autor fotografa em série (mesma rua, mesmo enquadramento)
+        # com títulos diferentes. Todas as fotos de um autor ficam no mesmo conjunto.
+        return f"flickr|{fonte['autor'].strip().lower()}"
     base = re.sub(r"^File:|\.[A-Za-z]+$", "", fonte["titulo"])
     base = re.sub(r"[\d()_\-.,]+", " ", base).strip().lower()
     return f"{fonte['autor'].lower()}|{base}"
@@ -83,6 +92,10 @@ def main() -> None:
         por_foto[m["arquivo"]].append((m["classe"], [float(m[k]) for k in ("x1", "y1", "x2", "y2")]))
     if sem_decisao:
         print(f"aviso: {sem_decisao} caixas ainda sem decisao em revisao.csv (ficaram de fora)")
+    # A mesma foto baixada de duas fontes (passo 1c) entra uma vez só.
+    repetidas = {r["arquivo"] for r in ler_csv(ANOT / "repetidas.csv")}
+    for arquivo in repetidas & set(por_foto):
+        del por_foto[arquivo]
 
     fontes = {r["arquivo"]: r for r in ler_csv(FONTES)}
     grupos: dict[str, list[str]] = defaultdict(list)
@@ -97,10 +110,23 @@ def main() -> None:
     for g, fotos in grupos.items():
         estratos[classe_do_grupo(fotos)].append(g)
 
+    # Fotos que já foram divididas ficam onde estão (dados/anotacao/divisao.csv). Só os grupos novos
+    # são sorteados. Sem isso, cada foto acrescentada embaralharia a divisão: fotos de teste iriam
+    # para o treino e não daria para comparar um modelo novo com o anterior.
+    fixas = {r["arquivo"]: r["parte"] for r in ler_csv(DIVISAO)}
     destino: dict[str, str] = {}
+    novos: set[str] = set()
+    for g, fotos in grupos.items():
+        partes = Counter(fixas[f] for f in fotos if f in fixas)
+        if partes:                                    # grupo já conhecido: foto nova da série acompanha as antigas
+            for f in fotos:
+                destino[f] = fixas.get(f, partes.most_common(1)[0][0])
+        else:
+            novos.add(g)
+
     rng = random.Random(SEMENTE)
     for classe in RARIDADE:
-        lista = sorted(estratos.get(classe, []))
+        lista = sorted(g for g in estratos.get(classe, []) if g in novos)
         rng.shuffle(lista)
         total = sum(len(grupos[g]) for g in lista)
         falta = {"test": total * FRACOES["test"], "val": total * FRACOES["val"]}
@@ -109,12 +135,19 @@ def main() -> None:
             # vai para o conjunto (teste ou validação) que mais precisa, se o grupo couber nele;
             # séries grandes do mesmo bueiro acabam no treino
             parte = max(falta, key=falta.get)
-            if n <= falta[parte] + 1.5:
+            # folga de meia foto: com folga maior, as classes raras (estratos de 5 ou 6 grupos) iam
+            # quase todas para validação e teste e o treino ficava sem exemplos
+            if n <= falta[parte] + 0.5:
                 falta[parte] -= n
             else:
                 parte = "train"
             for f in grupos[g]:
                 destino[f] = parte
+
+    with open(DIVISAO, "w", encoding="utf-8", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["arquivo", "parte"])
+        w.writerows(sorted(destino.items()))
 
     if DATASET.exists():
         shutil.rmtree(DATASET)

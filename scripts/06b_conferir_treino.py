@@ -11,11 +11,16 @@ aprender a classe: o que falta é variedade de dados reais, não mais épocas de
 
 Saída: resultados/teste/conferencia_treino.json
 
+Só faz sentido para um modelo treinado com o dataset que está em dados/dataset/ (as montagens e as
+fotos reais do treino têm de ser as que ele viu).
+
 Uso (depois do passo 6):
     python scripts/06b_conferir_treino.py
+    python scripts/06b_conferir_treino.py --pesos modelos/yolov8n-bocadelobo-v3.pt --saida resultados/historico/rodada3_conferencia_treino.json
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import sys
@@ -27,14 +32,18 @@ import cv2
 RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "src"))
 from boca_de_lobo_visao.contrato import classe_do_ponto  # noqa: E402
-from boca_de_lobo_visao.detector import Detector  # noqa: E402
+from boca_de_lobo_visao.detector import PESOS_PADRAO, Detector  # noqa: E402
 
 TREINO = RAIZ / "dados" / "dataset"
 ESPERADO = {"parc": "parcialmente_obstruido", "entu": "entupido", "lado": "livre"}
 
 
 def main() -> None:
-    detector = Detector(conf=0.35)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--pesos", default=str(PESOS_PADRAO))
+    ap.add_argument("--saida", default=str(RAIZ / "resultados" / "teste" / "conferencia_treino.json"))
+    args = ap.parse_args()
+    detector = Detector(args.pesos, conf=0.35)
 
     def previsto(foto: Path) -> str:
         principal = classe_do_ponto(detector.detectar(cv2.imread(str(foto))))
@@ -46,7 +55,9 @@ def main() -> None:
         montagens[(tipo, previsto(foto) == ESPERADO[tipo])] += 1
 
     reais: Counter = Counter()
-    for foto in sorted((TREINO / "images" / "train").glob("wm_*.jpg")):
+    reais_treino = [f for f in sorted((TREINO / "images" / "train").glob("*.jpg"))
+                    if not f.name.startswith(("sint_", "rep_"))]          # fotos reais: Commons (wm_) e Flickr (ov_)
+    for foto in reais_treino:
         ids = [int(linha.split()[0]) for linha in (TREINO / "labels" / "train" / (foto.stem + ".txt")).read_text().splitlines()]
         if 1 in ids or 2 in ids:
             reais[previsto(foto) == ("entupido" if 2 in ids else "parcialmente_obstruido")] += 1
@@ -54,7 +65,7 @@ def main() -> None:
     with open(RAIZ / "dados" / "fontes.csv", encoding="utf-8", newline="") as fh:
         autor = {Path(r["arquivo"]).stem: r["autor"] for r in csv.DictReader(fh)}
     lixo: Counter = Counter()
-    for txt in (TREINO / "labels" / "train").glob("wm_*.txt"):
+    for txt in (TREINO / "labels" / "train" / (f.stem + ".txt") for f in reais_treino):
         n = sum(linha.split()[0] == "3" for linha in txt.read_text().splitlines())
         if n:
             lixo[autor.get(txt.stem, txt.stem)] += n
@@ -67,7 +78,8 @@ def main() -> None:
         "lixo_treino_total": sum(lixo.values()),
         "lixo_treino_maior_autor": lixo.most_common(1)[0][1] if lixo else 0,
     }
-    (RAIZ / "resultados" / "teste" / "conferencia_treino.json").write_text(json.dumps(saida, indent=2), encoding="utf-8")
+    saida["modelo"] = Path(args.pesos).stem
+    Path(args.saida).write_text(json.dumps(saida, indent=2), encoding="utf-8")
     print(saida)
 
 

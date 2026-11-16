@@ -225,7 +225,9 @@ def main() -> None:
     registros: dict[str, dict] = {}
     if FONTES.exists():
         with open(FONTES, encoding="utf-8", newline="") as fh:
-            registros = {r["titulo"]: r for r in csv.DictReader(fh)}
+            registros = {r["arquivo"]: r for r in csv.DictReader(fh)}
+    # fontes.csv também guarda as fotos do passo 1b (prefixo ov_), que podem repetir título
+    titulos = {r["titulo"] for r in registros.values() if r["arquivo"].startswith("wm_")}
 
     def gravar() -> None:
         with open(FONTES, "w", encoding="utf-8", newline="") as fh:
@@ -235,7 +237,7 @@ def main() -> None:
 
     novos = 0
     for a in aceitos:
-        if a["titulo"] in registros:
+        if a["titulo"] in titulos:
             continue
         ext = ".png" if a["mime"] == "image/png" else ".jpg"
         nome = "wm_" + hashlib.sha1(a["titulo"].encode("utf-8")).hexdigest()[:12] + ext
@@ -247,8 +249,9 @@ def main() -> None:
             if not corpo:
                 continue
             destino.write_bytes(corpo)
-        registros[a["titulo"]] = {"arquivo": nome, "titulo": a["titulo"], "pagina": a["pagina"],
-                                  "autor": a["autor"], "licenca": a["licenca"], "origem": a["origem"]}
+        registros[nome] = {"arquivo": nome, "titulo": a["titulo"], "pagina": a["pagina"],
+                           "autor": a["autor"], "licenca": a["licenca"], "origem": a["origem"]}
+        titulos.add(a["titulo"])
         novos += 1
         if novos % 20 == 0:
             gravar()

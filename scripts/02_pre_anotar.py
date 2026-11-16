@@ -18,6 +18,7 @@ pode ser dividido em processos paralelos:
     python scripts/02_pre_anotar.py                # tudo em um processo
     python scripts/02_pre_anotar.py --parte 1/3    # um terço das fotos (rodar 1/3, 2/3 e 3/3 juntos)
     python scripts/02_pre_anotar.py --juntar       # une as partes em pre_anotacao.json
+    python scripts/02_pre_anotar.py --lista triadas.txt   # só as fotos listadas no arquivo
 
 Precisa de:  pip install transformers
 """
@@ -84,6 +85,8 @@ def main() -> None:
     ap.add_argument("--parte", default="1/1", help="K/N: processa só a fatia K de N")
     ap.add_argument("--juntar", action="store_true", help="só une as partes já processadas")
     ap.add_argument("--threads", type=int, default=0)
+    ap.add_argument("--lista", help="arquivo com um nome de foto por linha: pré-anota só essas "
+                                    "(as buscas do passo 1b trazem muito ruído; vale triar antes)")
     args = ap.parse_args()
     ANOT.mkdir(parents=True, exist_ok=True)
 
@@ -95,6 +98,9 @@ def main() -> None:
         feitas = json.loads(SAIDA.read_text(encoding="utf-8")) if SAIDA.exists() else {}
         resultado = json.loads(destino.read_text(encoding="utf-8")) if destino.exists() else {}
         fotos = sorted(p for p in BRUTAS.iterdir() if p.suffix.lower() in (".jpg", ".png"))
+        if args.lista:
+            pedidas = {nome.strip() for nome in Path(args.lista).read_text(encoding="utf-8").splitlines()}
+            fotos = [f for f in fotos if f.name in pedidas]
         fila = [f for i, f in enumerate(fotos) if i % n == k - 1 and f.name not in feitas and f.name not in resultado]
         print(f"parte {k}/{n}: {len(fila)} fotos para pre-anotar", flush=True)
 

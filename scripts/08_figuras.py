@@ -87,7 +87,7 @@ def classes() -> None:
     achados: dict[str, list[np.ndarray]] = {c: [] for c in CLASSES}
     for parte in ("train", "val", "test"):
         for txt in sorted((DATASET / "labels" / parte).glob("*.txt")):
-            if txt.stem.startswith("sint_"):
+            if txt.stem.startswith(("sint_", "rep_")):
                 continue
             img = None
             for linha in txt.read_text().splitlines():
@@ -157,7 +157,7 @@ def quadro_do_video() -> None:
         return
     cap = cv2.VideoCapture(str(video))
     total = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    for n, fracao in enumerate((0.22, 0.60), 1):
+    for n, fracao in enumerate((0.045, 0.60), 1):      # fim do 1º ponto e meio da ronda
         cap.set(cv2.CAP_PROP_POS_FRAMES, int(total * fracao))
         ok, quadro = cap.read()
         if ok:

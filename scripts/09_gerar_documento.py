@@ -2,7 +2,7 @@
 Passo 9: gera o documento da entrega (PDF) a partir dos resultados gravados.
 
 O texto fica em documento/texto.py (um dicionário com as seções). Os números das tabelas vêm de
-resultados/teste/metricas.json e de dados/dataset/resumo.json, então o PDF nunca fica com um
+resultados/teste/metricas.json, de resultados/historico/ e de dados/dataset/resumo.json, então o PDF nunca fica com um
 número diferente do que os scripts mediram.
 
 Caminho: HTML (documento/Documento_Visao_BocaDeLobo.html) -> PDF pelo Chrome ou Edge em modo
@@ -143,8 +143,11 @@ def main() -> None:
     with open(RAIZ / "dados" / "fontes.csv", encoding="utf-8", newline="") as fh:
         fontes = list(csv.DictReader(fh))
     usadas = {p.stem for parte in ("train", "val", "test")
-              for p in (RAIZ / "dados" / "dataset" / "images" / parte).glob("wm_*.jpg")}
-    licencas = Counter(f["licenca"] for f in fontes if Path(f["arquivo"]).stem in usadas)
+              for p in (RAIZ / "dados" / "dataset" / "images" / parte).glob("*.jpg")
+              if not p.name.startswith(("sint_", "rep_"))}
+    # o Openverse escreve "CC0 1.0" e "Public domain 1.0"; o Commons, "CC0" e "Public domain"
+    licencas = Counter(f["licenca"].removesuffix(" 1.0") if f["licenca"].startswith(("CC0", "Public domain")) else f["licenca"]
+                       for f in fontes if Path(f["arquivo"]).stem in usadas)
 
     # ---- tabelas montadas com os números medidos
     sint = resumo.get("sinteticas_no_treino", {})
@@ -173,15 +176,22 @@ def main() -> None:
                        f"{l_['pontos_com_problema'] - l_['problema_nao_alertado']} de {l_['pontos_com_problema']}"]
         return saida_
 
-    historico = RAIZ / "resultados" / "historico" / "rodada1_metricas.json"
-    t_rodadas = ""
-    if historico.exists():
-        m1 = json.loads(historico.read_text(encoding="utf-8"))
-        t_rodadas = tabela(
-            ["Rodada", "mAP@50 (validação)", "Leituras certas (validação)", "Problemas alertados (validação)",
-             "mAP@50 (teste)", "Leituras certas (teste)", "Problemas alertados (teste)"],
-            [linha_rodada("1ª (só montagens sobre a grelha)", m1), linha_rodada("<b>2ª (modelo entregue)</b>", m)],
-            {1, 2, 3, 4, 5, 6})
+    historico = RAIZ / "resultados" / "historico"
+
+    def ler(nome: str) -> dict | None:
+        arq = historico / nome
+        return json.loads(arq.read_text(encoding="utf-8")) if arq.exists() else None
+
+    cab_rodadas = ["Rodada", "mAP@50 (validação)", "Leituras certas (validação)", "Problemas alertados (validação)",
+                   "mAP@50 (teste)", "Leituras certas (teste)", "Problemas alertados (teste)"]
+    # as três rodadas nas MESMAS fotos de validação e teste das duas primeiras (26 e 26)
+    originais = [(nome, ler(f"rodada{k}_teste_original_metricas.json")) for k, nome in
+                 ((1, "1ª (só montagens sobre a grelha)"), (2, "<b>2ª (modelo entregue)</b>"), (3, "3ª (mais fotos reais)"))]
+    t_rodadas = tabela(cab_rodadas, [linha_rodada(n, mm) for n, mm in originais if mm], {1, 2, 3, 4, 5, 6})
+    # segunda e terceira rodadas na validação e no teste ampliados
+    m3 = ler("rodada3_metricas.json")
+    t_rodadas_novo = tabela(cab_rodadas, [linha_rodada("<b>2ª (modelo entregue)</b>", m),
+                                          linha_rodada("3ª (mais fotos reais)", m3)], {1, 2, 3, 4, 5, 6}) if m3 else ""
     det = m["deteccao_test"]
     t_deteccao = tabela(
         ["Classe", "Precisão", "Revocação", "mAP@50", "mAP@50-95"],
@@ -225,7 +235,7 @@ def main() -> None:
     valores.update(caixas_revisadas=len(decisoes), caixas_aceitas=sum(d != "descartar" for d in decisoes),
                    caixas_manuais=max(0, len(manuais.read_text(encoding="utf-8").splitlines()) - 1) if manuais.exists() else 0)
     livre = det["por_classe"].get("livre", {})
-    obstr = ("parcialmente_obstruido", "entupido")
+    obstr_classes = ("parcialmente_obstruido", "entupido")
     with open(RAIZ / "resultados" / "treino" / "results.csv", encoding="utf-8", newline="") as fh:
         epocas = [{k.strip(): v.strip() for k, v in r.items()} for r in csv.DictReader(fh)]
     melhor = max(epocas, key=lambda r: float(r["metrics/mAP50-95(B)"]) * 0.9 + float(r["metrics/mAP50(B)"]) * 0.1)
@@ -233,9 +243,9 @@ def main() -> None:
         map50_livre=num(livre.get("mAP50", 0)), rev_livre=pct(livre.get("revocacao")), prec_livre=pct(livre.get("precisao")),
         acertos_livre=lp["matriz"][0][0], fotos_livre=lp["por_classe"]["livre"]["fotos"],
         alertados=lp["pontos_com_problema"] - lp["problema_nao_alertado"],
-        reais_obstr_treino=sum(resumo["caixas"]["train"].get(c, 0) for c in obstr),
+        reais_obstr_treino=sum(resumo["caixas"]["train"].get(c, 0) for c in obstr_classes),
         reais_livre_treino=resumo["caixas"]["train"].get("livre", 0),
-        fotos_obstr_teste=sum(lp["por_classe"][c]["fotos"] for c in obstr),
+        fotos_obstr_teste=sum(lp["por_classe"][c]["fotos"] for c in obstr_classes),
         epocas_rodadas=len(epocas), melhor_epoca=melhor["epoch"])
     demo = RAIZ / "resultados" / "demo" / "demo_ronda.json"
     if demo.exists():
@@ -243,9 +253,40 @@ def main() -> None:
         valores.update(fps_demo=num(d.get("fps_ponta_a_ponta", 0), 1), pontos_demo=len(d["pontos"]),
                        demo_livre=d["resumo"].get("livre", 0), demo_atencao=d["resumo"].get("atencao", 0),
                        demo_critico=d["resumo"].get("critico", 0), demo_sem=d["resumo"].get("sem_leitura", 0))
-    conferencia = RAIZ / "resultados" / "teste" / "conferencia_treino.json"
-    if conferencia.exists():
-        valores.update(json.loads(conferencia.read_text(encoding="utf-8")))
+    for k in (2, 3):                                        # o que cada rodada acerta no próprio treino (passo 6b)
+        conf_k = ler(f"rodada{k}_conferencia_treino.json") or {}
+        valores.update({f"c{k}_{chave}": v for chave, v in conf_k.items()})
+
+    def obstr(mm: dict, chave: str) -> tuple[int, int]:
+        mat = mm[chave]["matriz"]
+        return sum(mat[i][j] for i in (1, 2) for j in (1, 2)), sum(sum(mat[i]) for i in (1, 2))
+
+    valores.update(
+        fotos_commons=sum(f["arquivo"].startswith("wm_") for f in fontes),
+        fotos_flickr=sum(f["arquivo"].startswith("ov_") for f in fontes),
+        reais_obstr_val=sum(resumo["caixas"]["val"].get(c, 0) for c in obstr_classes),
+        reais_obstr_teste=sum(resumo["caixas"]["test"].get(c, 0) for c in obstr_classes),
+        lixo_val=resumo["caixas"]["val"].get("lixo_sarjeta", 0), lixo_teste=resumo["caixas"]["test"].get("lixo_sarjeta", 0),
+        r2v_obs=obstr(m, "leitura_do_ponto_val")[0], v_nobs=obstr(m, "leitura_do_ponto_val")[1])
+    repetidas = RAIZ / "dados" / "anotacao" / "repetidas.csv"
+    valores["repetidas"] = max(0, len(repetidas.read_text(encoding="utf-8").splitlines()) - 1) if repetidas.exists() else 0
+    if m3:
+        l3v, l3t = m3["leitura_do_ponto_val"], m3["leitura_do_ponto"]
+        valores.update(
+            r3v_obs=obstr(m3, "leitura_do_ponto_val")[0], r3v_acertos=l3v["acertos"],
+            r3v_alertados=l3v["pontos_com_problema"] - l3v["problema_nao_alertado"],
+            r3t_acertos=l3t["acertos"], r3t_alertados=l3t["pontos_com_problema"] - l3t["problema_nao_alertado"],
+            r3t_obs=obstr(m3, "leitura_do_ponto")[0])
+    clip_json = RAIZ / "resultados" / "experimentos" / "clip_segunda_etapa.json"
+    if clip_json.exists():
+        cj = json.loads(clip_json.read_text(encoding="utf-8"))
+        valores.update(clip_auc_treino=num(cj["zero_shot_auc_recortes_anotados"]["treino"], 2),
+                       clip_auc_val=num(cj["zero_shot_auc_recortes_anotados"]["validacao"], 2),
+                       clip_obs=cj["validacao_ponta_a_ponta"]["yolo_mais_clip"]["obstruidos_reconhecidos"],
+                       clip_nobs=cj["validacao_ponta_a_ponta"]["yolo_mais_clip"]["obstruidos"])
+    treino3 = RAIZ / "resultados" / "treino_rodada3" / "results.csv"
+    if treino3.exists():
+        valores["epocas_rodada3"] = max(0, len(treino3.read_text(encoding="utf-8").splitlines()) - 1)
     lpv = m["leitura_do_ponto_val"]
     valores.update(
         obstr_certos=sum(lp["matriz"][i][i] for i in (1, 2)),
@@ -259,7 +300,7 @@ def main() -> None:
         map50_lixo_val=num(m["deteccao_val"]["por_classe"].get("lixo_sarjeta", {}).get("mAP50", 0)))
     blocos = {"TABELA_DATASET": t_dataset, "TABELA_DETECCAO": t_deteccao, "TABELA_PONTO": t_ponto,
               "TABELA_VELOCIDADE": t_velocidade, "TABELA_LICENCAS": t_licencas,
-              "TABELA_SINTETICAS": t_sinteticas, "TABELA_RODADAS": t_rodadas}
+              "TABELA_SINTETICAS": t_sinteticas, "TABELA_RODADAS": t_rodadas, "TABELA_RODADAS_NOVO": t_rodadas_novo}
 
     def secao(chave: str) -> str:
         bruto = getattr(T, chave)

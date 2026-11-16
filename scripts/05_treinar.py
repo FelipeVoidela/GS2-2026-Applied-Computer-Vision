@@ -77,6 +77,12 @@ def main() -> None:
     for nome in ("results.csv", "results.png", "args.yaml", "labels.jpg", "train_batch0.jpg"):
         if (pasta / nome).exists():
             shutil.copy2(pasta / nome, resultados / nome)
+    copia_args = resultados / "args.yaml"
+    if copia_args.exists():                      # caminhos relativos ao repositório, sem a pasta do usuário
+        texto = copia_args.read_text(encoding="utf-8")
+        for raiz in (str(RAIZ) + "\\", str(RAIZ) + "/", RAIZ.as_posix() + "/"):
+            texto = texto.replace(raiz, "")
+        copia_args.write_text(texto, encoding="utf-8")
     print(f"Pesos em {MODELOS / (args.nome + '.pt')}; curvas em {resultados}")
 
 

@@ -1,37 +1,37 @@
 {
   "fotos": {
-    "val": 26,
-    "test": 26,
-    "train": 110
+    "train": 200,
+    "test": 48,
+    "val": 48
   },
   "caixas": {
     "train": {
-      "livre": 92,
-      "lixo_sarjeta": 38,
-      "parcialmente_obstruido": 11,
-      "entupido": 1
+      "lixo_sarjeta": 72,
+      "livre": 154,
+      "entupido": 4,
+      "parcialmente_obstruido": 17
     },
     "val": {
-      "livre": 21,
-      "lixo_sarjeta": 5,
-      "parcialmente_obstruido": 3,
-      "entupido": 1
+      "livre": 36,
+      "lixo_sarjeta": 10,
+      "entupido": 2,
+      "parcialmente_obstruido": 4
     },
     "test": {
-      "lixo_sarjeta": 4,
-      "livre": 19,
-      "parcialmente_obstruido": 3,
-      "entupido": 1
+      "lixo_sarjeta": 9,
+      "livre": 33,
+      "parcialmente_obstruido": 7,
+      "entupido": 2
     }
   },
-  "total_fotos": 162,
-  "total_caixas": 199,
+  "total_fotos": 296,
+  "total_caixas": 350,
   "semente": 2026,
-  "grupos": 114,
+  "grupos": 200,
   "sinteticas_no_treino": {
-    "parcialmente_obstruido": 59,
-    "entupido": 69,
-    "livre_com_lixo": 64
+    "parcialmente_obstruido": 53,
+    "entupido": 66,
+    "livre_com_lixo": 65
   },
-  "repeticoes_de_reais_obstruidas": 36
+  "repeticoes_de_reais_obstruidas": 63
 }

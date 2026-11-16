@@ -2,81 +2,69 @@
   "video": "demo_ronda.mp4",
   "pontos": [
     {
-      "foto": "wm_ae1cdf384e50.jpg",
-      "classe_do_ponto": "livre",
-      "quadros_com_deteccao": 20,
-      "quadros": 48
-    },
-    {
-      "foto": "wm_30ae27bfa37b.jpg",
+      "foto": "wm_711ae97577ab.jpg",
       "classe_do_ponto": "livre",
       "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
-      "foto": "wm_f829bde3808c.jpg",
-      "classe_do_ponto": null,
-      "quadros_com_deteccao": 6,
+      "foto": "ov_1a3903feb847.jpg",
+      "classe_do_ponto": "entupido",
+      "quadros_com_deteccao": 28,
       "quadros": 48
     },
     {
-      "foto": "wm_0a6f06b08bb9.jpg",
-      "classe_do_ponto": "lixo_sarjeta",
-      "quadros_com_deteccao": 48,
-      "quadros": 48
-    },
-    {
-      "foto": "wm_3cb075fc0d3e.jpg",
-      "classe_do_ponto": "livre",
-      "quadros_com_deteccao": 48,
-      "quadros": 48
-    },
-    {
-      "foto": "wm_7c26dde39f9d.jpg",
-      "classe_do_ponto": null,
-      "quadros_com_deteccao": 15,
-      "quadros": 48
-    },
-    {
-      "foto": "wm_9de8fe487300.jpg",
-      "classe_do_ponto": "livre",
-      "quadros_com_deteccao": 16,
-      "quadros": 48
-    },
-    {
-      "foto": "wm_bbaf0c24ff4a.jpg",
-      "classe_do_ponto": "livre",
-      "quadros_com_deteccao": 32,
-      "quadros": 48
-    },
-    {
-      "foto": "wm_fc234baf91ed.jpg",
-      "classe_do_ponto": null,
-      "quadros_com_deteccao": 0,
-      "quadros": 48
-    },
-    {
-      "foto": "wm_d950253b3d8e.jpg",
+      "foto": "ov_f8ff4cab2f98.jpg",
       "classe_do_ponto": "parcialmente_obstruido",
-      "quadros_com_deteccao": 39,
-      "quadros": 48
-    },
-    {
-      "foto": "wm_f345e26c8a5b.jpg",
-      "classe_do_ponto": "livre",
-      "quadros_com_deteccao": 48,
+      "quadros_com_deteccao": 17,
       "quadros": 48
     },
     {
       "foto": "wm_2263a324508a.jpg",
       "classe_do_ponto": "livre",
+      "quadros_com_deteccao": 41,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_efaccf4a9109.jpg",
+      "classe_do_ponto": "livre",
       "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
-      "foto": "wm_204783f337c1.jpg",
+      "foto": "ov_61b22af741f4.jpg",
+      "classe_do_ponto": null,
+      "quadros_com_deteccao": 14,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_f829bde3808c.jpg",
+      "classe_do_ponto": null,
+      "quadros_com_deteccao": 15,
+      "quadros": 48
+    },
+    {
+      "foto": "ov_10d4b3afc61a.jpg",
+      "classe_do_ponto": "entupido",
+      "quadros_com_deteccao": 48,
+      "quadros": 48
+    },
+    {
+      "foto": "ov_521173425ff8.jpg",
       "classe_do_ponto": "livre",
       "quadros_com_deteccao": 48,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_fc234baf91ed.jpg",
+      "classe_do_ponto": null,
+      "quadros_com_deteccao": 2,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_d950253b3d8e.jpg",
+      "classe_do_ponto": "parcialmente_obstruido",
+      "quadros_com_deteccao": 38,
       "quadros": 48
     },
     {
@@ -86,24 +74,37 @@
       "quadros": 48
     },
     {
-      "foto": "wm_711ae97577ab.jpg",
+      "foto": "wm_7c26dde39f9d.jpg",
+      "classe_do_ponto": null,
+      "quadros_com_deteccao": 12,
+      "quadros": 48
+    },
+    {
+      "foto": "ov_89c65e55f1ce.jpg",
+      "classe_do_ponto": "entupido",
+      "quadros_com_deteccao": 29,
+      "quadros": 48
+    },
+    {
+      "foto": "wm_f345e26c8a5b.jpg",
       "classe_do_ponto": "livre",
       "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
-      "foto": "wm_caf59b77c3f2.jpg",
-      "classe_do_ponto": "livre",
-      "quadros_com_deteccao": 48,
+      "foto": "ov_bee8c589cffb.jpg",
+      "classe_do_ponto": null,
+      "quadros_com_deteccao": 4,
       "quadros": 48
     }
   ],
   "resumo": {
-    "livre": 11,
-    "sem_leitura": 3,
-    "atencao": 2
+    "livre": 6,
+    "critico": 3,
+    "atencao": 2,
+    "sem_leitura": 5
   },
-  "fps_ponta_a_ponta": 17.1,
+  "fps_ponta_a_ponta": 19.8,
   "fps_video": 15,
   "observacao": "ronda simulada com fotos do conjunto de teste"
 }

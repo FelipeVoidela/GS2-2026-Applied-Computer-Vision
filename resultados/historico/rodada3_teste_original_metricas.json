@@ -1,0 +1,263 @@
+{
+  "modelo": "yolov8n-bocadelobo-v3",
+  "conf_minima": 0.35,
+  "divisao": "divisao_rodada2.csv",
+  "resumo_dataset": {
+    "fotos": {
+      "train": 200,
+      "test": 48,
+      "val": 48
+    },
+    "caixas": {
+      "train": {
+        "lixo_sarjeta": 72,
+        "livre": 154,
+        "entupido": 4,
+        "parcialmente_obstruido": 17
+      },
+      "val": {
+        "livre": 36,
+        "lixo_sarjeta": 10,
+        "entupido": 2,
+        "parcialmente_obstruido": 4
+      },
+      "test": {
+        "lixo_sarjeta": 9,
+        "livre": 33,
+        "parcialmente_obstruido": 7,
+        "entupido": 2
+      }
+    },
+    "total_fotos": 296,
+    "total_caixas": 350,
+    "semente": 2026,
+    "grupos": 200,
+    "sinteticas_no_treino": {
+      "parcialmente_obstruido": 53,
+      "entupido": 66,
+      "livre_com_lixo": 65
+    },
+    "repeticoes_de_reais_obstruidas": 63
+  },
+  "deteccao_test": {
+    "precisao": 0.826,
+    "revocacao": 0.292,
+    "mAP50": 0.259,
+    "mAP50_95": 0.173,
+    "por_classe": {
+      "livre": {
+        "precisao": 0.859,
+        "revocacao": 0.947,
+        "mAP50": 0.907,
+        "mAP50_95": 0.579
+      },
+      "parcialmente_obstruido": {
+        "precisao": 1.0,
+        "revocacao": 0.0,
+        "mAP50": 0.003,
+        "mAP50_95": 0.001
+      },
+      "entupido": {
+        "precisao": 1.0,
+        "revocacao": 0.0,
+        "mAP50": 0.0,
+        "mAP50_95": 0.0
+      },
+      "lixo_sarjeta": {
+        "precisao": 0.445,
+        "revocacao": 0.222,
+        "mAP50": 0.125,
+        "mAP50_95": 0.111
+      }
+    }
+  },
+  "deteccao_val": {
+    "precisao": 0.231,
+    "revocacao": 0.488,
+    "mAP50": 0.447,
+    "mAP50_95": 0.329,
+    "por_classe": {
+      "livre": {
+        "precisao": 0.375,
+        "revocacao": 0.952,
+        "mAP50": 0.774,
+        "mAP50_95": 0.51
+      },
+      "parcialmente_obstruido": {
+        "precisao": 0.0,
+        "revocacao": 0.0,
+        "mAP50": 0.003,
+        "mAP50_95": 0.001
+      },
+      "entupido": {
+        "precisao": 0.547,
+        "revocacao": 1.0,
+        "mAP50": 0.995,
+        "mAP50_95": 0.796
+      },
+      "lixo_sarjeta": {
+        "precisao": 0.0,
+        "revocacao": 0.0,
+        "mAP50": 0.017,
+        "mAP50_95": 0.009
+      }
+    }
+  },
+  "leitura_do_ponto": {
+    "fotos": 26,
+    "acertos": 19,
+    "acuracia": 0.731,
+    "linhas_anotado": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta"
+    ],
+    "colunas_previsto": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta",
+      "nada"
+    ],
+    "matriz": [
+      [
+        18,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "por_classe": {
+      "livre": {
+        "fotos": 19,
+        "revocacao": 0.947,
+        "precisao": 0.857
+      },
+      "parcialmente_obstruido": {
+        "fotos": 3,
+        "revocacao": 0.0,
+        "precisao": null
+      },
+      "entupido": {
+        "fotos": 1,
+        "revocacao": 0.0,
+        "precisao": null
+      },
+      "lixo_sarjeta": {
+        "fotos": 3,
+        "revocacao": 0.333,
+        "precisao": 0.5
+      }
+    },
+    "pontos_com_problema": 7,
+    "problema_nao_alertado": 5,
+    "taxa_problema_nao_alertado": 0.714,
+    "livres_lidos_como_problema": 0
+  },
+  "leitura_do_ponto_val": {
+    "fotos": 26,
+    "acertos": 18,
+    "acuracia": 0.692,
+    "linhas_anotado": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta"
+    ],
+    "colunas_previsto": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta",
+      "nada"
+    ],
+    "matriz": [
+      [
+        18,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        2
+      ]
+    ],
+    "por_classe": {
+      "livre": {
+        "fotos": 20,
+        "revocacao": 0.9,
+        "precisao": 0.857
+      },
+      "parcialmente_obstruido": {
+        "fotos": 2,
+        "revocacao": 0.0,
+        "precisao": 0.0
+      },
+      "entupido": {
+        "fotos": 1,
+        "revocacao": 0.0,
+        "precisao": null
+      },
+      "lixo_sarjeta": {
+        "fotos": 3,
+        "revocacao": 0.0,
+        "precisao": null
+      }
+    },
+    "pontos_com_problema": 6,
+    "problema_nao_alertado": 6,
+    "taxa_problema_nao_alertado": 1.0,
+    "livres_lidos_como_problema": 1
+  },
+  "velocidade": {
+    "ms_por_quadro_mediana": 33.7,
+    "ms_por_quadro_p90": 53.6,
+    "fps": 29.7,
+    "tamanho_entrada": 640,
+    "maquina": "AMD Ryzen 5 5600X 6-Core Processor (8 threads), sem GPU",
+    "parametros": 3138732,
+    "tamanho_pesos_mb": 6.5
+  }
+}
