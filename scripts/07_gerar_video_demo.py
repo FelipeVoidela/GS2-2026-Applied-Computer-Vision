@@ -15,12 +15,14 @@ Para gravar a demonstração com câmera de verdade, use:  python detectar.py --
 Uso:
     python scripts/07_gerar_video_demo.py               # resultados/demo/demo_ronda.mp4
     python scripts/07_gerar_video_demo.py --pontos 12
+    python scripts/07_gerar_video_demo.py --so-previa   # só refaz docs/demo_ronda.gif
 """
 from __future__ import annotations
 
 import argparse
 import json
 import random
+import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
@@ -42,6 +44,9 @@ VISTA = (LARG - PAINEL, ALT)
 FPS_VIDEO = 15
 SEGUNDOS_POR_PONTO = 3.2
 FONTE = cv2.FONT_HERSHEY_SIMPLEX
+# Prévia para o README: os 4 primeiros pontos da ronda (um de cada classe anotada).
+PREVIA = RAIZ / "docs" / "demo_ronda.gif"
+PREVIA_SEGUNDOS, PREVIA_FPS, PREVIA_LARG = 4 * SEGUNDOS_POR_PONTO, 6, 480
 
 
 def escolher_fotos(n: int) -> list[Path]:
@@ -119,13 +124,31 @@ def painel(ponto: int, total: int, leitura: dict | None, estavel: str | None, re
     return p
 
 
+def gerar_previa(video: Path) -> None:
+    """
+    Prévia animada (GIF) dos primeiros pontos da ronda, para o README: o GitHub não toca um .mp4
+    guardado no repositório (só oferece o download), mas mostra um GIF direto na página.
+    """
+    PREVIA.parent.mkdir(parents=True, exist_ok=True)
+    filtro = (f"fps={PREVIA_FPS},scale={PREVIA_LARG}:-1:flags=lanczos,split[a][b];"
+              "[a]palettegen=stats_mode=full[p];[b][p]paletteuse=dither=bayer:bayer_scale=4")
+    subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), "-y", "-loglevel", "error", "-t", str(PREVIA_SEGUNDOS),
+                    "-i", str(video), "-filter_complex", filtro, str(PREVIA)], check=True)
+    print(f"Previa em {PREVIA} ({PREVIA.stat().st_size / 1e6:.1f} MB)")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--pontos", type=int, default=16)
     ap.add_argument("--conf", type=float, default=0.35)
+    ap.add_argument("--so-previa", action="store_true",
+                    help="não grava o vídeo de novo: só refaz o GIF do README a partir do vídeo que já existe")
     args = ap.parse_args()
     SAIDA.mkdir(parents=True, exist_ok=True)
     destino = SAIDA / "demo_ronda.mp4"
+    if args.so_previa:
+        gerar_previa(destino)
+        return
 
     fotos = escolher_fotos(args.pontos)
     detector = Detector(conf=args.conf)
@@ -173,6 +196,7 @@ def main() -> None:
          "fps_video": FPS_VIDEO, "observacao": "ronda simulada com fotos do conjunto de teste"},
         indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Video em {destino} ({destino.stat().st_size / 1e6:.1f} MB), {medidor.fps:.1f} FPS de ponta a ponta")
+    gerar_previa(destino)
 
 
 if __name__ == "__main__":

@@ -10,9 +10,11 @@ previsão de chuva e as áreas de risco e avisa a equipe de limpeza e os morador
 
 **Documento da entrega (PDF): [documento/Documento_Visao_BocaDeLobo.pdf](documento/Documento_Visao_BocaDeLobo.pdf)**
 
-**Vídeo de demonstração: [resultados/demo/demo_ronda.mp4](resultados/demo/demo_ronda.mp4)**
+**Vídeo de demonstração (53 s): [resultados/demo/demo_ronda.mp4](https://github.com/FelipeVoidela/GS2-2026-Applied-Computer-Vision/raw/main/resultados/demo/demo_ronda.mp4)**.
+O GitHub não toca vídeo guardado no repositório: o link baixa o arquivo (19 MB). A prévia abaixo mostra os 4 primeiros
+pontos da ronda, um de cada classe anotada, incluindo dois bueiros obstruídos que o modelo não reconhece.
 
-![Quadro do vídeo de demonstração](docs/demo_quadro1.jpg)
+![Prévia do vídeo de demonstração: os 4 primeiros pontos da ronda](docs/demo_ronda.gif)
 
 ## Integrantes
 
@@ -210,7 +212,7 @@ python scripts/04b_gerar_sinteticos.py   # imagens sintéticas e repetições, s
 python scripts/05_treinar.py             # treino do YOLOv8n (cerca de 1 hora em CPU)
 python scripts/06_avaliar.py             # métricas no teste -> resultados/teste/metricas.json
 python scripts/06b_conferir_treino.py    # o modelo decorou o treino? -> conferencia_treino.json
-python scripts/07_gerar_video_demo.py    # vídeo de demonstração
+python scripts/07_gerar_video_demo.py    # vídeo de demonstração e a prévia (GIF) do README
 python scripts/08_figuras.py             # figuras do README e do documento
 python scripts/09_gerar_documento.py     # PDF da entrega
 ```
@@ -254,7 +256,7 @@ resultados/teste/            métricas, matriz de confusão e exemplos de acerto
 resultados/historico/        métricas da primeira rodada de treino, para comparação
 resultados/demo/             vídeo de demonstração e as leituras de cada ponto
 documento/                   PDF da entrega e o texto que o gera
-docs/                        figuras
+docs/                        figuras e a prévia do vídeo (demo_ronda.gif)
 tests/                       testes do contrato
 ```
 
