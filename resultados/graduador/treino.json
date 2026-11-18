@@ -1,0 +1,94 @@
+{
+  "margem": 0.1,
+  "semente": 2026,
+  "quantil_do_limiar": 0.9,
+  "camadas_finais_treinadas_com": "treino + validacao",
+  "recorte": {
+    "codificadores": {
+      "clip": {
+        "modelo": "openai/clip-vit-base-patch32",
+        "validacao_cruzada_auc": {
+          "0.3": 0.925,
+          "1.0": 0.922,
+          "3.0": 0.919,
+          "10.0": 0.911
+        },
+        "regularizacao_escolhida": 0.3,
+        "auc_validacao": 0.954
+      },
+      "dino": {
+        "modelo": "facebook/dinov2-small",
+        "validacao_cruzada_auc": {
+          "0.3": 0.947,
+          "1.0": 0.946,
+          "3.0": 0.943,
+          "10.0": 0.939
+        },
+        "regularizacao_escolhida": 0.3,
+        "auc_validacao": 0.88
+      }
+    },
+    "treino": {
+      "sem_problema": 154,
+      "com_problema": 21,
+      "exemplos_com_variacoes": 1750
+    },
+    "limiar": 1.1927,
+    "treino_fora_da_dobra": {
+      "auc": 0.952,
+      "com_problema_acima_do_limiar": 19,
+      "sem_problema_acima_do_limiar": 16
+    },
+    "validacao": {
+      "sem_problema": 36,
+      "com_problema": 6,
+      "auc": 0.926,
+      "com_problema_acima_do_limiar": 4,
+      "sem_problema_acima_do_limiar": 1
+    }
+  },
+  "quadro": {
+    "codificadores": {
+      "clip": {
+        "modelo": "openai/clip-vit-base-patch32",
+        "validacao_cruzada_auc": {
+          "0.3": 0.893,
+          "1.0": 0.887,
+          "3.0": 0.876,
+          "10.0": 0.865
+        },
+        "regularizacao_escolhida": 0.3,
+        "auc_validacao": 0.963
+      },
+      "dino": {
+        "modelo": "facebook/dinov2-small",
+        "validacao_cruzada_auc": {
+          "0.3": 0.924,
+          "1.0": 0.922,
+          "3.0": 0.914,
+          "10.0": 0.906
+        },
+        "regularizacao_escolhida": 0.3,
+        "auc_validacao": 0.932
+      }
+    },
+    "treino": {
+      "sem_problema": 147,
+      "com_problema": 53,
+      "exemplos_com_variacoes": 2000
+    },
+    "limiar": 1.2704,
+    "treino_fora_da_dobra": {
+      "auc": 0.92,
+      "com_problema_acima_do_limiar": 41,
+      "sem_problema_acima_do_limiar": 15
+    },
+    "validacao": {
+      "sem_problema": 35,
+      "com_problema": 13,
+      "auc": 0.954,
+      "com_problema_acima_do_limiar": 8,
+      "sem_problema_acima_do_limiar": 0
+    }
+  }
+}

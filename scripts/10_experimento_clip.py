@@ -208,7 +208,7 @@ def medir(parte, det):
     return {"so_yolo": resumo(conf_yolo), "yolo_mais_clip": resumo(conf_2e)}
 
 
-det = Detector(raiz / "modelos" / "yolov8n-bocadelobo-v2.pt", conf=0.35)
+det = Detector(raiz / "modelos" / "yolov8n-bocadelobo-v2.pt", conf=0.35, graduador=None)
 res["validacao_ponta_a_ponta"] = medir("val", det)
 saida.parent.mkdir(parents=True, exist_ok=True)
 saida.write_text(json.dumps(res, indent=1), encoding="utf-8")

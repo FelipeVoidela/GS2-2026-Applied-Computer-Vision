@@ -56,11 +56,11 @@ def grade(celulas: list[np.ndarray], colunas: int, espaco: int = 8) -> np.ndarra
 
 def pipeline() -> None:
     etapas = [
-        ("Fotos\n(Wikimedia Commons,\nlicença livre)", "#dbe5f1"),
+        ("Fotos de licença\nlivre (Wikimedia\nCommons e Flickr)", "#dbe5f1"),
         ("Pré-anotação\n(Grounding DINO)\n+ revisão visual", "#dbe5f1"),
         ("Dataset YOLO\n4 classes\ntreino / val / teste", "#dbe5f1"),
-        ("Treino\nYOLOv8n\n(transfer learning)", "#fde9c9"),
-        ("Detecção em\ntempo real\n(câmera do robô)", "#d9ead3"),
+        ("Treino: YOLOv8n\n(localiza) e graduador\n(CLIP + DINOv2)", "#fde9c9"),
+        ("Tempo real: YOLO\nacha a boca de lobo,\ngraduador diz o estado", "#d9ead3"),
         ('Bloco "visao"\n(classe, confiança,\nfoto_id)', "#d9ead3"),
         ("Pipeline de dados\ne mapa do cidadão", "#eadcf4"),
     ]

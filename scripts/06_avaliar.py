@@ -2,10 +2,12 @@
 Passo 6: avalia o modelo treinado no conjunto de TESTE (fotos que ele nunca viu).
 
 Mede três coisas:
-  1. Detecção (métricas padrão do YOLO): precisão, revocação, mAP@50 e mAP@50-95, por classe.
+  1. Detecção (métricas padrão do YOLO, a primeira etapa): precisão, revocação, mAP@50 e mAP@50-95, por classe.
   2. Leitura do ponto: o que o produto usa de fato. Para cada foto, compara a classe que o robô
-     enviaria (contrato.classe_do_ponto) com a classe anotada do ponto.
-  3. Velocidade: tempo por quadro e FPS nesta máquina, para sustentar o "tempo real".
+     enviaria (contrato.classe_do_ponto) com a classe anotada do ponto. É medida duas vezes: com o
+     sistema entregue (YOLO + graduador, a segunda etapa) e só com o YOLO, para mostrar o que a
+     segunda etapa muda.
+  3. Velocidade: tempo por quadro e FPS nesta máquina, do YOLO sozinho e com a segunda etapa.
 
 As mesmas medidas são tiradas na VALIDAÇÃO, que é o conjunto usado para decidir entre modelos
 (comparar duas rodadas de treino pelo teste seria escolher o modelo olhando a prova).
@@ -17,7 +19,12 @@ Com --divisao, só entram as fotos listadas no CSV (arquivo, parte). Serve para 
 nas mesmas 26 fotos de teste das rodadas anteriores (dados/anotacao/divisao_rodada2.csv), mesmo depois
 de o dataset ter crescido.
 
+Se o graduador entregue foi reajustado com treino + validação (passo 11 com --com-validacao), a leitura
+do ponto na VALIDAÇÃO é medida com as camadas treinadas só no treino
+(modelos/graduador-obstrucao-v1-so-treino.npz): medir na validação um modelo que a viu não diria nada.
+
 Uso:
+    python scripts/06_avaliar.py --so-validacao      # decide entre modelos sem tocar no teste
     python scripts/06_avaliar.py
     python scripts/06_avaliar.py --pesos modelos/outro.pt --saida resultados/teste_outro
     python scripts/06_avaliar.py --divisao dados/anotacao/divisao_rodada2.csv --saida resultados/teste_rodada2
@@ -45,6 +52,7 @@ sys.path.insert(0, str(RAIZ / "src"))
 from boca_de_lobo_visao.classes import CLASSES, CLASSES_DE_BUEIRO, NOME_MODELO  # noqa: E402
 from boca_de_lobo_visao.contrato import classe_do_ponto  # noqa: E402
 from boca_de_lobo_visao.detector import Detector, desenhar  # noqa: E402
+from boca_de_lobo_visao.graduador import PESOS_GRADUADOR, Graduador  # noqa: E402
 
 DATASET = RAIZ / "dados" / "dataset"
 PESOS = RAIZ / "modelos" / f"{NOME_MODELO}.pt"
@@ -148,8 +156,11 @@ def leitura_do_ponto(detector: Detector, parte: str, exemplos: Path | None,
     perdidos = sum(confusao[(c, p)] for c in com_problema for p in ("livre", "nada"))
     # Erro oposto: bueiro livre lido como problema (manda a equipe de limpeza à toa).
     alarmes_falsos = sum(confusao[("livre", p)] for p in com_problema)
+    obstruidas = ("parcialmente_obstruido", "entupido")
     return {
         "fotos": total, "acertos": acertos, "acuracia": round(acertos / total, 3),
+        "bueiros_obstruidos": sum(confusao[(c, p)] for c in obstruidas for p in colunas),
+        "bueiros_obstruidos_reconhecidos": sum(confusao[(c, p)] for c in obstruidas for p in obstruidas),
         "linhas_anotado": CLASSES, "colunas_previsto": colunas, "matriz": matriz, "por_classe": por_classe,
         "pontos_com_problema": n_problema, "problema_nao_alertado": perdidos,
         "taxa_problema_nao_alertado": round(perdidos / n_problema, 3) if n_problema else None,
@@ -157,11 +168,24 @@ def leitura_do_ponto(detector: Detector, parte: str, exemplos: Path | None,
     }, tempos
 
 
+def resumir(rotulo: str, lp: dict) -> str:
+    m = lp["matriz"]
+    return (f"{rotulo}: leituras certas {lp['acertos']}/{lp['fotos']}; bueiros obstruidos reconhecidos "
+            f"{lp['bueiros_obstruidos_reconhecidos']}/{lp['bueiros_obstruidos']}; problemas alertados "
+            f"{lp['pontos_com_problema'] - lp['problema_nao_alertado']}/{lp['pontos_com_problema']}; "
+            f"livres certos {m[0][0]}/{sum(m[0])}; livres lidos como problema {lp['livres_lidos_como_problema']}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--pesos", default=str(PESOS))
     ap.add_argument("--saida", default=str(SAIDA))
     ap.add_argument("--divisao", help="CSV (arquivo, parte): avalia só as fotos listadas nele")
+    ap.add_argument("--graduador", default=str(PESOS_GRADUADOR), help="pesos da segunda etapa (graduador)")
+    ap.add_argument("--sem-graduador", action="store_true", help="mede só o YOLO, sem a segunda etapa")
+    ap.add_argument("--conf", type=float, default=CONF, help="confiança mínima de uma caixa do YOLO")
+    ap.add_argument("--so-validacao", action="store_true",
+                    help="só a leitura do ponto na validação, sem tocar no teste (para decidir entre modelos)")
     args = ap.parse_args()
     pesos, saida = Path(args.pesos), Path(args.saida)
     divisao, rotulo = None, ""
@@ -171,6 +195,28 @@ def main() -> None:
             for r in csv.DictReader(fh):
                 divisao[r["parte"]].add(Path(r["arquivo"]).stem)
         rotulo = "_" + Path(args.divisao).stem
+
+    # Segunda etapa. Para a validação valem as camadas treinadas só com o treino, se existirem.
+    graduador = graduador_val = None
+    caminho = Path(args.graduador)
+    if not args.sem_graduador and caminho.exists():
+        graduador = Graduador(caminho)
+        so_treino = caminho.with_name(caminho.stem + "-so-treino.npz")
+        graduador_val = Graduador(so_treino, graduador.codificadores) if so_treino.exists() else graduador
+    so_yolo = Detector(pesos, conf=args.conf, graduador=None)
+
+    if args.so_validacao:
+        saida.mkdir(parents=True, exist_ok=True)
+        medidas = {"modelo": pesos.stem, "conf_minima": args.conf,
+                   "so_yolo": leitura_do_ponto(so_yolo, "val", None, divisao)[0]}
+        print(resumir("validacao, so YOLO", medidas["so_yolo"]))
+        if graduador_val is not None:
+            medidas["com_graduador"] = leitura_do_ponto(Detector(pesos, conf=args.conf, graduador=graduador_val),
+                                                        "val", None, divisao)[0]
+            print(resumir("validacao, YOLO + graduador", medidas["com_graduador"]))
+        (saida / "validacao.json").write_text(json.dumps(medidas, indent=2, ensure_ascii=False), encoding="utf-8")
+        return
+
     saida.mkdir(parents=True, exist_ok=True)
     exemplos = saida / "exemplos"
     if exemplos.exists():
@@ -178,10 +224,12 @@ def main() -> None:
     (exemplos / "acertos").mkdir(parents=True)
     (exemplos / "erros").mkdir(parents=True)
 
-    resultado = {"modelo": pesos.stem, "conf_minima": CONF, "divisao": Path(args.divisao).name if divisao else "completa",
+    resultado = {"modelo": pesos.stem, "conf_minima": args.conf,
+                 "divisao": Path(args.divisao).name if divisao else "completa",
+                 "segunda_etapa": caminho.name if graduador is not None else None,
                  "resumo_dataset": json.loads((DATASET / "resumo.json").read_text(encoding="utf-8"))}
 
-    # 1) detecção, no teste e na validação
+    # 1) detecção (primeira etapa), no teste e na validação
     for parte in ("test", "val"):
         det = metricas_de_deteccao(pesos, parte, divisao, rotulo)
         graficos = Path(det.pop("pasta_graficos"))
@@ -193,26 +241,44 @@ def main() -> None:
                     shutil.copy2(graficos / nome, saida / nome)
 
     # 2) leitura do ponto + 3) velocidade
-    detector = Detector(pesos, conf=CONF)
-    resultado["leitura_do_ponto"], tempos = leitura_do_ponto(detector, "test", exemplos, divisao)
-    resultado["leitura_do_ponto_val"], _ = leitura_do_ponto(detector, "val", None, divisao)
+    if graduador is not None:
+        entregue = Detector(pesos, conf=args.conf, graduador=graduador)
+        resultado["leitura_do_ponto"], tempos_2e = leitura_do_ponto(entregue, "test", exemplos, divisao)
+        resultado["leitura_do_ponto_val"], _ = leitura_do_ponto(
+            Detector(pesos, conf=args.conf, graduador=graduador_val), "val", None, divisao)
+        resultado["leitura_do_ponto_so_yolo"], tempos = leitura_do_ponto(so_yolo, "test", None, divisao)
+        resultado["leitura_do_ponto_val_so_yolo"], _ = leitura_do_ponto(so_yolo, "val", None, divisao)
+    else:
+        resultado["leitura_do_ponto"], tempos = leitura_do_ponto(so_yolo, "test", exemplos, divisao)
+        resultado["leitura_do_ponto_val"], _ = leitura_do_ponto(so_yolo, "val", None, divisao)
+        tempos_2e = None
     mediana = statistics.median(tempos)
     resultado["velocidade"] = {
         "ms_por_quadro_mediana": round(mediana * 1000, 1),
         "ms_por_quadro_p90": round(float(np.percentile(tempos, 90)) * 1000, 1),
         "fps": round(1 / mediana, 1), "tamanho_entrada": 640,
         "maquina": f"{get_cpu_info()} ({torch.get_num_threads()} threads), sem GPU",
-        "parametros": int(sum(p.numel() for p in detector.modelo.model.parameters())),
+        "parametros": int(sum(p.numel() for p in so_yolo.modelo.model.parameters())),
         "tamanho_pesos_mb": round(pesos.stat().st_size / 1e6, 1),
     }
+    if tempos_2e:
+        # Em vídeo a segunda etapa roda a cada N quadros (detectar.py --graduar-a-cada, padrão 5):
+        # o custo médio por quadro é o do YOLO mais 1/N do custo extra da segunda etapa.
+        med_2e = statistics.median(tempos_2e)
+        resultado["velocidade"].update({
+            "ms_por_quadro_com_segunda_etapa": round(med_2e * 1000, 1),
+            "fps_com_segunda_etapa_em_todo_quadro": round(1 / med_2e, 1),
+            "graduar_a_cada": 5,
+            "fps_com_segunda_etapa_a_cada_5": round(1 / (mediana + max(0.0, med_2e - mediana) / 5), 1),
+        })
     (saida / "metricas.json").write_text(json.dumps(resultado, indent=2, ensure_ascii=False), encoding="utf-8")
-    for parte, chave in (("teste", "leitura_do_ponto"), ("validacao", "leitura_do_ponto_val")):
-        lp = resultado[chave]
-        print(f"{parte}: leitura do ponto {lp['acertos']}/{lp['fotos']}; problemas alertados "
-              f"{lp['pontos_com_problema'] - lp['problema_nao_alertado']}/{lp['pontos_com_problema']}; "
-              f"livres lidos como problema {lp['livres_lidos_como_problema']}")
+    print(resumir("teste", resultado["leitura_do_ponto"]))
+    print(resumir("validacao", resultado["leitura_do_ponto_val"]))
+    if graduador is not None:
+        print(resumir("teste, so YOLO", resultado["leitura_do_ponto_so_yolo"]))
+        print(resumir("validacao, so YOLO", resultado["leitura_do_ponto_val_so_yolo"]))
     print(f"mAP50 teste {resultado['deteccao_test']['mAP50']} | validacao {resultado['deteccao_val']['mAP50']} | "
-          f"{resultado['velocidade']['fps']} FPS")
+          f"{resultado['velocidade']['fps']} FPS so YOLO")
 
 
 if __name__ == "__main__":

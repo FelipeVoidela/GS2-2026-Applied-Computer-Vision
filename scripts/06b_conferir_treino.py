@@ -43,7 +43,7 @@ def main() -> None:
     ap.add_argument("--pesos", default=str(PESOS_PADRAO))
     ap.add_argument("--saida", default=str(RAIZ / "resultados" / "teste" / "conferencia_treino.json"))
     args = ap.parse_args()
-    detector = Detector(args.pesos, conf=0.35)
+    detector = Detector(args.pesos, conf=0.35, graduador=None)   # confere só o YOLO (primeira etapa)
 
     def previsto(foto: Path) -> str:
         principal = classe_do_ponto(detector.detectar(cv2.imread(str(foto))))

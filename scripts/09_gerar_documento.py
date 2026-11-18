@@ -2,13 +2,13 @@
 Passo 9: gera o documento da entrega (PDF) a partir dos resultados gravados.
 
 O texto fica em documento/texto.py (um dicionário com as seções). Os números das tabelas vêm de
-resultados/teste/metricas.json, de resultados/historico/ e de dados/dataset/resumo.json, então o PDF nunca fica com um
-número diferente do que os scripts mediram.
+resultados/teste/metricas.json, de resultados/graduador/, de resultados/historico/ e de
+dados/dataset/resumo.json, então o PDF nunca fica com um número diferente do que os scripts mediram.
 
 Caminho: HTML (documento/Documento_Visao_BocaDeLobo.html) -> PDF pelo Chrome ou Edge em modo
 headless (não precisa de Word nem LibreOffice).
 
-Uso (depois dos passos 6, 7 e 8):
+Uso (depois dos passos 11, 6, 7 e 8):
     python scripts/09_gerar_documento.py
 """
 from __future__ import annotations
@@ -34,6 +34,7 @@ import texto as T  # noqa: E402
 SAIDA = RAIZ / "documento"
 HTML = SAIDA / "Documento_Visao_BocaDeLobo.html"
 PDF = SAIDA / "Documento_Visao_BocaDeLobo.pdf"
+FOTOS_ATE_A_RODADA_3 = 1374      # fotos baixadas até a terceira rodada; o que passar disso veio das buscas da quarta
 
 NAVEGADORES = [
     r"C:\Program Files\Google\Chrome\Application\chrome.exe",
@@ -168,10 +169,10 @@ def main() -> None:
          ["Repetição de fotos reais obstruídas", "cópias das fotos reais de bueiro obstruído do treino", repeticoes]],
         {2})
 
-    def linha_rodada(nome: str, mm: dict) -> list:
+    def linha_rodada(nome: str, mm: dict, sufixo: str = "") -> list:
         saida_ = [nome]
         for chave_det, chave_lp in (("deteccao_val", "leitura_do_ponto_val"), ("deteccao_test", "leitura_do_ponto")):
-            l_ = mm[chave_lp]
+            l_ = mm[chave_lp + sufixo]
             saida_ += [num(mm[chave_det]["mAP50"]), f"{l_['acertos']} de {l_['fotos']}",
                        f"{l_['pontos_com_problema'] - l_['problema_nao_alertado']} de {l_['pontos_com_problema']}"]
         return saida_
@@ -186,12 +187,55 @@ def main() -> None:
                    "mAP@50 (teste)", "Leituras certas (teste)", "Problemas alertados (teste)"]
     # as três rodadas nas MESMAS fotos de validação e teste das duas primeiras (26 e 26)
     originais = [(nome, ler(f"rodada{k}_teste_original_metricas.json")) for k, nome in
-                 ((1, "1ª (só montagens sobre a grelha)"), (2, "<b>2ª (modelo entregue)</b>"), (3, "3ª (mais fotos reais)"))]
+                 ((1, "1ª (só montagens sobre a grelha)"), (2, "2ª (montagens também ao lado da grelha)"),
+                  (3, "3ª (mais fotos reais)"))]
     t_rodadas = tabela(cab_rodadas, [linha_rodada(n, mm) for n, mm in originais if mm], {1, 2, 3, 4, 5, 6})
     # segunda e terceira rodadas na validação e no teste ampliados
     m3 = ler("rodada3_metricas.json")
-    t_rodadas_novo = tabela(cab_rodadas, [linha_rodada("<b>2ª (modelo entregue)</b>", m),
-                                          linha_rodada("3ª (mais fotos reais)", m3)], {1, 2, 3, 4, 5, 6}) if m3 else ""
+    tem_2e = "leitura_do_ponto_so_yolo" in m             # o sistema entregue tem segunda etapa (quarta rodada)
+    linhas_novo = [linha_rodada("2ª (só o YOLO)", m, "_so_yolo" if tem_2e else "")]
+    if m3:
+        linhas_novo.append(linha_rodada("3ª (mais fotos reais, só o YOLO)", m3))
+    if tem_2e:
+        linhas_novo.append(linha_rodada("<b>4ª (YOLO da 2ª + graduador, entregue)</b>", m))
+    t_rodadas_novo = tabela(cab_rodadas, linhas_novo, {1, 2, 3, 4, 5, 6})
+
+    # o que a segunda etapa muda: só o YOLO contra o sistema entregue, na validação e no teste
+    def linha_etapas(nome: str, l_: dict) -> list:
+        mat = l_["matriz"]
+        return [nome, f"{l_['acertos']} de {l_['fotos']}",
+                f"{l_['bueiros_obstruidos_reconhecidos']} de {l_['bueiros_obstruidos']}",
+                f"{l_['pontos_com_problema'] - l_['problema_nao_alertado']} de {l_['pontos_com_problema']}",
+                f"{mat[0][0]} de {sum(mat[0])}", f"{l_['livres_lidos_como_problema']} de {sum(mat[0])}"]
+
+    t_etapas = ""
+    if tem_2e:
+        t_etapas = tabela(
+            ["Conjunto e modelo", "Leituras certas", "Bueiros obstruídos reconhecidos", "Pontos com problema alertados",
+             "Bueiros livres lidos como livres", "Bueiros livres lidos como problema"],
+            [linha_etapas("Validação, só o YOLO", m["leitura_do_ponto_val_so_yolo"]),
+             linha_etapas("Validação, YOLO + graduador", m["leitura_do_ponto_val"]),
+             linha_etapas("Teste, só o YOLO", m["leitura_do_ponto_so_yolo"]),
+             linha_etapas("<b>Teste, YOLO + graduador (entregue)</b>", m["leitura_do_ponto"])], {1, 2, 3, 4, 5})
+
+    # o treino do graduador (passo 11)
+    arq_g = RAIZ / "resultados" / "graduador" / "treino.json"
+    g = json.loads(arq_g.read_text(encoding="utf-8")) if arq_g.exists() else None
+    t_graduador = ""
+    if g:
+        def linha_cabeca(nome: str, c: dict) -> list:
+            tr, fd, va = c["treino"], c["treino_fora_da_dobra"], c["validacao"]
+            return [nome, f"{tr['com_problema']} e {tr['sem_problema']}", num(fd["auc"]),
+                    f"{fd['com_problema_acima_do_limiar']} de {tr['com_problema']}",
+                    f"{fd['sem_problema_acima_do_limiar']} de {tr['sem_problema']}", num(va["auc"]),
+                    f"{va['com_problema_acima_do_limiar']} de {va['com_problema']}",
+                    f"{va['sem_problema_acima_do_limiar']} de {va['sem_problema']}"]
+        t_graduador = tabela(
+            ["Cabeça", "Exemplos de treino (com e sem problema)", "AUC no treino, fora da dobra",
+             "Com problema acima do limiar (treino)", "Sem problema acima do limiar (treino)", "AUC na validação",
+             "Com problema acima do limiar (validação)", "Sem problema acima do limiar (validação)"],
+            [linha_cabeca("Recorte: bueiro obstruído ou livre", g["recorte"]),
+             linha_cabeca("Quadro: ponto com problema ou livre", g["quadro"])], {2, 3, 4, 5, 6, 7})
     det = m["deteccao_test"]
     t_deteccao = tabela(
         ["Classe", "Precisão", "Revocação", "mAP@50", "mAP@50-95"],
@@ -211,7 +255,11 @@ def main() -> None:
     t_velocidade = tabela(["Medida", "Valor"], [
         ["Tempo por quadro (mediana)", f"{num(v['ms_por_quadro_mediana'], 1)} ms"],
         ["Tempo por quadro (percentil 90)", f"{num(v['ms_por_quadro_p90'], 1)} ms"],
-        ["Quadros por segundo", num(v["fps"], 1)],
+        ["Quadros por segundo (só o YOLO)", num(v["fps"], 1)]] + ([
+        ["Tempo por quadro com a segunda etapa", f"{num(v['ms_por_quadro_com_segunda_etapa'], 1)} ms"],
+        ["Quadros por segundo, segunda etapa em todos os quadros", num(v["fps_com_segunda_etapa_em_todo_quadro"], 1)],
+        [f"Quadros por segundo, segunda etapa a cada {v['graduar_a_cada']} quadros, como em vídeo (calculado)",
+         num(v["fps_com_segunda_etapa_a_cada_5"], 1)]] if "ms_por_quadro_com_segunda_etapa" in v else []) + [
         ["Entrada da rede", f"{v['tamanho_entrada']} x {v['tamanho_entrada']} px"],
         ["Parâmetros do modelo", f"{v['parametros']:,}".replace(",", ".")],
         ["Tamanho dos pesos", f"{num(v['tamanho_pesos_mb'], 1)} MB"],
@@ -253,6 +301,11 @@ def main() -> None:
         valores.update(fps_demo=num(d.get("fps_ponta_a_ponta", 0), 1), pontos_demo=len(d["pontos"]),
                        demo_livre=d["resumo"].get("livre", 0), demo_atencao=d["resumo"].get("atencao", 0),
                        demo_critico=d["resumo"].get("critico", 0), demo_sem=d["resumo"].get("sem_leitura", 0))
+        com_problema_demo = [pt for pt in d["pontos"] if pt.get("anotado", "livre") != "livre"]
+        livres_demo = [pt for pt in d["pontos"] if pt.get("anotado") == "livre"]
+        valores.update(demo_prob=len(com_problema_demo), demo_livres=len(livres_demo),
+                       demo_prob_alert=sum(pt["classe_do_ponto"] not in (None, "livre") for pt in com_problema_demo),
+                       demo_livres_ok=sum(pt["classe_do_ponto"] == "livre" for pt in livres_demo))
     for k in (2, 3):                                        # o que cada rodada acerta no próprio treino (passo 6b)
         conf_k = ler(f"rodada{k}_conferencia_treino.json") or {}
         valores.update({f"c{k}_{chave}": v for chave, v in conf_k.items()})
@@ -267,7 +320,8 @@ def main() -> None:
         reais_obstr_val=sum(resumo["caixas"]["val"].get(c, 0) for c in obstr_classes),
         reais_obstr_teste=sum(resumo["caixas"]["test"].get(c, 0) for c in obstr_classes),
         lixo_val=resumo["caixas"]["val"].get("lixo_sarjeta", 0), lixo_teste=resumo["caixas"]["test"].get("lixo_sarjeta", 0),
-        r2v_obs=obstr(m, "leitura_do_ponto_val")[0], v_nobs=obstr(m, "leitura_do_ponto_val")[1])
+        r2v_obs=obstr(m, "leitura_do_ponto_val_so_yolo" if tem_2e else "leitura_do_ponto_val")[0],
+        v_nobs=obstr(m, "leitura_do_ponto_val")[1])
     repetidas = RAIZ / "dados" / "anotacao" / "repetidas.csv"
     valores["repetidas"] = max(0, len(repetidas.read_text(encoding="utf-8").splitlines()) - 1) if repetidas.exists() else 0
     if m3:
@@ -298,7 +352,38 @@ def main() -> None:
         val_acertos=lpv["acertos"], val_fotos=lpv["fotos"],
         map50_lixo=num(det["por_classe"].get("lixo_sarjeta", {}).get("mAP50", 0)),
         map50_lixo_val=num(m["deteccao_val"]["por_classe"].get("lixo_sarjeta", {}).get("mAP50", 0)))
-    blocos = {"TABELA_DATASET": t_dataset, "TABELA_DETECCAO": t_deteccao, "TABELA_PONTO": t_ponto,
+    def medidas(prefixo: str, l_: dict) -> dict:
+        mat = l_["matriz"]
+        return {f"{prefixo}_certas": l_["acertos"], f"{prefixo}_fotos": l_["fotos"], f"{prefixo}_acuracia": pct(l_["acuracia"]),
+                f"{prefixo}_obs": l_["bueiros_obstruidos_reconhecidos"], f"{prefixo}_nobs": l_["bueiros_obstruidos"],
+                f"{prefixo}_obs_alert": sum(sum(mat[i][1:4]) for i in (1, 2)),
+                f"{prefixo}_alert": l_["pontos_com_problema"] - l_["problema_nao_alertado"],
+                f"{prefixo}_prob": l_["pontos_com_problema"], f"{prefixo}_naoalert": l_["problema_nao_alertado"],
+                f"{prefixo}_livres_certos": mat[0][0], f"{prefixo}_livres": sum(mat[0]),
+                f"{prefixo}_livres_prob": l_["livres_lidos_como_problema"], f"{prefixo}_livres_nada": mat[0][4],
+                f"{prefixo}_lixo_alert": sum(mat[3][1:4]), f"{prefixo}_lixo": sum(mat[3])}
+
+    valores.update(medidas("s", m["leitura_do_ponto"]))                 # sistema entregue, teste
+    valores.update(medidas("sv", m["leitura_do_ponto_val"]))            # sistema entregue, validação
+    valores.update(medidas("y", m.get("leitura_do_ponto_so_yolo", m["leitura_do_ponto"])))          # só o YOLO, teste
+    valores.update(medidas("yv", m.get("leitura_do_ponto_val_so_yolo", m["leitura_do_ponto_val"])))  # só o YOLO, validação
+    valores["fotos_rodada4"] = len(fontes) - FOTOS_ATE_A_RODADA_3
+    if "ms_por_quadro_com_segunda_etapa" in v:
+        valores.update(ms_2e=num(v["ms_por_quadro_com_segunda_etapa"], 1),
+                       fps_2e=num(v["fps_com_segunda_etapa_em_todo_quadro"], 1),
+                       fps_cad=num(v["fps_com_segunda_etapa_a_cada_5"], 1), cadencia=v["graduar_a_cada"])
+    if g:
+        for cab in ("recorte", "quadro"):
+            c = g[cab]
+            valores.update({
+                f"g_{cab}_pos": c["treino"]["com_problema"], f"g_{cab}_neg": c["treino"]["sem_problema"],
+                f"g_{cab}_auc": num(c["treino_fora_da_dobra"]["auc"], 2), f"g_{cab}_auc_val": num(c["validacao"]["auc"], 2),
+                f"g_{cab}_oof_pos": c["treino_fora_da_dobra"]["com_problema_acima_do_limiar"],
+                f"g_{cab}_oof_neg": c["treino_fora_da_dobra"]["sem_problema_acima_do_limiar"],
+                f"g_{cab}_val_pos": c["validacao"]["com_problema_acima_do_limiar"], f"g_{cab}_val_npos": c["validacao"]["com_problema"],
+                f"g_{cab}_val_neg": c["validacao"]["sem_problema_acima_do_limiar"], f"g_{cab}_val_nneg": c["validacao"]["sem_problema"]})
+        valores["g_quantil"] = f"{round((1 - g['quantil_do_limiar']) * 100)}%"
+    blocos = {"TABELA_ETAPAS": t_etapas, "TABELA_GRADUADOR": t_graduador, "TABELA_DATASET": t_dataset, "TABELA_DETECCAO": t_deteccao, "TABELA_PONTO": t_ponto,
               "TABELA_VELOCIDADE": t_velocidade, "TABELA_LICENCAS": t_licencas,
               "TABELA_SINTETICAS": t_sinteticas, "TABELA_RODADAS": t_rodadas, "TABELA_RODADAS_NOVO": t_rodadas_novo}
 

@@ -69,10 +69,31 @@ BUSCAS = [
     ("catch basin", 3), ("curb inlet", 2), ("street gutter", 3), ("gutter litter", 3), ("gutter trash", 2),
     ("bueiro lixo", 1), ("boca de lobo lixo", 1), ("esgoto entupido", 1), ("alcantarilla hojas", 1),
     ("alcantarilla calle", 2), ("tombino foglie", 1), ("tombino", 2), ("Gully", 2), ("avaloir", 2),
+    # terceira leva (quarta rodada de treino): outras palavras para a obstrução e outros idiomas
+    ("drain covered leaves", 3), ("drain full of leaves", 2), ("leaf litter drain", 2), ("fallen leaves gutter", 3),
+    ("leaves blocking drain", 3), ("drain blocked rubbish", 2), ("drain plastic bottle", 2), ("drain cover litter", 2),
+    ("storm drain plastic", 2), ("storm drain garbage clogged", 1), ("storm drain mud", 2), ("drain silt", 2),
+    ("blocked grid drain", 2), ("blocked road gully leaves", 2), ("gully leaves", 3), ("gully blocked", 3),
+    ("drain weeds", 3), ("grass growing drain", 2), ("overgrown drain", 2), ("drain neglected", 2),
+    ("storm drain flooding leaves", 2), ("clogged sewer", 2), ("clogged gutter", 3), ("dirty storm drain", 2),
+    ("storm drain cleaning", 3), ("drain cleaning leaves", 2), ("adopt a drain", 3), ("storm drain stenciling", 2),
+    ("catch basin cleaning", 2), ("catch basin clogged", 2), ("stormwater drain rubbish", 2), ("stormwater drain litter", 2),
+    ("kerb drain leaves", 2), ("roadside drain blocked", 2), ("drain cigarette butts", 2),
+    ("boca de tormenta", 3), ("boca de tormenta tapada", 1), ("sumidero tapado", 2), ("sumidero hojas", 1),
+    ("imbornal", 2), ("rejilla alcantarilla", 2), ("alcantarilla obstruida", 1), ("alcantarilla hojas", 1),
+    ("caditoia", 2), ("caditoia foglie", 1), ("tombino intasato", 1), ("tombino otturato", 1),
+    ("bouche d'égout feuilles", 2), ("avaloir bouché", 1), ("caniveau feuilles", 2), ("grille égout", 2),
+    ("Gully Blätter", 2), ("Straßenablauf", 2), ("Gullydeckel Laub", 2), ("Kanaldeckel Laub", 2), ("Gulli Laub", 2),
+    ("kolk bladeren", 2), ("straatkolk", 2), ("putdeksel bladeren", 1), ("verstopte put", 1),
+    ("dagvattenbrunn", 2), ("rännstensbrunn", 1), ("studzienka liście", 1), ("ливневка", 2),
+    ("bueiro folhas", 1), ("bueiro sujo", 1), ("boca de lobo entupida", 1), ("sarjeta folhas", 1), ("sarjeta", 2),
+    ("ralo rua", 1), ("sumidouro", 2), ("sarjeta entupida", 1),
 ]
 # A foto só interessa se o título ou as etiquetas citarem o objeto.
 PALAVRAS = re.compile(r"drain|gull(y|ies)|gutter|grate|grating|sewer|catch ?basin|kerb|curb|bueiro|boca de lobo|"
-                      r"sarjeta|alcantarilla|sumidero|imbornal|avaloir|caniveau|gulli|kanal|tombino", re.I)
+                      r"sarjeta|alcantarilla|sumidero|imbornal|avaloir|caniveau|gulli|kanal|tombino|"
+                      r"boca de tormenta|rejilla|caditoia|[ée]gout|stra(ß|ss)enablauf|kolk|putdeksel|brunn|"
+                      r"studzienk|ливнев|ralo|sumidouro|storm ?water", re.I)
 
 _ultima = 0.0
 
@@ -104,17 +125,17 @@ def _abrir(url: str, pausa: float, tentativas: int = 4) -> bytes | None:
 def levantar_candidatos(cache: dict) -> None:
     """Roda as buscas que ainda não estão no cache e grava o cache a cada busca concluída."""
     candidatos: dict[str, dict] = {c["id"]: c for c in cache["candidatos"]}
+    falhas_seguidas = 0
     for termo, max_paginas in BUSCAS:
         if termo in cache["buscas_feitas"]:
             continue
         achados = 0
+        sem_resposta = False
         for pagina in range(1, max_paginas + 1):
             q = urllib.parse.urlencode({"q": termo, "license": LICENCAS, "page_size": 20, "page": pagina})
-            corpo = _abrir(f"{API}?{q}", PAUSA_API, tentativas=2)
-            if not corpo and pagina == 1:
-                print(f"busca '{termo}': sem resposta (cota do dia esgotada?). Rode de novo amanha para continuar.")
-                return
+            corpo = _abrir(f"{API}?{q}", PAUSA_API, tentativas=3)
             if not corpo:
+                sem_resposta = pagina == 1
                 break
             d = json.loads(corpo.decode("utf-8"))
             for x in d.get("results", []):
@@ -135,6 +156,16 @@ def levantar_candidatos(cache: dict) -> None:
                     }
             if pagina >= (d.get("page_count") or 0):
                 break
+        if sem_resposta:
+            # A API do Openverse às vezes devolve 504 por alguns minutos. A busca fica para a próxima
+            # execução (não entra em buscas_feitas); depois de 4 falhas seguidas o script para de insistir.
+            falhas_seguidas += 1
+            print(f"busca '{termo}': sem resposta; fica para a proxima execucao", flush=True)
+            if falhas_seguidas >= 4:
+                print("API sem resposta (fora do ar ou cota do dia esgotada). Rode de novo mais tarde para continuar.")
+                return
+            continue
+        falhas_seguidas = 0
         print(f"busca '{termo}': {achados} fotos novas de interesse", flush=True)
         cache["buscas_feitas"].append(termo)
         cache["candidatos"] = list(candidatos.values())

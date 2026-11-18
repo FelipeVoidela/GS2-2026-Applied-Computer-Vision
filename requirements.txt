@@ -1,7 +1,10 @@
-# Python 3.10 ou mais novo. Em máquina sem GPU o pip já instala o PyTorch de CPU.
-ultralytics>=8.3
-opencv-python>=4.9
-numpy>=1.26
-torch>=2.2
-torchvision>=0.17
-imageio-ffmpeg>=0.5      # só para gerar o vídeo de demonstração em H.264
+# Python 3.10 ou mais novo (testado com 3.11). Em máquina sem GPU o pip já instala o PyTorch de CPU.
+# Versões fixadas: são as que produziram os números do README e do documento.
+ultralytics==8.4.215
+opencv-python==4.13.0.92
+numpy==2.4.2
+torch==2.12.0
+torchvision==0.27.0
+transformers==5.23.0     # segunda etapa (graduador): codificadores CLIP e DINOv2; e a pré-anotação (Grounding DINO)
+imageio-ffmpeg==0.8.1    # só para gerar o vídeo de demonstração em H.264
+matplotlib==3.10.8       # só para as figuras (scripts/08_figuras.py)

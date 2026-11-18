@@ -1,110 +1,127 @@
 {
   "video": "demo_ronda.mp4",
+  "modelo": "yolov8n-bocadelobo-v2+graduador-v1",
   "pontos": [
     {
       "foto": "wm_711ae97577ab.jpg",
+      "anotado": "livre",
       "classe_do_ponto": "livre",
       "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "ov_1a3903feb847.jpg",
+      "anotado": "parcialmente_obstruido",
       "classe_do_ponto": "entupido",
-      "quadros_com_deteccao": 28,
+      "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "ov_f8ff4cab2f98.jpg",
-      "classe_do_ponto": "parcialmente_obstruido",
-      "quadros_com_deteccao": 17,
+      "anotado": "entupido",
+      "classe_do_ponto": "lixo_sarjeta",
+      "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "wm_2263a324508a.jpg",
+      "anotado": "lixo_sarjeta",
       "classe_do_ponto": "livre",
       "quadros_com_deteccao": 41,
       "quadros": 48
     },
     {
       "foto": "wm_efaccf4a9109.jpg",
+      "anotado": "livre",
       "classe_do_ponto": "livre",
       "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "ov_61b22af741f4.jpg",
+      "anotado": "parcialmente_obstruido",
       "classe_do_ponto": null,
       "quadros_com_deteccao": 14,
       "quadros": 48
     },
     {
       "foto": "wm_f829bde3808c.jpg",
-      "classe_do_ponto": null,
-      "quadros_com_deteccao": 15,
+      "anotado": "entupido",
+      "classe_do_ponto": "lixo_sarjeta",
+      "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "ov_10d4b3afc61a.jpg",
+      "anotado": "lixo_sarjeta",
       "classe_do_ponto": "entupido",
       "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "ov_521173425ff8.jpg",
+      "anotado": "livre",
       "classe_do_ponto": "livre",
       "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "wm_fc234baf91ed.jpg",
-      "classe_do_ponto": null,
-      "quadros_com_deteccao": 2,
+      "anotado": "parcialmente_obstruido",
+      "classe_do_ponto": "lixo_sarjeta",
+      "quadros_com_deteccao": 26,
       "quadros": 48
     },
     {
       "foto": "wm_d950253b3d8e.jpg",
+      "anotado": "lixo_sarjeta",
       "classe_do_ponto": "parcialmente_obstruido",
-      "quadros_com_deteccao": 38,
+      "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "wm_2130062f1b34.jpg",
+      "anotado": "livre",
       "classe_do_ponto": "livre",
       "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "wm_7c26dde39f9d.jpg",
-      "classe_do_ponto": null,
-      "quadros_com_deteccao": 12,
+      "anotado": "parcialmente_obstruido",
+      "classe_do_ponto": "lixo_sarjeta",
+      "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "ov_89c65e55f1ce.jpg",
+      "anotado": "lixo_sarjeta",
       "classe_do_ponto": "entupido",
-      "quadros_com_deteccao": 29,
+      "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "wm_f345e26c8a5b.jpg",
-      "classe_do_ponto": "livre",
+      "anotado": "livre",
+      "classe_do_ponto": "parcialmente_obstruido",
       "quadros_com_deteccao": 48,
       "quadros": 48
     },
     {
       "foto": "ov_bee8c589cffb.jpg",
-      "classe_do_ponto": null,
-      "quadros_com_deteccao": 4,
+      "anotado": "parcialmente_obstruido",
+      "classe_do_ponto": "lixo_sarjeta",
+      "quadros_com_deteccao": 48,
       "quadros": 48
     }
   ],
   "resumo": {
-    "livre": 6,
+    "livre": 5,
     "critico": 3,
-    "atencao": 2,
-    "sem_leitura": 5
+    "atencao": 7,
+    "sem_leitura": 1
   },
-  "fps_ponta_a_ponta": 19.8,
+  "fps_ponta_a_ponta": 12.4,
   "fps_video": 15,
   "observacao": "ronda simulada com fotos do conjunto de teste"
 }

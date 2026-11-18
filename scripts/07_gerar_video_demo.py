@@ -3,9 +3,10 @@ Passo 7: gera um vídeo de demonstração da detecção rodando quadro a quadro.
 
 Como ainda não há filmagem do robô em campo, o vídeo é uma RONDA SIMULADA: cada foto do conjunto
 de teste (que o modelo não viu no treino) vira alguns segundos de vídeo com um movimento lento de
-câmera (aproximação e deslocamento), como se o carrinho estivesse chegando ao ponto. O modelo roda
-em todos os quadros, na hora, e o FPS mostrado é o medido durante a gravação, de ponta a ponta
-(detecção + desenho do painel + codificação do vídeo).
+câmera (aproximação e deslocamento), como se o carrinho estivesse chegando ao ponto. O YOLO roda em
+todos os quadros, na hora, e a segunda etapa (graduador) a cada 5 quadros, como em detectar.py. O FPS
+mostrado é o medido durante a gravação, de ponta a ponta (detecção + desenho do painel + codificação
+do vídeo).
 
 À direita, o painel mostra a leitura que o robô enviaria ao pipeline de dados (bloco "visao" do
 contrato) e o resumo da ronda.
@@ -33,7 +34,7 @@ import numpy as np
 
 RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "src"))
-from boca_de_lobo_visao.classes import CLASSES, CORES, NOME_MODELO, ROTULOS, STATUS  # noqa: E402
+from boca_de_lobo_visao.classes import CLASSES, CLASSES_DE_BUEIRO, STATUS  # noqa: E402
 from boca_de_lobo_visao.contrato import bloco_visao, classe_do_ponto  # noqa: E402
 from boca_de_lobo_visao.detector import COR_STATUS, TEXTO_STATUS, Detector, EstadoDoPonto, MedidorFPS, desenhar  # noqa: E402
 
@@ -47,6 +48,12 @@ FONTE = cv2.FONT_HERSHEY_SIMPLEX
 # Prévia para o README: os 4 primeiros pontos da ronda (um de cada classe anotada).
 PREVIA = RAIZ / "docs" / "demo_ronda.gif"
 PREVIA_SEGUNDOS, PREVIA_FPS, PREVIA_LARG = 4 * SEGUNDOS_POR_PONTO, 6, 480
+
+
+def leitura_anotada(txt: Path) -> str:
+    """Mesma regra do passo 6: vale a maior boca de lobo anotada; sem ela, o lixo."""
+    caixas = [(CLASSES[int(c)], float(w) * float(h)) for c, _, _, w, h in (l.split() for l in txt.read_text().splitlines())]
+    return max([c for c in caixas if c[0] in CLASSES_DE_BUEIRO] or caixas, key=lambda c: c[1])[0]
 
 
 def escolher_fotos(n: int) -> list[Path]:
@@ -82,14 +89,15 @@ def vista_da_camera(img: np.ndarray, t: float, rng_estado: tuple[float, float]) 
     return cv2.resize(img[y1:y1 + int(a), x1:x1 + int(l)], VISTA, interpolation=cv2.INTER_AREA)
 
 
-def painel(ponto: int, total: int, leitura: dict | None, estavel: str | None, resumo: Counter, fps: float) -> np.ndarray:
+def painel(ponto: int, total: int, leitura: dict | None, estavel: str | None, resumo: Counter, fps: float,
+           modelo: str) -> np.ndarray:
     p = np.full((ALT, PAINEL, 3), (38, 30, 24), np.uint8)
 
     def escrever(texto, y, escala=0.55, cor=(235, 235, 235), esp=1, x=18):
         cv2.putText(p, texto, (x, y), FONTE, escala, cor, esp, cv2.LINE_AA)
 
     escrever("BOCA DE LOBO", 44, 0.95, (255, 255, 255), 2)
-    escrever("Visao computacional - YOLOv8n", 72, 0.52, (190, 200, 210))
+    escrever("Visao: YOLOv8n + graduador", 72, 0.52, (190, 200, 210))
     escrever("Ronda simulada com fotos de teste", 96, 0.48, (150, 160, 170))
     cv2.line(p, (18, 112), (PAINEL - 18, 112), (90, 90, 90), 1)
     escrever(f"Ponto {ponto} de {total}", 146, 0.75, (255, 255, 255), 2)
@@ -104,12 +112,14 @@ def painel(ponto: int, total: int, leitura: dict | None, estavel: str | None, re
 
     escrever("Leitura enviada ao pipeline:", 262, 0.52, (190, 200, 210))
     if leitura:
-        linhas = ['"visao": {', f'  "modelo": "{NOME_MODELO}",', f'  "classe": "{leitura["classe"]}",',
+        base, _, etapa2 = modelo.partition("+")          # o nome com a segunda etapa não cabe em uma linha
+        linhas = ['"visao": {', f'  "modelo": "{base}' + ('",' if not etapa2 else ""),
+                  *([f'             +{etapa2}",'] if etapa2 else []), f'  "classe": "{leitura["classe"]}",',
                   f'  "confianca": {leitura["confianca"]:.3f},', f'  "foto_id": "{leitura["foto_id"]}"', "}"]
     else:
         linhas = ["(sem deteccao neste quadro)"]
     for k, linha in enumerate(linhas):
-        cv2.putText(p, linha, (18, 290 + 24 * k), cv2.FONT_HERSHEY_PLAIN, 1.0, (160, 235, 170), 1, cv2.LINE_AA)
+        cv2.putText(p, linha, (18, 290 + 23 * k), cv2.FONT_HERSHEY_PLAIN, 1.0, (160, 235, 170), 1, cv2.LINE_AA)
 
     cv2.line(p, (18, 452), (PAINEL - 18, 452), (90, 90, 90), 1)
     escrever("Resumo da ronda", 484, 0.6, (255, 255, 255), 2)
@@ -151,7 +161,7 @@ def main() -> None:
         return
 
     fotos = escolher_fotos(args.pontos)
-    detector = Detector(conf=args.conf)
+    detector = Detector(conf=args.conf, graduar_a_cada=5)
     detector.detectar(cv2.imread(str(fotos[0])))            # aquecimento
     medidor = MedidorFPS(janela=45)
     resumo: Counter = Counter()
@@ -166,7 +176,9 @@ def main() -> None:
         img = cv2.imread(str(foto))
         deslocamento = (rng.uniform(-1, 1), rng.uniform(-1, 1))
         estado = EstadoDoPonto(janela=12)
+        detector.reiniciar()
         estavel, leitura = None, None
+        ultima_da_classe: dict[str, dict] = {}       # o painel mostra a leitura que corresponde ao estado exibido
         votos: Counter = Counter()
         for q in range(quadros_por_ponto):
             vista = vista_da_camera(img, q / (quadros_por_ponto - 1), deslocamento)
@@ -176,14 +188,16 @@ def main() -> None:
             estavel = estado.atualizar(principal.classe if principal else None)
             if principal:
                 votos[principal.classe] += 1
-                leitura = bloco_visao(vista, deteccoes)
+                ultima_da_classe[principal.classe] = bloco_visao(vista, deteccoes, detector.nome)
+            leitura = ultima_da_classe.get(estavel) if estavel else None
             quadro = np.hstack([desenhar(vista, deteccoes, classe_do_ponto=estavel, mostrar_faixa=False),
-                                painel(n, len(fotos), leitura, estavel, resumo, fps)])
+                                painel(n, len(fotos), leitura, estavel, resumo, fps, detector.nome)])
             gravador.send(np.ascontiguousarray(quadro[:, :, ::-1]))
         # a leitura do ponto só vale se o modelo viu algo em pelo menos um terço dos quadros
         final = votos.most_common(1)[0][0] if sum(votos.values()) >= quadros_por_ponto / 3 else None
         resumo[STATUS[final] if final else "sem_leitura"] += 1
-        leituras.append({"foto": foto.name, "classe_do_ponto": final, "quadros_com_deteccao": sum(votos.values()),
+        leituras.append({"foto": foto.name, "anotado": leitura_anotada(TESTE / "labels" / "test" / (foto.stem + ".txt")),
+                         "classe_do_ponto": final, "quadros_com_deteccao": sum(votos.values()),
                          "quadros": quadros_por_ponto})
         print(f"ponto {n}/{len(fotos)}: {final} ({medidor.fps:.1f} FPS)")
 
@@ -192,7 +206,8 @@ def main() -> None:
         gravador.send(np.ascontiguousarray(quadro[:, :, ::-1]))
     gravador.close()
     (SAIDA / "demo_ronda.json").write_text(json.dumps(
-        {"video": destino.name, "pontos": leituras, "resumo": dict(resumo), "fps_ponta_a_ponta": round(medidor.fps, 1),
+        {"video": destino.name, "modelo": detector.nome, "pontos": leituras, "resumo": dict(resumo),
+         "fps_ponta_a_ponta": round(medidor.fps, 1),
          "fps_video": FPS_VIDEO, "observacao": "ronda simulada com fotos do conjunto de teste"},
         indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Video em {destino} ({destino.stat().st_size / 1e6:.1f} MB), {medidor.fps:.1f} FPS de ponta a ponta")

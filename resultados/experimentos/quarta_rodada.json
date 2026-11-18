@@ -1,0 +1,62 @@
+{
+  "observacao": "Medidas na VALIDACAO (48 fotos); o teste nao foi usado. Scripts em scripts/experimentos_rodada4/.",
+  "yolo_com_classes_de_bueiro_unificadas": {
+    "descricao": "YOLOv8n treinado com 2 classes (boca_de_lobo, lixo_sarjeta) no dataset da 3a rodada, 60 epocas, mesmos hiperparametros",
+    "conf_0.35": {
+      "yolo_2a_rodada": {
+        "bueiros_livres_localizados": "34 de 36",
+        "bueiros_obstruidos_localizados": "4 de 6",
+        "caixas_de_bueiro_sem_anotacao_por_perto": 8,
+        "com_graduador": {
+          "leituras_certas": "39 de 48",
+          "obstruidos_reconhecidos": "2 de 5",
+          "problemas_alertados": "11 de 13",
+          "livres_como_problema": 2
+        }
+      },
+      "yolo_unificado": {
+        "bueiros_livres_localizados": "34 de 36",
+        "bueiros_obstruidos_localizados": "4 de 6",
+        "caixas_de_bueiro_sem_anotacao_por_perto": 7,
+        "com_graduador": {
+          "leituras_certas": "38 de 48",
+          "obstruidos_reconhecidos": "1 de 5",
+          "problemas_alertados": "11 de 13",
+          "livres_como_problema": 2
+        }
+      }
+    },
+    "decisao": "nao adotado: nao localiza mais bueiros obstruidos e fica um pouco pior de ponta a ponta"
+  },
+  "cabeca_bueiro_coberto_ou_lixo_solto": {
+    "descricao": "terceira cabeca, aplicada as caixas de lixo do YOLO: ha uma boca de lobo sob este lixo?",
+    "auc_treino_fora_da_dobra": 0.991,
+    "exemplos_treino": {
+      "bueiro_obstruido": 21,
+      "lixo_solto": 72
+    },
+    "validacao_ponta_a_ponta": "nenhuma leitura mudou (com e sem a cabeca: 2 de 5 obstruidos reconhecidos, 6 de 13 alertados, antes da cabeca de quadro)",
+    "decisao": "nao adotada"
+  },
+  "resgate_de_caixas_de_baixa_confianca": {
+    "descricao": "aceitar caixas do YOLO com confianca entre 0,15 e 0,35 quando o graduador as le como obstruidas",
+    "validacao_ponta_a_ponta": "um alerta a mais (7 de 13 contra 6), mas como lixo lido como obstruido; sem ganho em bueiros obstruidos",
+    "decisao": "nao adotado"
+  },
+  "codificadores": {
+    "descricao": "AUC da cabeca de recorte, validacao cruzada repetida (8 sorteios de dobras) no treino e AUC na validacao; script de bancada nao guardado",
+    "clip_vit_b32": {
+      "auc_treino": 0.909,
+      "auc_validacao": 0.954
+    },
+    "dinov2_vit_s14": {
+      "auc_treino": 0.941,
+      "auc_validacao": 0.88
+    },
+    "media_das_pontuacoes_dos_dois": {
+      "auc_treino": 0.946,
+      "auc_validacao": 0.935
+    },
+    "decisao": "adotada a media dos dois (a mais estavel entre treino e validacao)"
+  }
+}

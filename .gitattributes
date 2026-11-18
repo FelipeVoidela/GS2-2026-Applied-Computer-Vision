@@ -4,3 +4,5 @@
 *.pt binary
 *.mp4 binary
 *.pdf binary
+*.npz binary
+*.gif binary

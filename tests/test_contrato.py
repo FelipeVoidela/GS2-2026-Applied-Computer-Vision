@@ -74,3 +74,25 @@ def test_estado_do_ponto_some_quando_o_bueiro_sai_do_quadro():
     for _ in range(5):
         ultimo = estado.atualizar(None)
     assert ultimo is None
+
+
+def test_bloco_leva_o_nome_do_modelo_informado():
+    assert bloco_visao(QUADRO, [det("livre", 0.9)], "yolov8n-bocadelobo-v2+graduador-v1")["modelo"].endswith("+graduador-v1")
+
+
+def test_graduador_troca_a_classe_so_das_bocas_de_lobo():
+    from boca_de_lobo_visao.graduador import Graduador
+    assert Graduador.aplicar(det("livre", 0.9), 1.3).classe == "parcialmente_obstruido"
+    assert Graduador.aplicar(det("entupido", 0.9), 1.3).classe == "entupido"
+    assert Graduador.aplicar(det("parcialmente_obstruido", 0.9), -0.4).classe == "livre"
+    lixo = Graduador.aplicar(det("lixo_sarjeta", 0.9), 5.0)
+    assert lixo.classe == "lixo_sarjeta" and lixo.obstrucao is None
+    graduada = Graduador.aplicar(det("livre", 0.9), 0.0)
+    assert graduada.classe == "livre" and graduada.obstrucao == 0.5 and graduada.confianca == 0.9
+
+
+def test_leitura_do_quadro_inteiro_vale_como_lixo_e_perde_para_boca_de_lobo():
+    quadro = Deteccao("lixo_sarjeta", 0.8, (0, 0, 160, 120), origem="quadro")
+    assert classe_do_ponto([quadro]).classe == "lixo_sarjeta"
+    assert quadro.como_dict()["origem"] == "quadro"
+    assert classe_do_ponto([quadro, det("livre", 0.4)]).classe == "livre"

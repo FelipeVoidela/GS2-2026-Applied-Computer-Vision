@@ -4,7 +4,7 @@ Contrato com o resto do produto: o que a visão entrega depois de olhar um ponto
 O robô manda, em cada inspeção, um bloco "visao" que o pipeline de dados (componente Big Data)
 lê na camada Bronze e valida na Prata:
 
-    "visao": {"modelo": "yolov8n-bocadelobo-v2", "classe": "entupido",
+    "visao": {"modelo": "yolov8n-bocadelobo-v2+graduador-v1", "classe": "parcialmente_obstruido",
               "confianca": 0.87, "foto_id": "886935bd3b0c8ab3"}
 
 A Prata só aceita classe em {livre, parcialmente_obstruido, entupido, lixo_sarjeta} e confiança
@@ -28,7 +28,8 @@ def classe_do_ponto(deteccoes: list[Deteccao]) -> Deteccao | None:
     """
     Uma inspeção olha um ponto, mas o quadro pode ter várias caixas. Regra:
       1. se há boca de lobo detectada, vale a de maior confiança (ela diz o estado do ponto);
-      2. se não há boca de lobo, mas há lixo na sarjeta, vale a detecção de lixo;
+      2. se não há boca de lobo, mas há lixo na sarjeta, vale a detecção de lixo (do YOLO ou, quando
+         ele não detecta nada, a leitura do quadro inteiro feita pelo graduador);
       3. sem detecção nenhuma, não há leitura de visão para enviar.
     """
     bueiros = [d for d in deteccoes if d.classe in CLASSES_DE_BUEIRO]
@@ -42,13 +43,13 @@ def foto_id(quadro: np.ndarray) -> str:
     return hashlib.sha256(jpg.tobytes() if ok else quadro.tobytes()).hexdigest()[:16]
 
 
-def bloco_visao(quadro: np.ndarray, deteccoes: list[Deteccao]) -> dict | None:
-    """Bloco "visao" da inspeção, ou None quando o modelo não viu nada no ponto."""
+def bloco_visao(quadro: np.ndarray, deteccoes: list[Deteccao], modelo: str = NOME_MODELO) -> dict | None:
+    """Bloco "visao" da inspeção, ou None quando o modelo não viu nada no ponto. `modelo` é Detector.nome."""
     principal = classe_do_ponto(deteccoes)
     if principal is None:
         return None
     return {
-        "modelo": NOME_MODELO,
+        "modelo": modelo,
         "classe": principal.classe,
         "confianca": round(principal.confianca, 3),
         "foto_id": foto_id(quadro),

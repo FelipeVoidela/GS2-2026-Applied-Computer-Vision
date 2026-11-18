@@ -1,0 +1,156 @@
+{
+  "modelo": "yolov8n-bocadelobo-v2",
+  "conf_minima": 0.35,
+  "so_yolo": {
+    "fotos": 48,
+    "acertos": 35,
+    "acuracia": 0.729,
+    "bueiros_obstruidos": 5,
+    "bueiros_obstruidos_reconhecidos": 1,
+    "linhas_anotado": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta"
+    ],
+    "colunas_previsto": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta",
+      "nada"
+    ],
+    "matriz": [
+      [
+        33,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1,
+        5
+      ]
+    ],
+    "por_classe": {
+      "livre": {
+        "fotos": 35,
+        "revocacao": 0.943,
+        "precisao": 0.917
+      },
+      "parcialmente_obstruido": {
+        "fotos": 3,
+        "revocacao": 0.333,
+        "precisao": 0.333
+      },
+      "entupido": {
+        "fotos": 2,
+        "revocacao": 0.0,
+        "precisao": null
+      },
+      "lixo_sarjeta": {
+        "fotos": 8,
+        "revocacao": 0.125,
+        "precisao": 0.5
+      }
+    },
+    "pontos_com_problema": 13,
+    "problema_nao_alertado": 9,
+    "taxa_problema_nao_alertado": 0.692,
+    "livres_lidos_como_problema": 1
+  },
+  "com_graduador": {
+    "fotos": 48,
+    "acertos": 39,
+    "acuracia": 0.812,
+    "bueiros_obstruidos": 5,
+    "bueiros_obstruidos_reconhecidos": 2,
+    "linhas_anotado": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta"
+    ],
+    "colunas_previsto": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta",
+      "nada"
+    ],
+    "matriz": [
+      [
+        32,
+        2,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        5,
+        1
+      ]
+    ],
+    "por_classe": {
+      "livre": {
+        "fotos": 35,
+        "revocacao": 0.914,
+        "precisao": 0.97
+      },
+      "parcialmente_obstruido": {
+        "fotos": 3,
+        "revocacao": 0.667,
+        "precisao": 0.333
+      },
+      "entupido": {
+        "fotos": 2,
+        "revocacao": 0.0,
+        "precisao": null
+      },
+      "lixo_sarjeta": {
+        "fotos": 8,
+        "revocacao": 0.625,
+        "precisao": 0.714
+      }
+    },
+    "pontos_com_problema": 13,
+    "problema_nao_alertado": 2,
+    "taxa_problema_nao_alertado": 0.154,
+    "livres_lidos_como_problema": 2
+  }
+}

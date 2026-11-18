@@ -2,6 +2,7 @@
   "modelo": "yolov8n-bocadelobo-v2",
   "conf_minima": 0.35,
   "divisao": "completa",
+  "segunda_etapa": "graduador-obstrucao-v1.npz",
   "resumo_dataset": {
     "fotos": {
       "train": 200,
@@ -105,8 +106,162 @@
   },
   "leitura_do_ponto": {
     "fotos": 48,
+    "acertos": 31,
+    "acuracia": 0.646,
+    "bueiros_obstruidos": 9,
+    "bueiros_obstruidos_reconhecidos": 2,
+    "linhas_anotado": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta"
+    ],
+    "colunas_previsto": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta",
+      "nada"
+    ],
+    "matriz": [
+      [
+        25,
+        1,
+        0,
+        1,
+        6
+      ],
+      [
+        1,
+        1,
+        0,
+        3,
+        2
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        5,
+        0
+      ]
+    ],
+    "por_classe": {
+      "livre": {
+        "fotos": 33,
+        "revocacao": 0.758,
+        "precisao": 0.962
+      },
+      "parcialmente_obstruido": {
+        "fotos": 7,
+        "revocacao": 0.143,
+        "precisao": 0.25
+      },
+      "entupido": {
+        "fotos": 2,
+        "revocacao": 0.0,
+        "precisao": null
+      },
+      "lixo_sarjeta": {
+        "fotos": 6,
+        "revocacao": 0.833,
+        "precisao": 0.5
+      }
+    },
+    "pontos_com_problema": 15,
+    "problema_nao_alertado": 3,
+    "taxa_problema_nao_alertado": 0.2,
+    "livres_lidos_como_problema": 2
+  },
+  "leitura_do_ponto_val": {
+    "fotos": 48,
+    "acertos": 39,
+    "acuracia": 0.812,
+    "bueiros_obstruidos": 5,
+    "bueiros_obstruidos_reconhecidos": 2,
+    "linhas_anotado": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta"
+    ],
+    "colunas_previsto": [
+      "livre",
+      "parcialmente_obstruido",
+      "entupido",
+      "lixo_sarjeta",
+      "nada"
+    ],
+    "matriz": [
+      [
+        32,
+        2,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        5,
+        1
+      ]
+    ],
+    "por_classe": {
+      "livre": {
+        "fotos": 35,
+        "revocacao": 0.914,
+        "precisao": 0.97
+      },
+      "parcialmente_obstruido": {
+        "fotos": 3,
+        "revocacao": 0.667,
+        "precisao": 0.333
+      },
+      "entupido": {
+        "fotos": 2,
+        "revocacao": 0.0,
+        "precisao": null
+      },
+      "lixo_sarjeta": {
+        "fotos": 8,
+        "revocacao": 0.625,
+        "precisao": 0.714
+      }
+    },
+    "pontos_com_problema": 13,
+    "problema_nao_alertado": 2,
+    "taxa_problema_nao_alertado": 0.154,
+    "livres_lidos_como_problema": 2
+  },
+  "leitura_do_ponto_so_yolo": {
+    "fotos": 48,
     "acertos": 26,
     "acuracia": 0.542,
+    "bueiros_obstruidos": 9,
+    "bueiros_obstruidos_reconhecidos": 0,
     "linhas_anotado": [
       "livre",
       "parcialmente_obstruido",
@@ -177,10 +332,12 @@
     "taxa_problema_nao_alertado": 0.733,
     "livres_lidos_como_problema": 3
   },
-  "leitura_do_ponto_val": {
+  "leitura_do_ponto_val_so_yolo": {
     "fotos": 48,
     "acertos": 35,
     "acuracia": 0.729,
+    "bueiros_obstruidos": 5,
+    "bueiros_obstruidos_reconhecidos": 1,
     "linhas_anotado": [
       "livre",
       "parcialmente_obstruido",
@@ -252,12 +409,16 @@
     "livres_lidos_como_problema": 1
   },
   "velocidade": {
-    "ms_por_quadro_mediana": 30.2,
-    "ms_por_quadro_p90": 44.7,
-    "fps": 33.1,
+    "ms_por_quadro_mediana": 29.2,
+    "ms_por_quadro_p90": 31.7,
+    "fps": 34.2,
     "tamanho_entrada": 640,
     "maquina": "AMD Ryzen 5 5600X 6-Core Processor (8 threads), sem GPU",
     "parametros": 3138732,
-    "tamanho_pesos_mb": 6.5
+    "tamanho_pesos_mb": 6.5,
+    "ms_por_quadro_com_segunda_etapa": 124.7,
+    "fps_com_segunda_etapa_em_todo_quadro": 8.0,
+    "graduar_a_cada": 5,
+    "fps_com_segunda_etapa_a_cada_5": 20.7
   }
 }

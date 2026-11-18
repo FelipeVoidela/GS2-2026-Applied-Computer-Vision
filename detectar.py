@@ -10,6 +10,11 @@ Exemplos:
 Na janela: caixas coloridas por classe, FPS no canto e, embaixo, o estado do ponto
 (LIVRE, ATENCAO ou CRITICO). Tecla q ou Esc fecha.
 
+São duas etapas: o YOLOv8n localiza as bocas de lobo e o lixo em todos os quadros, e o graduador
+(CLIP + camada linear treinada neste projeto) olha o recorte de cada boca de lobo e decide se ela está
+livre ou obstruída. Em vídeo, o graduador roda a cada --graduar-a-cada quadros (padrão 5) para manter o
+tempo real; --sem-graduador desliga a segunda etapa.
+
 Com --json, cada leitura vira uma linha com o bloco "visao" no formato que o pipeline de dados
 do Boca de Lobo consome (ver src/boca_de_lobo_visao/contrato.py).
 """
@@ -53,7 +58,7 @@ def processar_fotos(det: Detector, fotos: list[Path], args) -> None:
             else:
                 cv2.imwrite(str(destino), anotada)
         if saida_json:
-            saida_json.write(json.dumps({"arquivo": foto.name, "visao": bloco_visao(img, deteccoes)},
+            saida_json.write(json.dumps({"arquivo": foto.name, "visao": bloco_visao(img, deteccoes, det.nome)},
                                         ensure_ascii=False) + "\n")
         if not args.sem_janela:
             cv2.imshow("Boca de Lobo - visao", anotada)
@@ -92,7 +97,7 @@ def processar_video(det: Detector, fonte: str, args) -> None:
         quadros += 1
         # Uma leitura por mudança de estado: é o que o robô enviaria ao pipeline de dados.
         if saida_json and estavel and estavel != ultimo_enviado and principal and principal.classe == estavel:
-            saida_json.write(json.dumps({"quadro": quadros, "visao": bloco_visao(quadro, deteccoes)},
+            saida_json.write(json.dumps({"quadro": quadros, "visao": bloco_visao(quadro, deteccoes, det.nome)},
                                         ensure_ascii=False) + "\n")
             saida_json.flush()
             ultimo_enviado = estavel
@@ -115,7 +120,7 @@ def processar_video(det: Detector, fonte: str, args) -> None:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Detecção de bocas de lobo em tempo real (YOLOv8n).")
+    ap = argparse.ArgumentParser(description="Detecção de bocas de lobo em tempo real (YOLOv8n + graduador).")
     ap.add_argument("--fonte", default="0", help="índice da webcam, vídeo, foto ou pasta de fotos")
     ap.add_argument("--pesos", default=str(PESOS_PADRAO))
     ap.add_argument("--conf", type=float, default=0.35, help="confiança mínima de uma detecção")
@@ -123,10 +128,16 @@ def main() -> None:
     ap.add_argument("--salvar", help="arquivo (vídeo ou foto) ou pasta de saída")
     ap.add_argument("--json", help="grava as leituras no formato do contrato (JSON Lines)")
     ap.add_argument("--sem-janela", action="store_true", help="não abre janela (servidor ou robô)")
+    ap.add_argument("--sem-graduador", action="store_true", help="só o YOLO, sem a segunda etapa")
+    ap.add_argument("--graduar-a-cada", type=int, default=5,
+                    help="em vídeo, roda a segunda etapa a cada N quadros (em fotos, roda sempre)")
     args = ap.parse_args()
 
-    det = Detector(args.pesos, conf=args.conf, tamanho=args.tamanho)
     caminho = Path(args.fonte)
+    em_video = not (caminho.is_dir() or caminho.suffix.lower() in EXT_FOTO)
+    det = Detector(args.pesos, conf=args.conf, tamanho=args.tamanho,
+                   graduador=None if args.sem_graduador else "auto",
+                   graduar_a_cada=args.graduar_a_cada if em_video else 1)
     if caminho.is_dir():
         processar_fotos(det, sorted(p for p in caminho.iterdir() if p.suffix.lower() in EXT_FOTO), args)
     elif caminho.suffix.lower() in EXT_FOTO:
