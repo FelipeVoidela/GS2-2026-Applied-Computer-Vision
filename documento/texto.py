@@ -20,7 +20,8 @@ INTEGRANTES = [
 
 LINKS = ("Repositório: [github.com/FelipeVoidela/GS2-2026-Applied-Computer-Vision]"
          "(https://github.com/FelipeVoidela/GS2-2026-Applied-Computer-Vision) · "
-         "Vídeo de demonstração: [resultados/demo/demo_ronda.mp4]"
+         "Vídeo de apresentação: [youtu.be/fr6dg2dogik](https://youtu.be/fr6dg2dogik) · "
+         "Ronda simulada: [resultados/demo/demo_ronda.mp4]"
          "(https://github.com/FelipeVoidela/GS2-2026-Applied-Computer-Vision/raw/main/resultados/demo/demo_ronda.mp4)"
          ", no repositório (o link baixa o arquivo)")
 

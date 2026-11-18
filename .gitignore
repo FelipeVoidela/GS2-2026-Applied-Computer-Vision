@@ -34,3 +34,6 @@ dados/anotacao/pre_anotacao.parte*.json
 # repetições das fotos reais obstruídas no treino (geradas por scripts/04b_gerar_sinteticos.py)
 dados/dataset/images/train/rep_*
 dados/dataset/labels/train/rep_*
+
+# filmagem simulada sem detecção (gerada por scripts/07_gerar_video_demo.py --so-bruto)
+resultados/demo/ronda_bruta.mp4

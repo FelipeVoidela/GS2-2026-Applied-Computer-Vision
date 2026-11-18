@@ -12,7 +12,10 @@ risco e avisa a equipe de limpeza e os moradores.
 
 **Documento da entrega (PDF): [documento/Documento_Visao_BocaDeLobo.pdf](documento/Documento_Visao_BocaDeLobo.pdf)**
 
-**Vídeo de demonstração (53 s): [resultados/demo/demo_ronda.mp4](https://github.com/FelipeVoidela/GS2-2026-Applied-Computer-Vision/raw/main/resultados/demo/demo_ronda.mp4)**.
+**Vídeo de apresentação (YouTube): [youtu.be/fr6dg2dogik](https://youtu.be/fr6dg2dogik)**. Explica o projeto como um
+todo e mostra a solução funcionando.
+
+**Ronda simulada (53 s, arquivo no repositório): [resultados/demo/demo_ronda.mp4](https://github.com/FelipeVoidela/GS2-2026-Applied-Computer-Vision/raw/main/resultados/demo/demo_ronda.mp4)**.
 O GitHub não toca vídeo guardado no repositório: o link baixa o arquivo (17 MB). A prévia abaixo mostra os 4 primeiros
 pontos da ronda, um de cada classe anotada: o sistema acerta o bueiro livre, acusa a obstrução no parcialmente obstruído
 (errando o grau: lê como entupido), acusa material acumulado no bueiro entupido (sem reconhecer que há um bueiro
@@ -296,6 +299,10 @@ python detectar.py --fonte video.mp4 --salvar saida.mp4
 python detectar.py --fonte dados/dataset/images/test --salvar saida --json leituras.jsonl --sem-janela
 python detectar.py --fonte 0 --sem-graduador          # só a primeira etapa (YOLO)
 ```
+
+Para ver a detecção ao vivo sem câmera: `python scripts/07_gerar_video_demo.py --so-bruto` grava a ronda simulada sem
+nada desenhado (`resultados/demo/ronda_bruta.mp4`), e `python detectar.py --fonte resultados/demo/ronda_bruta.mp4`
+roda o sistema sobre ela, na janela.
 
 Na tela: caixas coloridas por classe, FPS e, embaixo, o estado do ponto (LIVRE, ATENCAO ou CRITICO).
 O estado é o mais votado nos últimos quadros, para o alerta não piscar quando uma detecção falha por um instante.

@@ -17,6 +17,11 @@ Uso:
     python scripts/07_gerar_video_demo.py               # resultados/demo/demo_ronda.mp4
     python scripts/07_gerar_video_demo.py --pontos 12
     python scripts/07_gerar_video_demo.py --so-previa   # só refaz docs/demo_ronda.gif
+    python scripts/07_gerar_video_demo.py --so-bruto    # só a "filmagem" da ronda, sem detecção nem painel
+
+Com --so-bruto sai resultados/demo/ronda_bruta.mp4: os mesmos pontos e o mesmo movimento de câmera, sem
+nada desenhado. Serve de entrada para ver a detecção ao vivo, na janela do programa:
+    python detectar.py --fonte resultados/demo/ronda_bruta.mp4
 """
 from __future__ import annotations
 
@@ -151,6 +156,8 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--pontos", type=int, default=16)
     ap.add_argument("--conf", type=float, default=0.35)
+    ap.add_argument("--so-bruto", action="store_true",
+                    help="grava só a filmagem simulada (resultados/demo/ronda_bruta.mp4), sem detecção nem painel")
     ap.add_argument("--so-previa", action="store_true",
                     help="não grava o vídeo de novo: só refaz o GIF do README a partir do vídeo que já existe")
     args = ap.parse_args()
@@ -161,6 +168,21 @@ def main() -> None:
         return
 
     fotos = escolher_fotos(args.pontos)
+    if args.so_bruto:
+        bruto = SAIDA / "ronda_bruta.mp4"
+        saida = imageio_ffmpeg.write_frames(str(bruto), VISTA, fps=FPS_VIDEO, codec="libx264", quality=6,
+                                            pix_fmt_out="yuv420p", macro_block_size=None)
+        saida.send(None)
+        rng = random.Random(11)                 # mesma semente da ronda com detecção: mesmo movimento de câmera
+        quadros = int(SEGUNDOS_POR_PONTO * FPS_VIDEO)
+        for foto in fotos:
+            img = cv2.imread(str(foto))
+            deslocamento = (rng.uniform(-1, 1), rng.uniform(-1, 1))
+            for q in range(quadros):
+                saida.send(np.ascontiguousarray(vista_da_camera(img, q / (quadros - 1), deslocamento)[:, :, ::-1]))
+        saida.close()
+        print(f"Filmagem simulada em {bruto} ({bruto.stat().st_size / 1e6:.1f} MB), {len(fotos)} pontos")
+        return
     detector = Detector(conf=args.conf, graduar_a_cada=5)
     detector.detectar(cv2.imread(str(fotos[0])))            # aquecimento
     medidor = MedidorFPS(janela=45)
