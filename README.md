@@ -12,8 +12,11 @@ risco e avisa a equipe de limpeza e os moradores.
 
 **Documento da entrega (PDF): [documento/Documento_Visao_BocaDeLobo.pdf](documento/Documento_Visao_BocaDeLobo.pdf)**
 
-**Vídeo de apresentação (YouTube): [youtu.be/fr6dg2dogik](https://youtu.be/fr6dg2dogik)**. Explica o projeto como um
-todo e mostra a solução funcionando.
+**Vídeo de Applied Computer Vision (YouTube): [youtu.be/fr6dg2dogik](https://youtu.be/fr6dg2dogik)**. Apresenta este
+componente e mostra a solução funcionando.
+
+**Vídeo do projeto completo (YouTube): [youtube.com/watch?v=c0afZJsIye8](https://www.youtube.com/watch?v=c0afZJsIye8)**.
+É o pitch do Boca de Lobo, da disciplina Business Intelligence & Startup Development: explica o produto como um todo.
 
 **Ronda simulada (53 s, arquivo no repositório): [resultados/demo/demo_ronda.mp4](https://github.com/FelipeVoidela/GS2-2026-Applied-Computer-Vision/raw/main/resultados/demo/demo_ronda.mp4)**.
 O GitHub não toca vídeo guardado no repositório: o link baixa o arquivo (17 MB). A prévia abaixo mostra os 4 primeiros
